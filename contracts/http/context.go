@@ -4,7 +4,7 @@ import (
 	"context"
 )
 
-type Middleware func(Context)
+type Middleware func(Context) error
 
 type HandlerFunc func(Context) Response
 
