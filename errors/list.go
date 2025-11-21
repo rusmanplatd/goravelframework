@@ -18,6 +18,11 @@ var (
 	SessionFacadeNotSet     = New("session facade is not initialized")
 	ServiceProviderCycle    = New("circular dependency detected between providers: %s")
 
+	BroadcastDriverNotSupported   = New("broadcast driver not supported: %s")
+	BroadcastDriverRegisterFailed = New("failed to register broadcast driver '%s': %v")
+	BroadcastConnectionFailed     = New("failed to connect to broadcast service: %v")
+	BroadcastFailed               = New("failed to broadcast event: %v")
+
 	AuthEmptySecret             = New("authentication secret is missing or required")
 	AuthInvalidClaims           = New("authentication token contains invalid claims")
 	AuthInvalidKey              = New("authentication key is invalid")

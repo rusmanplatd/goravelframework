@@ -5,6 +5,7 @@ import (
 
 	"github.com/goravel/framework/contracts/auth"
 	"github.com/goravel/framework/contracts/auth/access"
+	"github.com/goravel/framework/contracts/broadcast"
 	"github.com/goravel/framework/contracts/cache"
 	"github.com/goravel/framework/contracts/config"
 	"github.com/goravel/framework/contracts/console"
@@ -120,6 +121,8 @@ type Application interface {
 	MakeArtisan() console.Artisan
 	// MakeAuth resolves the auth instance.
 	MakeAuth(ctx ...http.Context) auth.Auth
+	// MakeBroadcast resolves the broadcast instance.
+	MakeBroadcast() broadcast.Manager
 	// MakeCache resolves the cache instance.
 	MakeCache() cache.Cache
 	// MakeConfig resolves the config instance.

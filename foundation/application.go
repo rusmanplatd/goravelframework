@@ -12,6 +12,7 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/goravel/framework/broadcast"
 	"github.com/goravel/framework/config"
 	frameworkconsole "github.com/goravel/framework/console"
 	"github.com/goravel/framework/contracts/binding"
@@ -298,6 +299,7 @@ func (r *Application) getBaseServiceProviders() []foundation.ServiceProvider {
 	return []foundation.ServiceProvider{
 		&config.ServiceProvider{},
 		&frameworkconsole.ServiceProvider{},
+		&broadcast.ServiceProvider{},
 	}
 }
 

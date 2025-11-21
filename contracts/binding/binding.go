@@ -3,6 +3,7 @@ package binding
 const (
 	Artisan     = "goravel.artisan"
 	Auth        = "goravel.auth"
+	Broadcast   = "goravel.broadcast"
 	Cache       = "goravel.cache"
 	Config      = "goravel.config"
 	Crypt       = "goravel.crypt"
@@ -86,6 +87,33 @@ var (
 				Config,
 				Log,
 				Orm,
+			},
+		},
+		Broadcast: {
+			Description: "Enables real-time event broadcasting to channels using various drivers.",
+			PkgPath:     "github.com/goravel/framework/broadcast",
+			Dependencies: []string{
+				Config,
+				Log,
+			},
+			Drivers: []Driver{
+				{
+					Name:        "Null",
+					Description: "default",
+					Package:     "null",
+				},
+				{
+					Name:    "Pusher",
+					Package: "github.com/pusher/pusher-http-go/v5",
+				},
+				{
+					Name:    "Redis",
+					Package: "github.com/goravel/redis",
+				},
+				{
+					Name:    "Log",
+					Package: "log",
+				},
 			},
 		},
 		Cache: {

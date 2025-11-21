@@ -5,6 +5,7 @@ import "github.com/goravel/framework/contracts/binding"
 const (
 	Artisan     = "Artisan"
 	Auth        = "Auth"
+	Broadcast   = "Broadcast"
 	Cache       = "Cache"
 	Config      = "Config"
 	Crypt       = "Crypt"
@@ -35,6 +36,7 @@ const (
 var FacadeToBinding = map[string]string{
 	Artisan:     binding.Artisan,
 	Auth:        binding.Auth,
+	Broadcast:   binding.Broadcast,
 	Cache:       binding.Cache,
 	Config:      binding.Config,
 	Crypt:       binding.Crypt,

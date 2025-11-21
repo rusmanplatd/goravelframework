@@ -8,6 +8,7 @@ import (
 	contractsauth "github.com/goravel/framework/contracts/auth"
 	contractsaccess "github.com/goravel/framework/contracts/auth/access"
 	"github.com/goravel/framework/contracts/binding"
+	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
 	contractscache "github.com/goravel/framework/contracts/cache"
 	contractsconfig "github.com/goravel/framework/contracts/config"
 	contractsconsole "github.com/goravel/framework/contracts/console"
@@ -119,6 +120,16 @@ func (r *Container) MakeAuth(ctx ...contractshttp.Context) contractsauth.Auth {
 	}
 
 	return instance.(contractsauth.Auth)
+}
+
+func (r *Container) MakeBroadcast() contractsbroadcast.Manager {
+	instance, err := r.Make(facades.FacadeToBinding[facades.Broadcast])
+	if err != nil {
+		color.Errorln(err)
+		return nil
+	}
+
+	return instance.(contractsbroadcast.Manager)
 }
 
 func (r *Container) MakeCache() contractscache.Cache {
