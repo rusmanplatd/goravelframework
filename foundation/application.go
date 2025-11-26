@@ -21,6 +21,7 @@ import (
 	"github.com/goravel/framework/errors"
 	"github.com/goravel/framework/foundation/console"
 	"github.com/goravel/framework/foundation/json"
+	"github.com/goravel/framework/notification"
 	"github.com/goravel/framework/support"
 	"github.com/goravel/framework/support/carbon"
 	"github.com/goravel/framework/support/color"
@@ -305,6 +306,7 @@ func (r *Application) getBaseServiceProviders() []foundation.ServiceProvider {
 		&config.ServiceProvider{},
 		&frameworkconsole.ServiceProvider{},
 		&broadcast.ServiceProvider{},
+		&notification.ServiceProvider{},
 	}
 }
 

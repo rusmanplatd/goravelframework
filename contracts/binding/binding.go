@@ -1,34 +1,35 @@
 package binding
 
 const (
-	Artisan     = "goravel.artisan"
-	Auth        = "goravel.auth"
-	Broadcast   = "goravel.broadcast"
-	Cache       = "goravel.cache"
-	Config      = "goravel.config"
-	Crypt       = "goravel.crypt"
-	DB          = "goravel.db"
-	Event       = "goravel.event"
-	Gate        = "goravel.gate"
-	Grpc        = "goravel.grpc"
-	Hash        = "goravel.hash"
-	Http        = "goravel.http"
-	Lang        = "goravel.lang"
-	Log         = "goravel.log"
-	Mail        = "goravel.mail"
-	Orm         = "goravel.orm"
-	Process     = "goravel.process"
-	Queue       = "goravel.queue"
-	RateLimiter = "goravel.rate_limiter"
-	Route       = "goravel.route"
-	Schedule    = "goravel.schedule"
-	Schema      = "goravel.schema"
-	Seeder      = "goravel.seeder"
-	Session     = "goravel.session"
-	Storage     = "goravel.storage"
-	Testing     = "goravel.testing"
-	Validation  = "goravel.validation"
-	View        = "goravel.view"
+	Artisan      = "goravel.artisan"
+	Auth         = "goravel.auth"
+	Broadcast    = "goravel.broadcast"
+	Cache        = "goravel.cache"
+	Config       = "goravel.config"
+	Crypt        = "goravel.crypt"
+	DB           = "goravel.db"
+	Event        = "goravel.event"
+	Gate         = "goravel.gate"
+	Grpc         = "goravel.grpc"
+	Hash         = "goravel.hash"
+	Http         = "goravel.http"
+	Lang         = "goravel.lang"
+	Log          = "goravel.log"
+	Mail         = "goravel.mail"
+	Notification = "goravel.notification"
+	Orm          = "goravel.orm"
+	Process      = "goravel.process"
+	Queue        = "goravel.queue"
+	RateLimiter  = "goravel.rate_limiter"
+	Route        = "goravel.route"
+	Schedule     = "goravel.schedule"
+	Schema       = "goravel.schema"
+	Seeder       = "goravel.seeder"
+	Session      = "goravel.session"
+	Storage      = "goravel.storage"
+	Testing      = "goravel.testing"
+	Validation   = "goravel.validation"
+	View         = "goravel.view"
 )
 
 type Relationship struct {
@@ -231,6 +232,18 @@ var (
 			PkgPath:     "github.com/goravel/framework/mail",
 			Dependencies: []string{
 				Config,
+				Queue,
+			},
+		},
+		Notification: {
+			Description: "Send notifications across multiple channels (mail, database, etc.)",
+			PkgPath:     "github.com/goravel/framework/notification",
+			Dependencies: []string{
+				Config,
+				Event,
+				Log,
+				Mail,
+				Orm,
 				Queue,
 			},
 		},
