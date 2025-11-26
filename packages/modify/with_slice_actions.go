@@ -1,17 +1,19 @@
 package modify
 
 import (
+	"go/token"
 	"path/filepath"
+	"slices"
 	"strings"
 
 	"github.com/dave/dst"
 	"github.com/dave/dst/dstutil"
 
-	"github.com/goravel/framework/contracts/packages/match"
+	contractsmatch "github.com/goravel/framework/contracts/packages/match"
 	"github.com/goravel/framework/contracts/packages/modify"
-	packagesmatch "github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/support"
+	"github.com/goravel/framework/packages/match"
 	supportfile "github.com/goravel/framework/support/file"
+	"github.com/goravel/framework/support/path/internals"
 )
 
 // withSliceConfig holds configuration for adding items to a slice in foundation.Setup() chain.
@@ -33,7 +35,7 @@ type withSliceConfig struct {
 	// stubTemplate is the function that returns the stub content for creating the file
 	stubTemplate func() string
 	// matcherFunc is the function that returns the matcher to find the target location (e.g., matchPkg.Commands, matchPkg.Migrations)
-	matcherFunc func() []match.GoNode
+	matcherFunc func() []contractsmatch.GoNode
 }
 
 // withSliceHandler handles adding items to a slice in foundation.Setup() chain.
@@ -46,7 +48,7 @@ type withSliceHandler struct {
 
 // newWithSliceHandler creates a new withSliceHandler with the given configuration.
 func newWithSliceHandler(config withSliceConfig) *withSliceHandler {
-	appFilePath := support.Config.Paths.App
+	appFilePath := internals.BootstrapApp()
 	bootstrapDir := filepath.Dir(appFilePath)
 	filePath := filepath.Join(bootstrapDir, config.fileName)
 
@@ -78,7 +80,7 @@ func (r *withSliceHandler) AddItem(pkg, item string) error {
 			return err
 		}
 
-		return GoFile(r.appFilePath).Find(packagesmatch.FoundationSetup()).Modify(r.setupWithFunction()).Apply()
+		return GoFile(r.appFilePath).Find(match.FoundationSetup()).Modify(r.setupWithFunction()).Apply()
 	}
 
 	if r.fileExists {
@@ -92,7 +94,39 @@ func (r *withSliceHandler) AddItem(pkg, item string) error {
 		return err
 	}
 
-	return GoFile(r.appFilePath).Find(packagesmatch.FoundationSetup()).Modify(r.setupInline(item)).Apply()
+	return GoFile(r.appFilePath).Find(match.FoundationSetup()).Modify(r.setupInline(item)).Apply()
+}
+
+// RemoveItem removes an item from the slice in foundation.Setup() chain.
+// If the helper file exists (e.g., providers.go), it removes the item from that file.
+// If the helper file doesn't exist, it removes the item from the inline array in app.go.
+// This method also cleans up unused imports after removing the item.
+func (r *withSliceHandler) RemoveItem(pkg, item string) error {
+	withMethodExists, err := r.checkWithMethodExists()
+	if err != nil {
+		return err
+	}
+
+	if !withMethodExists {
+		// If WithMethod doesn't exist, there's nothing to remove
+		return nil
+	}
+
+	if r.fileExists {
+		// Remove from helper file
+		if err := r.removeItemFromFile(pkg, item); err != nil {
+			return err
+		}
+		return nil
+	}
+
+	// Remove from inline array in app.go
+	if err := GoFile(r.appFilePath).Find(match.FoundationSetup()).Modify(r.removeInline(item)).Apply(); err != nil {
+		return err
+	}
+
+	// Clean up imports
+	return r.removeImports(pkg)
 }
 
 // checkWithMethodExists checks if the WithMethod exists in the foundation.Setup() chain.
@@ -133,8 +167,8 @@ func (r *withSliceHandler) createFile() error {
 //	    "github.com/goravel/framework/contracts/console"
 //	)
 func (r *withSliceHandler) addImports(pkg string) error {
-	importMatchers := packagesmatch.Imports()
-	if err := GoFile(r.appFilePath).FindOrCreate(importMatchers, CreateImport).Modify(AddImport(pkg)).Apply(); err != nil {
+	importMatchers := match.Imports()
+	if err := GoFile(r.appFilePath).FindOrCreate(importMatchers, createImport).Modify(AddImport(pkg)).Apply(); err != nil {
 		return err
 	}
 
@@ -162,13 +196,55 @@ func (r *withSliceHandler) addImports(pkg string) error {
 //	}
 func (r *withSliceHandler) addItemToFile(pkg, item string) error {
 	// Add the item package import
-	importMatchers := packagesmatch.Imports()
-	if err := GoFile(r.filePath).FindOrCreate(importMatchers, CreateImport).Modify(AddImport(pkg)).Apply(); err != nil {
+	importMatchers := match.Imports()
+	if err := GoFile(r.filePath).FindOrCreate(importMatchers, createImport).Modify(AddImport(pkg)).Apply(); err != nil {
 		return err
 	}
 
 	// Add the item to the helper function using the provided matcher function
 	return GoFile(r.filePath).Find(r.config.matcherFunc()).Modify(Register(item)).Apply()
+}
+
+// removeImports removes the item package import if it's no longer used.
+// It checks both app.go and the helper file (if it exists) to determine if the import is still in use.
+func (r *withSliceHandler) removeImports(pkg string) error {
+	importMatchers := match.Imports()
+	return GoFile(r.appFilePath).Find(importMatchers).Modify(RemoveImport(pkg)).Apply()
+}
+
+// removeItemFromFile removes an item from the existing helper function in the file.
+//
+// Example: For pkg="github.com/user/app/commands" and item="&commands.MyCommand{}":
+//
+// Before:
+//
+//	import "github.com/user/app/commands"
+//
+//	func Commands() []console.Command {
+//	    return []console.Command{
+//	        &commands.MyCommand{},
+//	        &commands.OtherCommand{},
+//	    }
+//	}
+//
+// After:
+//
+//	import "github.com/user/app/commands"
+//
+//	func Commands() []console.Command {
+//	    return []console.Command{
+//	        &commands.OtherCommand{},
+//	    }
+//	}
+func (r *withSliceHandler) removeItemFromFile(pkg, item string) error {
+	// Remove the item from the helper function using the provided matcher function
+	if err := GoFile(r.filePath).Find(r.config.matcherFunc()).Modify(Unregister(item)).Apply(); err != nil {
+		return err
+	}
+
+	// Clean up the import if it's no longer used
+	importMatchers := match.Imports()
+	return GoFile(r.filePath).Find(importMatchers).Modify(RemoveImport(pkg)).Apply()
 }
 
 // appendToExisting appends an item to an existing WithMethod call.
@@ -404,5 +480,318 @@ func (r *withSliceHandler) setupWithFunction() modify.Action {
 
 		// Insert WithMethod into the chain
 		parentOfSetup.X = newWithCall
+	}
+}
+
+// removeInline returns an action that removes an item from the inline array in the foundation.Setup() chain.
+//
+// This is used when the helper file doesn't exist and items are stored directly in app.go.
+// It removes the specified item from the inline array.
+//
+// Example: For item="&commands.MyCommand{}" with existing WithCommands:
+//
+// Before:
+//
+//	foundation.Setup().
+//	    WithCommands([]console.Command{
+//	        &commands.ExistingCmd{},
+//	        &commands.MyCommand{},
+//	    }).
+//	    Boot()
+//
+// After:
+//
+//	foundation.Setup().
+//	    WithCommands([]console.Command{
+//	        &commands.ExistingCmd{},
+//	    }).
+//	    Boot()
+func (r *withSliceHandler) removeInline(item string) modify.Action {
+	return func(cursor *dstutil.Cursor) {
+		stmt := cursor.Node().(*dst.ExprStmt)
+
+		if !containsFoundationSetup(stmt) {
+			return
+		}
+
+		callExpr, ok := stmt.X.(*dst.CallExpr)
+		if !ok {
+			return
+		}
+
+		_, withCall, _ := r.findFoundationSetupCalls(callExpr)
+		if withCall == nil {
+			return
+		}
+
+		itemExpr := MustParseExpr(item).(dst.Expr)
+		r.removeFromExisting(withCall, itemExpr)
+	}
+}
+
+// removeFromExisting removes an item from an existing WithMethod call.
+//
+// Example: For withCall representing ".WithCommands([]console.Command{&commands.Cmd1{}, &commands.Cmd2{}})" and itemExpr="&commands.Cmd1{}":
+//
+// Before:
+//
+//	.WithCommands([]console.Command{
+//	    &commands.Cmd1{},
+//	    &commands.Cmd2{},
+//	})
+//
+// After:
+//
+//	.WithCommands([]console.Command{
+//	    &commands.Cmd2{},
+//	})
+func (r *withSliceHandler) removeFromExisting(withCall *dst.CallExpr, itemExpr dst.Expr) {
+	if len(withCall.Args) == 0 {
+		return
+	}
+
+	compositeLit, ok := withCall.Args[0].(*dst.CompositeLit)
+	if !ok {
+		return
+	}
+
+	// Use slices.DeleteFunc to remove the matching item
+	compositeLit.Elts = slices.DeleteFunc(compositeLit.Elts, func(ex dst.Expr) bool {
+		return match.EqualNode(itemExpr).MatchNode(ex)
+	})
+}
+
+// addMiddlewareAppendCall adds a new handler.Append() call to the function literal.
+func addMiddlewareAppendCall(funcLit *dst.FuncLit, middlewareArg dst.Expr) {
+	// Add newline decorations to middleware argument for proper formatting
+	middlewareArg.Decorations().Before = dst.NewLine
+	middlewareArg.Decorations().After = dst.NewLine
+
+	appendStmt := &dst.ExprStmt{
+		X: &dst.CallExpr{
+			Fun: &dst.SelectorExpr{
+				X:   &dst.Ident{Name: "handler"},
+				Sel: &dst.Ident{Name: "Append"},
+			},
+			Args: []dst.Expr{middlewareArg},
+			Decs: dst.CallExprDecorations{
+				NodeDecs: dst.NodeDecs{
+					Before: dst.NewLine,
+					After:  dst.NewLine,
+				},
+			},
+		},
+	}
+	funcLit.Body.List = append(funcLit.Body.List, appendStmt)
+}
+
+// addMiddlewareImports adds the required imports for middleware and configuration packages.
+func addMiddlewareImports(appFilePath, pkg string) error {
+	importMatchers := match.Imports()
+	if err := GoFile(appFilePath).FindOrCreate(importMatchers, createImport).Modify(AddImport(pkg)).Apply(); err != nil {
+		return err
+	}
+
+	configImportPath := "github.com/goravel/framework/contracts/foundation/configuration"
+	return GoFile(appFilePath).Find(importMatchers).Modify(AddImport(configImportPath)).Apply()
+}
+
+// appendToExistingMiddleware appends middleware to an existing WithMiddleware call.
+func appendToExistingMiddleware(withMiddlewareCall *dst.CallExpr, middlewareExpr dst.Expr) {
+	if len(withMiddlewareCall.Args) == 0 {
+		return
+	}
+
+	funcLit, ok := withMiddlewareCall.Args[0].(*dst.FuncLit)
+	if !ok {
+		return
+	}
+
+	appendCall := findMiddlewareAppendCall(funcLit)
+	if appendCall != nil {
+		// Ensure the first existing argument doesn't have a newline before it
+		if len(appendCall.Args) > 0 {
+			appendCall.Args[0].Decorations().Before = dst.None
+		}
+
+		// Add newline decorations to the new middleware for proper formatting
+		middlewareExpr.Decorations().Before = dst.NewLine
+		middlewareExpr.Decorations().After = dst.NewLine
+
+		appendCall.Args = append(appendCall.Args, middlewareExpr)
+	} else {
+		addMiddlewareAppendCall(funcLit, middlewareExpr)
+	}
+}
+
+// containsFoundationSetup checks if the statement contains a foundation.Setup() call.
+func containsFoundationSetup(stmt *dst.ExprStmt) bool {
+	var foundSetup bool
+	dst.Inspect(stmt, func(n dst.Node) bool {
+		if call, ok := n.(*dst.CallExpr); ok {
+			if sel, ok := call.Fun.(*dst.SelectorExpr); ok {
+				if ident, ok := sel.X.(*dst.Ident); ok {
+					if ident.Name == "foundation" && sel.Sel.Name == "Setup" {
+						foundSetup = true
+						return false
+					}
+				}
+			}
+		}
+		return true
+	})
+	return foundSetup
+}
+
+func createImport(node dst.Node) error {
+	importDecl := &dst.GenDecl{
+		Tok: token.IMPORT,
+	}
+
+	f := node.(*dst.File)
+
+	newDecls := make([]dst.Decl, 0, len(f.Decls)+1)
+	newDecls = append(newDecls, f.Decls[0], importDecl) // package and import
+
+	if len(f.Decls) > 1 {
+		newDecls = append(newDecls, f.Decls[1:]...) // others
+	}
+
+	f.Decls = newDecls
+
+	return nil
+}
+
+// createWithMiddleware creates a new WithMiddleware call and inserts it into the chain.
+func createWithMiddleware(setupCall *dst.CallExpr, parentOfSetup *dst.SelectorExpr, middlewareExpr dst.Expr) {
+	// Add newline decorations to middleware argument for proper formatting
+	middlewareExpr.Decorations().Before = dst.NewLine
+	middlewareExpr.Decorations().After = dst.NewLine
+
+	funcLit := &dst.FuncLit{
+		Type: &dst.FuncType{
+			Params: &dst.FieldList{
+				List: []*dst.Field{
+					{
+						Names: []*dst.Ident{{Name: "handler"}},
+						Type: &dst.SelectorExpr{
+							X:   &dst.Ident{Name: "configuration"},
+							Sel: &dst.Ident{Name: "Middleware"},
+						},
+					},
+				},
+			},
+		},
+		Body: &dst.BlockStmt{
+			List: []dst.Stmt{
+				&dst.ExprStmt{
+					X: &dst.CallExpr{
+						Fun: &dst.SelectorExpr{
+							X:   &dst.Ident{Name: "handler"},
+							Sel: &dst.Ident{Name: "Append"},
+						},
+						Args: []dst.Expr{middlewareExpr},
+						Decs: dst.CallExprDecorations{
+							NodeDecs: dst.NodeDecs{
+								Before: dst.NewLine,
+								After:  dst.NewLine,
+							},
+						},
+					},
+				},
+			},
+		},
+	}
+
+	newWithMiddlewareCall := &dst.CallExpr{
+		Fun: &dst.SelectorExpr{
+			X: setupCall,
+			Sel: &dst.Ident{
+				Name: "WithMiddleware",
+				Decs: dst.IdentDecorations{
+					NodeDecs: dst.NodeDecs{
+						Before: dst.NewLine,
+					},
+				},
+			},
+		},
+		Args: []dst.Expr{funcLit},
+	}
+
+	// Insert WithMiddleware into the chain
+	parentOfSetup.X = newWithMiddlewareCall
+}
+
+// findFoundationSetupCallsForMiddleware walks the chain to find Setup() and WithMiddleware() calls.
+func findFoundationSetupCallsForMiddleware(callExpr *dst.CallExpr) (setupCall, withMiddlewareCall *dst.CallExpr, parentOfSetup *dst.SelectorExpr) {
+	current := callExpr
+	for current != nil {
+		if sel, ok := current.Fun.(*dst.SelectorExpr); ok {
+			if innerCall, ok := sel.X.(*dst.CallExpr); ok {
+				if innerSel, ok := innerCall.Fun.(*dst.SelectorExpr); ok {
+					// Check if this is the Setup() call
+					if innerSel.Sel.Name == "Setup" {
+						if ident, ok := innerSel.X.(*dst.Ident); ok && ident.Name == "foundation" {
+							setupCall = innerCall
+							parentOfSetup = sel
+							break
+						}
+					}
+					// Check if this is WithMiddleware
+					if innerSel.Sel.Name == "WithMiddleware" {
+						withMiddlewareCall = innerCall
+					}
+				}
+				current = innerCall
+				continue
+			}
+		}
+		break
+	}
+	return
+}
+
+// findMiddlewareAppendCall finds the handler.Append() call in the function literal.
+func findMiddlewareAppendCall(funcLit *dst.FuncLit) *dst.CallExpr {
+	for _, stmt := range funcLit.Body.List {
+		if exprStmt, ok := stmt.(*dst.ExprStmt); ok {
+			if call, ok := exprStmt.X.(*dst.CallExpr); ok {
+				if sel, ok := call.Fun.(*dst.SelectorExpr); ok {
+					if sel.Sel.Name == "Append" {
+						return call
+					}
+				}
+			}
+		}
+	}
+	return nil
+}
+
+// foundationSetupMiddleware returns an action that modifies the foundation.Setup() chain.
+func foundationSetupMiddleware(middleware string) modify.Action {
+	return func(cursor *dstutil.Cursor) {
+		stmt := cursor.Node().(*dst.ExprStmt)
+
+		if !containsFoundationSetup(stmt) {
+			return
+		}
+
+		callExpr, ok := stmt.X.(*dst.CallExpr)
+		if !ok {
+			return
+		}
+
+		setupCall, withMiddlewareCall, parentOfSetup := findFoundationSetupCallsForMiddleware(callExpr)
+		if setupCall == nil || parentOfSetup == nil {
+			return
+		}
+
+		middlewareExpr := MustParseExpr(middleware).(dst.Expr)
+
+		if withMiddlewareCall != nil {
+			appendToExistingMiddleware(withMiddlewareCall, middlewareExpr)
+		} else {
+			createWithMiddleware(setupCall, parentOfSetup, middlewareExpr)
+		}
 	}
 }
