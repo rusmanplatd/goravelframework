@@ -56,16 +56,49 @@ func (s *NotificationSender) SendNow(notifiables any, notification contractsnoti
 			continue
 		}
 
-		// Send through each channel
-		for _, channelName := range viaChannels {
-			if err := s.sendToNotifiable(notifiable, notification, channelName); err != nil {
-				s.log.Error(fmt.Sprintf("Failed to send notification via %s: %v", channelName, err))
-				// Continue with other channels even if one fails
+		// Determine locale for this notifiable
+		locale := s.getPreferredLocale(notifiable, notification)
+
+		// Send through each channel with locale context
+		s.sendWithLocale(locale, func() {
+			for _, channelName := range viaChannels {
+				if err := s.sendToNotifiable(notifiable, notification, channelName); err != nil {
+					s.log.Error(fmt.Sprintf("Failed to send notification via %s: %v", channelName, err))
+					// Continue with other channels even if one fails
+				}
 			}
-		}
+		})
 	}
 
 	return nil
+}
+
+// getPreferredLocale determines the preferred locale for sending a notification.
+func (s *NotificationSender) getPreferredLocale(notifiable any, notification contractsnotification.Notification) string {
+	// Check if notification has a locale
+	if hasLocale, ok := notification.(contractsnotification.HasLocale); ok {
+		if locale := hasLocale.Locale(); locale != "" {
+			return locale
+		}
+	}
+
+	// Check if notifiable has a locale preference
+	if hasPreference, ok := notifiable.(contractsnotification.HasLocalePreference); ok {
+		if locale := hasPreference.PreferredLocale(); locale != "" {
+			return locale
+		}
+	}
+
+	return ""
+}
+
+// sendWithLocale executes a function with a specific locale context.
+// This is a placeholder for locale handling - in a real implementation,
+// this would set the application locale temporarily.
+func (s *NotificationSender) sendWithLocale(locale string, fn func()) {
+	// TODO: Implement actual locale switching when translation support is available
+	// For now, just execute the function
+	fn()
 }
 
 // sendToNotifiable sends a notification to a single notifiable entity via a specific channel.

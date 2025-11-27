@@ -65,3 +65,37 @@ type Subscriber interface {
 	// The values can be listener method names (string), closures, or Listener interfaces.
 	Subscribe(dispatcher Instance) map[any][]any
 }
+
+// ShouldQueue indicates that a listener should be queued.
+// When a listener implements this interface, it will be executed asynchronously via the queue system.
+type ShouldQueue interface {
+	// ShouldQueue returns true if the listener should be queued.
+	ShouldQueue() bool
+}
+
+// QueueableListener provides queue configuration for a listener.
+// Listeners can implement this interface to customize queue behavior.
+type QueueableListener interface {
+	// ViaConnection returns the queue connection name to use.
+	ViaConnection() string
+	// ViaQueue returns the queue name to use.
+	ViaQueue() string
+	// WithDelay returns the delay before the job should be processed.
+	WithDelay() int
+}
+
+// ShouldBroadcast indicates that an event should be broadcast.
+// When an event implements this interface, it will be broadcast to connected clients.
+type ShouldBroadcast interface {
+	// BroadcastOn returns the channels the event should broadcast on.
+	BroadcastOn() []string
+	// BroadcastWhen returns true if the event should be broadcast.
+	BroadcastWhen() bool
+}
+
+// ShouldDispatchAfterCommit indicates that an event should be dispatched after database transaction commits.
+// This is useful for events that should only fire if the database transaction succeeds.
+type ShouldDispatchAfterCommit interface {
+	// ShouldDispatchAfterCommit returns true if the event should wait for transaction commit.
+	ShouldDispatchAfterCommit() bool
+}

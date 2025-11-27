@@ -38,3 +38,29 @@ type ShouldSend interface {
 	// ShouldSend returns true if the notification should be sent to the given notifiable via the given channel.
 	ShouldSend(notifiable any, channel string) bool
 }
+
+// HasLocalePreference indicates that a notifiable has a locale preference.
+// This is used to determine the locale for sending notifications.
+type HasLocalePreference interface {
+	// PreferredLocale returns the preferred locale for the notifiable.
+	PreferredLocale() string
+}
+
+// ViaConnections allows notifications to specify different queue connections per channel.
+type ViaConnections interface {
+	// ViaConnections returns a map of channel names to queue connection names.
+	ViaConnections() map[string]string
+}
+
+// ViaQueues allows notifications to specify different queue names per channel.
+type ViaQueues interface {
+	// ViaQueues returns a map of channel names to queue names.
+	ViaQueues() map[string]string
+}
+
+// WithDelay allows notifications to specify a delay before sending.
+type WithDelay interface {
+	// WithDelay returns the delay in seconds before the notification should be sent.
+	// Can return a map of channel names to delays for per-channel delays.
+	WithDelay(notifiable any, channel string) int
+}

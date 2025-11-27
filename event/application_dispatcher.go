@@ -26,6 +26,8 @@ func (app *Application) Listen(evt any, listeners ...any) error {
 	// Check if it's a wildcard pattern
 	if strings.Contains(eventName, "*") {
 		app.wildcards[eventName] = append(app.wildcards[eventName], listeners...)
+		// Clear wildcard cache since wildcards changed
+		app.wildcardsCache = make(map[string][]any)
 	} else {
 		app.listeners[eventName] = append(app.listeners[eventName], listeners...)
 	}
@@ -100,6 +102,8 @@ func (app *Application) Subscribe(subscriber event.Subscriber) error {
 func (app *Application) Forget(eventName string) {
 	if strings.Contains(eventName, "*") {
 		delete(app.wildcards, eventName)
+		// Clear wildcard cache since wildcards changed
+		app.wildcardsCache = make(map[string][]any)
 	} else {
 		delete(app.listeners, eventName)
 	}
@@ -141,6 +145,16 @@ func (app *Application) invokeListeners(eventName string, payload []any, halt bo
 	allListeners := app.getListenersForEvent(eventName)
 
 	for _, listener := range allListeners {
+		// Check if listener should be queued
+		if shouldQueueListener(listener, payload) {
+			// Queue the listener instead of executing it synchronously
+			if err := queueListener(app.queue, listener, eventName, payload); err != nil {
+				return nil, fmt.Errorf("failed to queue listener: %w", err)
+			}
+			// Queued listeners don't return responses
+			continue
+		}
+
 		callable, err := makeListenerCallable(listener)
 		if err != nil {
 			return nil, err
@@ -176,11 +190,20 @@ func (app *Application) getListenersForEvent(eventName string) []any {
 		allListeners = append(allListeners, listeners...)
 	}
 
-	// Add wildcard listeners
-	for pattern, listeners := range app.wildcards {
-		if matchWildcard(pattern, eventName) {
-			allListeners = append(allListeners, listeners...)
+	// Add wildcard listeners (use cache if available)
+	if cached, ok := app.wildcardsCache[eventName]; ok {
+		allListeners = append(allListeners, cached...)
+	} else {
+		// Build and cache wildcard listeners for this event
+		var wildcardListeners []any
+		for pattern, listeners := range app.wildcards {
+			if matchWildcard(pattern, eventName) {
+				wildcardListeners = append(wildcardListeners, listeners...)
+			}
 		}
+		// Cache for future use
+		app.wildcardsCache[eventName] = wildcardListeners
+		allListeners = append(allListeners, wildcardListeners...)
 	}
 
 	return allListeners
