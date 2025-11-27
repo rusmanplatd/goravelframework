@@ -74,59 +74,88 @@ func (s *NotificationSender) sendToNotifiable(
 	notification contractsnotification.Notification,
 	channelName string,
 ) error {
-	// Fire sending event
-	s.dispatchSendingEvent(notifiable, notification, channelName)
+	// Check if notification should be sent
+	if !s.shouldSendNotification(notifiable, notification, channelName) {
+		return nil
+	}
 
 	// Get the channel
 	channel, err := s.manager.Channel(channelName)
 	if err != nil {
-		s.dispatchFailedEvent(notifiable, notification, channelName, err)
-		return err
+		s.dispatchFailedEvent(notifiable, notification, channelName, nil, err)
+		// SendNow logs errors but doesn't return them, so we don't return here either.
+		return nil
 	}
 
 	// Send the notification
 	if err := channel.Send(notifiable, notification); err != nil {
-		s.dispatchFailedEvent(notifiable, notification, channelName, err)
-		return err
+		s.dispatchFailedEvent(notifiable, notification, channelName, nil, err)
+		// SendNow logs errors but doesn't return them, so we don't return here either.
+		return nil
 	}
 
-	// Fire sent event
-	s.dispatchSentEvent(notifiable, notification, channelName)
+	// Fire sent event (no response from channel currently)
+	s.dispatchSentEvent(notifiable, notification, channelName, nil)
 
 	return nil
 }
 
-// dispatchSendingEvent dispatches the NotificationSending event.
-func (s *NotificationSender) dispatchSendingEvent(notifiable any, notification contractsnotification.Notification, channelName string) {
+// shouldSendNotification determines if the notification should be sent.
+// It checks the notification's ShouldSend method and dispatches the NotificationSending event.
+func (s *NotificationSender) shouldSendNotification(
+	notifiable any,
+	notification contractsnotification.Notification,
+	channelName string,
+) bool {
+	// Check if notification has ShouldSend method
+	if shouldSender, ok := notification.(contractsnotification.ShouldSend); ok {
+		if !shouldSender.ShouldSend(notifiable, channelName) {
+			return false
+		}
+	}
+
+	// Fire NotificationSending event and check if any listener returns false
 	if s.manager.event != nil {
 		sendingEvent := &events.NotificationSending{
 			Notifiable:   notifiable,
 			Notification: notification,
 			Channel:      channelName,
 		}
-		if err := s.manager.event.Job(sendingEvent, nil).Dispatch(); err != nil {
-			s.log.Warning(fmt.Sprintf("Failed to dispatch NotificationSending event: %v", err))
+
+		// Use Until to allow listeners to cancel the notification
+		result, err := s.manager.event.Until(sendingEvent)
+		if err != nil {
+			s.log.Warning(fmt.Sprintf("Error during NotificationSending event: %v", err))
+			return true // Continue sending on error
+		}
+
+		// If any listener returned false, cancel the notification
+		if result == false {
+			return false
 		}
 	}
+
+	return true
 }
 
-// dispatchSentEvent dispatches the NotificationSent event.
-func (s *NotificationSender) dispatchSentEvent(notifiable any, notification contractsnotification.Notification, channelName string) {
+// dispatchSentEvent dispatches the NotificationSent event synchronously.
+func (s *NotificationSender) dispatchSentEvent(notifiable any, notification contractsnotification.Notification, channelName string, response any) {
 	if s.manager.event != nil {
 		sentEvent := &events.NotificationSent{
 			Notifiable:   notifiable,
 			Notification: notification,
 			Channel:      channelName,
-			Response:     nil, // Channels don't currently return responses
+			Response:     response,
 		}
-		if err := s.manager.event.Job(sentEvent, nil).Dispatch(); err != nil {
-			s.log.Warning(fmt.Sprintf("Failed to dispatch NotificationSent event: %v", err))
+		// Use synchronous Dispatch instead of queued Job
+		if _, err := s.manager.event.Dispatch(sentEvent); err != nil {
+			s.log.Warning(fmt.Sprintf("Error dispatching NotificationSent event: %v", err))
 		}
 	}
 }
 
-// dispatchFailedEvent dispatches the NotificationFailed event.
-func (s *NotificationSender) dispatchFailedEvent(notifiable any, notification contractsnotification.Notification, channelName string, notifErr error) {
+// dispatchFailedEvent dispatches the NotificationFailed event synchronously.
+func (s *NotificationSender) dispatchFailedEvent(notifiable any, notification contractsnotification.Notification, channelName string, response any, notifErr error) {
 	if s.manager.event != nil {
 		failedEvent := &events.NotificationFailed{
 			Notifiable:   notifiable,
@@ -134,8 +163,9 @@ func (s *NotificationSender) dispatchFailedEvent(notifiable any, notification co
 			Channel:      channelName,
 			Error:        notifErr,
 		}
-		if err := s.manager.event.Job(failedEvent, nil).Dispatch(); err != nil {
-			s.log.Warning(fmt.Sprintf("Failed to dispatch NotificationFailed event: %v", err))
+		// Use synchronous Dispatch instead of queued Job
+		if _, err := s.manager.event.Dispatch(failedEvent); err != nil {
+			s.log.Warning(fmt.Sprintf("Error dispatching NotificationFailed event: %v", err))
 		}
 	}
 }
@@ -150,8 +180,8 @@ func (s *NotificationSender) queueNotification(notifiables any, notification con
 			continue
 		}
 
-		// Queue a job for each notifiable
-		job := NewSendQueuedNotificationJob(notifiable, notification, channels)
+		// Queue a job for each notifiable, passing sender reference
+		job := NewSendQueuedNotificationJob(notifiable, notification, channels, s)
 		if err := s.queue.Job(job, []contractsqueue.Arg{}).Dispatch(); err != nil {
 			return fmt.Errorf("failed to queue notification: %w", err)
 		}

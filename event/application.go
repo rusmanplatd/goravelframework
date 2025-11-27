@@ -8,13 +8,20 @@ import (
 )
 
 type Application struct {
-	events map[event.Event][]event.Listener
-	queue  queue.Queue
+	events       map[event.Event][]event.Listener
+	listeners    map[string][]any // string event name -> listeners
+	wildcards    map[string][]any // wildcard patterns -> listeners
+	pushedEvents map[string][]any // pushed events -> payloads
+	queue        queue.Queue
 }
 
 func NewApplication(queue queue.Queue) *Application {
 	return &Application{
-		queue: queue,
+		events:       make(map[event.Event][]event.Listener),
+		listeners:    make(map[string][]any),
+		wildcards:    make(map[string][]any),
+		pushedEvents: make(map[string][]any),
+		queue:        queue,
 	}
 }
 

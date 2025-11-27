@@ -2,10 +2,8 @@ package notification
 
 import (
 	"encoding/json"
-	"fmt"
 
 	contractsnotification "github.com/goravel/framework/contracts/notification"
-	"github.com/goravel/framework/foundation"
 )
 
 // SendQueuedNotificationJob is a queue job for sending notifications.
@@ -13,6 +11,7 @@ type SendQueuedNotificationJob struct {
 	notifiable   any
 	notification contractsnotification.Notification
 	channels     []string
+	sender       *NotificationSender // Injected dependency
 }
 
 // NewSendQueuedNotificationJob creates a new queued notification job.
@@ -20,11 +19,13 @@ func NewSendQueuedNotificationJob(
 	notifiable any,
 	notification contractsnotification.Notification,
 	channels []string,
+	sender *NotificationSender,
 ) *SendQueuedNotificationJob {
 	return &SendQueuedNotificationJob{
 		notifiable:   notifiable,
 		notification: notification,
 		channels:     channels,
+		sender:       sender,
 	}
 }
 
@@ -35,14 +36,8 @@ func (j *SendQueuedNotificationJob) Signature() string {
 
 // Handle handles the job.
 func (j *SendQueuedNotificationJob) Handle(...any) error {
-	// Get the notification factory from the application
-	notificationFactory := foundation.App.MakeNotification()
-	if notificationFactory == nil {
-		return fmt.Errorf("notification facade not available")
-	}
-
-	// Send the notification immediately (already queued, so don't queue again)
-	return notificationFactory.SendNow(j.notifiable, j.notification, j.channels...)
+	// Use the injected sender instead of accessing through foundation
+	return j.sender.SendNow(j.notifiable, j.notification, j.channels...)
 }
 
 // Marshal serializes the job data.

@@ -31,3 +31,10 @@ type HasLocale interface {
 	// Locale returns the locale for the notification.
 	Locale() string
 }
+
+// ShouldSend allows notifications to conditionally send based on notifiable and channel.
+// This is called before the NotificationSending event is dispatched.
+type ShouldSend interface {
+	// ShouldSend returns true if the notification should be sent to the given notifiable via the given channel.
+	ShouldSend(notifiable any, channel string) bool
+}
