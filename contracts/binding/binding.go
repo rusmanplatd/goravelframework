@@ -18,6 +18,7 @@ const (
 	Mail         = "goravel.mail"
 	Notification = "goravel.notification"
 	Orm          = "goravel.orm"
+	Pipeline     = "goravel.pipeline"
 	Process      = "goravel.process"
 	Queue        = "goravel.queue"
 	RateLimiter  = "goravel.rate_limiter"
@@ -275,6 +276,11 @@ var (
 			InstallTogether: []string{
 				Schema,
 			},
+		},
+		Pipeline: {
+			Description: "Provides a pipeline pattern for passing data through a series of processing stages.",
+			PkgPath:     "github.com/goravel/framework/pipeline",
+			IsBase:      true,
 		},
 		Process: {
 			Description: "Executes and manages external processes with concurrency support.",

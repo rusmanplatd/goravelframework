@@ -23,6 +23,7 @@ import (
 	"github.com/goravel/framework/contracts/log"
 	"github.com/goravel/framework/contracts/mail"
 	"github.com/goravel/framework/contracts/notification"
+	"github.com/goravel/framework/contracts/pipeline"
 	"github.com/goravel/framework/contracts/process"
 	"github.com/goravel/framework/contracts/queue"
 	"github.com/goravel/framework/contracts/route"
@@ -154,6 +155,8 @@ type Application interface {
 	MakeNotification() notification.Factory
 	// MakeOrm resolves the orm instance.
 	MakeOrm() orm.Orm
+	// MakePipeline resolves the pipeline instance.
+	MakePipeline() pipeline.Pipeline
 	// MakeProcess resolves the process instance.
 	MakeProcess() process.Process
 	// MakeQueue resolves the queue instance.

@@ -28,6 +28,7 @@ import (
 	contractslog "github.com/goravel/framework/contracts/log"
 	contractsmail "github.com/goravel/framework/contracts/mail"
 	contractsnotification "github.com/goravel/framework/contracts/notification"
+	contractspipeline "github.com/goravel/framework/contracts/pipeline"
 	contractsprocess "github.com/goravel/framework/contracts/process"
 	contractsqueue "github.com/goravel/framework/contracts/queue"
 	contractsroute "github.com/goravel/framework/contracts/route"
@@ -279,6 +280,16 @@ func (r *Container) MakeOrm() contractsorm.Orm {
 	}
 
 	return instance.(contractsorm.Orm)
+}
+
+func (r *Container) MakePipeline() contractspipeline.Pipeline {
+	instance, err := r.Make(binding.Pipeline)
+	if err != nil {
+		color.Errorln(err)
+		return nil
+	}
+
+	return instance.(contractspipeline.Pipeline)
 }
 
 func (r *Container) MakeProcess() contractsprocess.Process {

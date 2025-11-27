@@ -44,6 +44,8 @@ import (
 
 	orm "github.com/goravel/framework/contracts/database/orm"
 
+	pipeline "github.com/goravel/framework/contracts/pipeline"
+
 	process "github.com/goravel/framework/contracts/process"
 
 	queue "github.com/goravel/framework/contracts/queue"
@@ -1871,6 +1873,53 @@ func (_c *Application_MakeOrm_Call) Return(_a0 orm.Orm) *Application_MakeOrm_Cal
 }
 
 func (_c *Application_MakeOrm_Call) RunAndReturn(run func() orm.Orm) *Application_MakeOrm_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// MakePipeline provides a mock function with no fields
+func (_m *Application) MakePipeline() pipeline.Pipeline {
+	ret := _m.Called()
+
+	if len(ret) == 0 {
+		panic("no return value specified for MakePipeline")
+	}
+
+	var r0 pipeline.Pipeline
+	if rf, ok := ret.Get(0).(func() pipeline.Pipeline); ok {
+		r0 = rf()
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(pipeline.Pipeline)
+		}
+	}
+
+	return r0
+}
+
+// Application_MakePipeline_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'MakePipeline'
+type Application_MakePipeline_Call struct {
+	*mock.Call
+}
+
+// MakePipeline is a helper method to define mock.On call
+func (_e *Application_Expecter) MakePipeline() *Application_MakePipeline_Call {
+	return &Application_MakePipeline_Call{Call: _e.mock.On("MakePipeline")}
+}
+
+func (_c *Application_MakePipeline_Call) Run(run func()) *Application_MakePipeline_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run()
+	})
+	return _c
+}
+
+func (_c *Application_MakePipeline_Call) Return(_a0 pipeline.Pipeline) *Application_MakePipeline_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Application_MakePipeline_Call) RunAndReturn(run func() pipeline.Pipeline) *Application_MakePipeline_Call {
 	_c.Call.Return(run)
 	return _c
 }
