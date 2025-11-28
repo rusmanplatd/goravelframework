@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"time"
 
-	contractsprocess "github.com/goravel/framework/contracts/process"
-	"github.com/goravel/framework/errors"
+	contractsprocess "github.com/rusmanplatd/goravelframework/contracts/process"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 var _ contractsprocess.Pipeline = (*Pipeline)(nil)

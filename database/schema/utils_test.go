@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	mocksdriver "github.com/goravel/framework/mocks/database/driver"
+	mocksdriver "github.com/rusmanplatd/goravelframework/mocks/database/driver"
 )
 
 func TestColumnDefaultValue(t *testing.T) {

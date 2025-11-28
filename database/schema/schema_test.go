@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	contractsschema "github.com/goravel/framework/contracts/database/schema"
+	contractsschema "github.com/rusmanplatd/goravelframework/contracts/database/schema"
 )
 
 type SchemaTestSuite struct {

@@ -3,7 +3,7 @@
 package mail
 
 import (
-	mail "github.com/goravel/framework/contracts/mail"
+	mail "github.com/rusmanplatd/goravelframework/contracts/mail"
 	mock "github.com/stretchr/testify/mock"
 )
 

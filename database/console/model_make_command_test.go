@@ -8,11 +8,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/contracts/database/schema"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksschema "github.com/goravel/framework/mocks/database/schema"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksschema "github.com/rusmanplatd/goravelframework/mocks/database/schema"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 func TestModelMakeCommand(t *testing.T) {
@@ -112,7 +112,7 @@ type Phone struct {
 
 import (
 	"database/sql"
-	"github.com/goravel/framework/database/orm"
+	"github.com/rusmanplatd/goravelframework/database/orm"
 )
 
 type Product struct {
@@ -183,7 +183,7 @@ func TestGenerateModelInfo(t *testing.T) {
 	}, info.Embeds)
 	assert.Equal(t, map[string]struct{}{
 		"database/sql": {},
-		"github.com/goravel/framework/database/orm": {},
+		"github.com/rusmanplatd/goravelframework/database/orm": {},
 	}, info.Imports)
 
 	// Test with only nullable timestamps (no id, with soft deletes)

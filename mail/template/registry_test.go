@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	contractsmail "github.com/goravel/framework/contracts/mail"
-	"github.com/goravel/framework/errors"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksmail "github.com/goravel/framework/mocks/mail"
+	contractsmail "github.com/rusmanplatd/goravelframework/contracts/mail"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	mocksmail "github.com/rusmanplatd/goravelframework/mocks/mail"
 )
 
 func TestGet_HtmlEngine(t *testing.T) {

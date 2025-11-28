@@ -9,13 +9,13 @@ import (
 	"github.com/rotisserie/eris"
 	"github.com/sirupsen/logrus"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/log/formatter"
-	"github.com/goravel/framework/log/logger"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/log/formatter"
+	"github.com/rusmanplatd/goravelframework/log/logger"
 )
 
 func NewLogrus() *logrus.Logger {

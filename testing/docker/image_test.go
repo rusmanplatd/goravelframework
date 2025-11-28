@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	contractsdocker "github.com/goravel/framework/contracts/testing/docker"
-	"github.com/goravel/framework/support/env"
+	contractsdocker "github.com/rusmanplatd/goravelframework/contracts/testing/docker"
+	"github.com/rusmanplatd/goravelframework/support/env"
 )
 
 type ImageDriverTestSuite struct {

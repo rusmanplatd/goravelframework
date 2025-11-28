@@ -9,11 +9,11 @@ import (
 
 	"github.com/urfave/cli/v3"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/env"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/env"
 )
 
 var (

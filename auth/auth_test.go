@@ -6,13 +6,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	contractsauth "github.com/goravel/framework/contracts/auth"
-	"github.com/goravel/framework/contracts/http"
-	mocksauth "github.com/goravel/framework/mocks/auth"
-	mockscache "github.com/goravel/framework/mocks/cache"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksorm "github.com/goravel/framework/mocks/database/orm"
-	mockslog "github.com/goravel/framework/mocks/log"
+	contractsauth "github.com/rusmanplatd/goravelframework/contracts/auth"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	mocksauth "github.com/rusmanplatd/goravelframework/mocks/auth"
+	mockscache "github.com/rusmanplatd/goravelframework/mocks/cache"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	mocksorm "github.com/rusmanplatd/goravelframework/mocks/database/orm"
+	mockslog "github.com/rusmanplatd/goravelframework/mocks/log"
 )
 
 type AuthTestSuite struct {

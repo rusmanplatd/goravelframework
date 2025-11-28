@@ -8,12 +8,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/convert"
-	"github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/convert"
+	"github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type EnvEncryptCommand struct {

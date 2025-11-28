@@ -11,7 +11,7 @@ func (s Stubs) Config(module string) string {
 
 import (
 	"DummyModule/app/facades"
-	"github.com/goravel/framework/support/path"
+	"github.com/rusmanplatd/goravelframework/support/path"
 )
 
 func init() {
@@ -53,7 +53,7 @@ func (s Stubs) StorageFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/filesystem"
+	"github.com/rusmanplatd/goravelframework/contracts/filesystem"
 )
 
 func Storage() filesystem.Storage {

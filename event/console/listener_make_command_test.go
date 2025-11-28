@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	"github.com/goravel/framework/support/file"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 func TestListenerMakeCommand(t *testing.T) {

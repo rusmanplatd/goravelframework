@@ -1,12 +1,12 @@
 package console
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type QueueFailedCommand struct {

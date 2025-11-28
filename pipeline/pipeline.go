@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/goravel/framework/contracts/foundation"
-	contractspipeline "github.com/goravel/framework/contracts/pipeline"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractspipeline "github.com/rusmanplatd/goravelframework/contracts/pipeline"
 )
 
 // Pipeline implements the pipeline pattern for passing data through stages.

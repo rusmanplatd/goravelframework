@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/errors"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksmigration "github.com/goravel/framework/mocks/database/migration"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksmigration "github.com/rusmanplatd/goravelframework/mocks/database/migration"
 )
 
 func TestMigrateRollbackCommand(t *testing.T) {

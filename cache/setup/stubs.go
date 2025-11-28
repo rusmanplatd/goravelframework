@@ -53,7 +53,7 @@ func (s Stubs) CacheFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/cache"
+	"github.com/rusmanplatd/goravelframework/contracts/cache"
 )
 
 func Cache() cache.Cache {

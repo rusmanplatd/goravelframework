@@ -3,7 +3,7 @@ package cache
 import (
 	"time"
 
-	contractscache "github.com/goravel/framework/contracts/cache"
+	contractscache "github.com/rusmanplatd/goravelframework/contracts/cache"
 )
 
 type Lock struct {

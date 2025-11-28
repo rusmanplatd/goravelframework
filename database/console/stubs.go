@@ -34,7 +34,7 @@ func (r Stubs) Observer() string {
 	return `package DummyPackage
 
 import (
-	"github.com/goravel/framework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
 )
 
 

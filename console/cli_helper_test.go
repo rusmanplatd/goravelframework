@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/console/console"
-	contractsconsole "github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/console/console"
+	contractsconsole "github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 func TestShowCommandHelp_HelpPrinterCustom(t *testing.T) {

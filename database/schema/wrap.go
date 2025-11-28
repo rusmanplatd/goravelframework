@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/goravel/framework/support/collect"
+	"github.com/rusmanplatd/goravelframework/support/collect"
 )
 
 var (

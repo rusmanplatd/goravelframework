@@ -1,4 +1,4 @@
-module github.com/goravel/framework
+module github.com/rusmanplatd/goravelframework
 
 go 1.24.0
 

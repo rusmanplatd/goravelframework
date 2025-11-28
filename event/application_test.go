@@ -6,10 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/contracts/queue"
-	mocksevent "github.com/goravel/framework/mocks/event"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/queue"
+	mocksevent "github.com/rusmanplatd/goravelframework/mocks/event"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 func TestApplication_Register(t *testing.T) {

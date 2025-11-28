@@ -6,11 +6,11 @@ import (
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/log/formatter"
-	"github.com/goravel/framework/support"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/log/formatter"
+	"github.com/rusmanplatd/goravelframework/support"
 )
 
 type Single struct {

@@ -1,8 +1,8 @@
 package configuration
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/support"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/support"
 )
 
 type Paths struct {

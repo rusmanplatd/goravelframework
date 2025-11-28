@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/foundation/json"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
 )
 
 type ResponseTestSuite struct {

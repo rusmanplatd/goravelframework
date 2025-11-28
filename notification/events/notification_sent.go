@@ -1,8 +1,8 @@
 package events
 
 import (
-	contractsevent "github.com/goravel/framework/contracts/event"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
+	contractsevent "github.com/rusmanplatd/goravelframework/contracts/event"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
 )
 
 // NotificationSent is fired after a notification is successfully sent.

@@ -9,12 +9,12 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/errors"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type PackageUninstallCommandTestSuite struct {
@@ -34,15 +34,15 @@ func (s *PackageUninstallCommandTestSuite) TestHandle() {
 		pkg      = "github.com/goravel/package"
 		bindings = map[string]binding.Info{
 			binding.Auth: {
-				PkgPath:      "github.com/goravel/framework/auth",
+				PkgPath:      "github.com/rusmanplatd/goravelframework/auth",
 				Dependencies: []string{binding.Config, binding.Orm},
 			},
 			binding.Config: {
-				PkgPath: "github.com/goravel/framework/config",
+				PkgPath: "github.com/rusmanplatd/goravelframework/config",
 				IsBase:  true,
 			},
 			binding.Orm: {
-				PkgPath:      "github.com/goravel/framework/database",
+				PkgPath:      "github.com/rusmanplatd/goravelframework/database",
 				Dependencies: []string{binding.Config},
 			},
 		}
@@ -182,15 +182,15 @@ func (s *PackageUninstallCommandTestSuite) TestHandle() {
 func (s *PackageUninstallCommandTestSuite) TestGetBindingsThatNeedUninstall() {
 	bindings := map[string]binding.Info{
 		binding.Auth: {
-			PkgPath:      "github.com/goravel/framework/auth",
+			PkgPath:      "github.com/rusmanplatd/goravelframework/auth",
 			Dependencies: []string{binding.Config, binding.Orm},
 		},
 		binding.Config: {
-			PkgPath: "github.com/goravel/framework/config",
+			PkgPath: "github.com/rusmanplatd/goravelframework/config",
 			IsBase:  true,
 		},
 		binding.Orm: {
-			PkgPath:      "github.com/goravel/framework/database",
+			PkgPath:      "github.com/rusmanplatd/goravelframework/database",
 			Dependencies: []string{binding.Config},
 		},
 	}
@@ -205,15 +205,15 @@ func (s *PackageUninstallCommandTestSuite) TestGetBindingsThatNeedUninstall() {
 func (s *PackageUninstallCommandTestSuite) TestGetExistingUpperDependencyFacades() {
 	bindings := map[string]binding.Info{
 		binding.Auth: {
-			PkgPath:      "github.com/goravel/framework/auth",
+			PkgPath:      "github.com/rusmanplatd/goravelframework/auth",
 			Dependencies: []string{binding.Config, binding.Orm},
 		},
 		binding.Config: {
-			PkgPath: "github.com/goravel/framework/config",
+			PkgPath: "github.com/rusmanplatd/goravelframework/config",
 			IsBase:  true,
 		},
 		binding.Orm: {
-			PkgPath:      "github.com/goravel/framework/database",
+			PkgPath:      "github.com/rusmanplatd/goravelframework/database",
 			Dependencies: []string{binding.Config},
 		},
 	}

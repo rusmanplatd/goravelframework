@@ -3,7 +3,7 @@
 package http
 
 import (
-	http "github.com/goravel/framework/contracts/http"
+	http "github.com/rusmanplatd/goravelframework/contracts/http"
 	mock "github.com/stretchr/testify/mock"
 
 	nethttp "net/http"

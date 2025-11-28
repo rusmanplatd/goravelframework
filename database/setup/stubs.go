@@ -139,7 +139,7 @@ func (s Stubs) DBFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/database/db"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
 )
 
 func DB() db.DB {
@@ -152,7 +152,7 @@ func (s Stubs) OrmFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
 )
 
 func Orm() orm.Orm {
@@ -165,7 +165,7 @@ func (s Stubs) SchemaFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 )
 
 func Schema() schema.Schema {
@@ -178,7 +178,7 @@ func (s Stubs) SeederFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 )
 
 func Seeder() seeder.Facade {
@@ -191,8 +191,8 @@ func (s Stubs) Kernel() string {
 	return `package database
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 )
 
 type Kernel struct {

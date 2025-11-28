@@ -5,11 +5,11 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
-	mocksdb "github.com/goravel/framework/mocks/database/db"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksdb "github.com/rusmanplatd/goravelframework/mocks/database/db"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 type DriverCreatorTestSuite struct {

@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/console/command"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type TestMakeCommandTestSuite struct {
@@ -96,6 +96,6 @@ func (s *TestMakeCommandTestSuite) TestTestHandle() {
 	s.True(file.Contain("tests/user/user_test.go", "package user"))
 	s.True(file.Contain("tests/user/user_test.go", "type UserTestSuite struct"))
 	s.True(file.Contain("tests/user/user_test.go", "func (s *UserTestSuite) SetupTest() {"))
-	s.True(file.Contain("tests/user/user_test.go", "github.com/goravel/framework/tests"))
+	s.True(file.Contain("tests/user/user_test.go", "github.com/rusmanplatd/goravelframework/tests"))
 	s.NoError(file.Remove("tests"))
 }

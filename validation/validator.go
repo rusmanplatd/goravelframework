@@ -9,9 +9,9 @@ import (
 	"github.com/gookit/validate"
 	"github.com/spf13/cast"
 
-	httpvalidate "github.com/goravel/framework/contracts/validation"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/maps"
+	httpvalidate "github.com/rusmanplatd/goravelframework/contracts/validation"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/maps"
 )
 
 func init() {

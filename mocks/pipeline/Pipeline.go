@@ -3,7 +3,7 @@
 package pipeline
 
 import (
-	pipeline "github.com/goravel/framework/contracts/pipeline"
+	pipeline "github.com/rusmanplatd/goravelframework/contracts/pipeline"
 	mock "github.com/stretchr/testify/mock"
 )
 

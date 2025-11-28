@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"sync"
 
-	contractsauth "github.com/goravel/framework/contracts/auth"
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/errors"
+	contractsauth "github.com/rusmanplatd/goravelframework/contracts/auth"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 var (

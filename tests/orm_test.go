@@ -8,11 +8,11 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	databasedb "github.com/goravel/framework/database/db"
-	"github.com/goravel/framework/database/orm"
 	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	databasedb "github.com/rusmanplatd/goravelframework/database/db"
+	"github.com/rusmanplatd/goravelframework/database/orm"
 )
 
 type OrmSuite struct {

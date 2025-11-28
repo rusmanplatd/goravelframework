@@ -4,12 +4,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type KeyGenerateCommand struct {

@@ -12,8 +12,8 @@ import (
 
 	"github.com/dave/dst"
 	"github.com/dave/dst/decorator"
-	"github.com/goravel/framework/support"
-	supportfile "github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/support"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
 )
 
 func TestAddCommand(t *testing.T) {
@@ -33,7 +33,7 @@ func TestAddCommand(t *testing.T) {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -46,7 +46,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -58,7 +58,7 @@ func Boot() {
 			expectedCommands: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -75,7 +75,7 @@ func Commands() []console.Command {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -87,7 +87,7 @@ func Boot() {
 			commandsContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -103,7 +103,7 @@ func Commands() []console.Command {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -115,7 +115,7 @@ func Boot() {
 			expectedCommands: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -133,8 +133,8 @@ func Commands() []console.Command {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 	"goravel/config"
 )
@@ -151,8 +151,8 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 	"goravel/config"
 )
@@ -171,7 +171,7 @@ func Boot() {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -182,7 +182,7 @@ func Boot() {
 			commandsContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -202,7 +202,7 @@ func Commands() []console.Command {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -214,7 +214,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -225,7 +225,7 @@ func Boot() {
 			expectedCommands: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -295,7 +295,7 @@ func TestAddMiddleware(t *testing.T) {
 			content: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -303,14 +303,14 @@ func Boot() {
 	foundation.Setup().WithConfig(config.Boot).Run()
 }
 `,
-			pkg: "github.com/goravel/framework/http/middleware",
+			pkg: "github.com/rusmanplatd/goravelframework/http/middleware",
 			mw:  "&middleware.Auth{}",
 			expected: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -329,9 +329,9 @@ func Boot() {
 			content: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -342,14 +342,14 @@ func Boot() {
 		}).WithConfig(config.Boot).Run()
 }
 `,
-			pkg: "github.com/goravel/framework/http/middleware",
+			pkg: "github.com/rusmanplatd/goravelframework/http/middleware",
 			mw:  "&middleware.Auth{}",
 			expected: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -368,7 +368,7 @@ func Boot() {
 			content: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -376,14 +376,14 @@ func Boot() {
 	foundation.Setup().WithConfig(config.Boot).WithRoute(route.Boot).Run()
 }
 `,
-			pkg: "github.com/goravel/framework/http/middleware",
+			pkg: "github.com/rusmanplatd/goravelframework/http/middleware",
 			mw:  "&middleware.Cors{}",
 			expected: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -402,9 +402,9 @@ func Boot() {
 			content: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -414,14 +414,14 @@ func Boot() {
 		}).WithConfig(config.Boot).Run()
 }
 `,
-			pkg: "github.com/goravel/framework/http/middleware",
+			pkg: "github.com/rusmanplatd/goravelframework/http/middleware",
 			mw:  "&middleware.Auth{}",
 			expected: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -440,7 +440,7 @@ func Boot() {
 			content: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -450,14 +450,14 @@ func Boot() {
 	app.Start()
 }
 `,
-			pkg: "github.com/goravel/framework/http/middleware",
+			pkg: "github.com/rusmanplatd/goravelframework/http/middleware",
 			mw:  "&middleware.Throttle{}",
 			expected: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -516,7 +516,7 @@ func TestAddMigration(t *testing.T) {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -529,7 +529,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -541,7 +541,7 @@ func Boot() {
 			expectedMigrations: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 
 	"goravel/database/migrations"
 )
@@ -558,7 +558,7 @@ func Migrations() []schema.Migration {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -570,7 +570,7 @@ func Boot() {
 			migrationsContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 
 	"goravel/database/migrations"
 )
@@ -586,7 +586,7 @@ func Migrations() []schema.Migration {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -598,7 +598,7 @@ func Boot() {
 			expectedMigrations: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 
 	"goravel/database/migrations"
 )
@@ -616,8 +616,8 @@ func Migrations() []schema.Migration {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 	"goravel/database/migrations"
 )
@@ -634,8 +634,8 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 	"goravel/database/migrations"
 )
@@ -654,7 +654,7 @@ func Boot() {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -665,7 +665,7 @@ func Boot() {
 			migrationsContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 
 	"goravel/database/migrations"
 )
@@ -685,7 +685,7 @@ func Migrations() []schema.Migration {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -697,7 +697,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -708,7 +708,7 @@ func Boot() {
 			expectedMigrations: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 
 	"goravel/database/migrations"
 )
@@ -781,7 +781,7 @@ func TestAddProvider(t *testing.T) {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -794,7 +794,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -806,7 +806,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -823,7 +823,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -835,7 +835,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -851,7 +851,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -863,7 +863,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -881,8 +881,8 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/providers"
 	"goravel/config"
 )
@@ -899,8 +899,8 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/providers"
 	"goravel/config"
 )
@@ -919,7 +919,7 @@ func Boot() {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -930,7 +930,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -951,7 +951,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -963,7 +963,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -974,7 +974,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -991,7 +991,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1004,7 +1004,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1016,7 +1016,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 	"github.com/goravel/redis"
 )
 
@@ -1032,7 +1032,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1044,7 +1044,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1060,7 +1060,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1072,7 +1072,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1144,7 +1144,7 @@ func TestRemoveProvider(t *testing.T) {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1156,7 +1156,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1173,7 +1173,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1185,7 +1185,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1202,8 +1202,8 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/providers"
 	"goravel/config"
 )
@@ -1221,8 +1221,8 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/providers"
 	"goravel/config"
 )
@@ -1240,7 +1240,7 @@ func Boot() {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1252,7 +1252,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1268,7 +1268,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1280,7 +1280,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 func Providers() []foundation.ServiceProvider {
@@ -1293,7 +1293,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1305,7 +1305,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 	"github.com/goravel/redis"
 
 	"goravel/app/providers"
@@ -1323,7 +1323,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1335,7 +1335,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1352,7 +1352,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1365,7 +1365,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1379,7 +1379,7 @@ func Boot() {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1391,7 +1391,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1407,7 +1407,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1419,7 +1419,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1436,7 +1436,7 @@ func Providers() []foundation.ServiceProvider {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1448,7 +1448,7 @@ func Boot() {
 			providersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1465,7 +1465,7 @@ func Providers() []foundation.ServiceProvider {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1477,7 +1477,7 @@ func Boot() {
 			expectedProviders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 
 	"goravel/app/providers"
 )
@@ -1541,7 +1541,7 @@ func TestAddSeeder(t *testing.T) {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1554,7 +1554,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1566,7 +1566,7 @@ func Boot() {
 			expectedSeeders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 	"goravel/database/seeders"
 )
@@ -1583,7 +1583,7 @@ func Seeders() []seeder.Seeder {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1595,7 +1595,7 @@ func Boot() {
 			seedersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 	"goravel/database/seeders"
 )
@@ -1611,7 +1611,7 @@ func Seeders() []seeder.Seeder {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1623,7 +1623,7 @@ func Boot() {
 			expectedSeeders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 	"goravel/database/seeders"
 )
@@ -1641,8 +1641,8 @@ func Seeders() []seeder.Seeder {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 	"goravel/database/seeders"
 )
@@ -1659,8 +1659,8 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 	"goravel/database/seeders"
 )
@@ -1679,7 +1679,7 @@ func Boot() {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1690,7 +1690,7 @@ func Boot() {
 			seedersContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 	"goravel/database/seeders"
 )
@@ -1711,7 +1711,7 @@ func Seeders() []seeder.Seeder {
 			appContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -1723,7 +1723,7 @@ func Boot() {
 			expectedApp: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -1734,7 +1734,7 @@ func Boot() {
 			expectedSeeders: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 	"goravel/database/seeders"
 )

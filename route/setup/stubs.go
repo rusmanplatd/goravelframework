@@ -8,7 +8,7 @@ func (s Stubs) RouteFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/route"
+	"github.com/rusmanplatd/goravelframework/contracts/route"
 )
 
 func Route() route.Route {
@@ -21,8 +21,8 @@ func (s Stubs) Routes(module string) string {
 	content := `package routes
 
 import (
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/support"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/support"
 
 	"DummyModule/app/facades"
 )

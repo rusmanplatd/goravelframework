@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	contractmatch "github.com/goravel/framework/contracts/packages/match"
-	"github.com/goravel/framework/contracts/packages/modify"
-	"github.com/goravel/framework/packages/match"
-	supportfile "github.com/goravel/framework/support/file"
+	contractmatch "github.com/rusmanplatd/goravelframework/contracts/packages/match"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/modify"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type ModifyActionsTestSuite struct {
@@ -31,7 +31,7 @@ func (s *ModifyActionsTestSuite) SetupTest() {
 import (	
 	"goravel/app/jobs"
 
-	"github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/facades"
 )
 
 func Boot() {}
@@ -46,8 +46,8 @@ func init() {
 	s.console = `package console
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/schedule"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
 	"goravel/app/console/commands"
 )
 
@@ -64,8 +64,8 @@ func (kernel Kernel) Commands() []console.Command {
 	s.database = `package database
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 	"goravel/database/migrations"
 	"goravel/database/seeders"
@@ -89,9 +89,9 @@ func (kernel Kernel) Seeders() []seeder.Seeder {
 	s.providers = `package bootstrap
 
 import (
-	"github.com/goravel/framework/auth"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/crypt"
+	"github.com/rusmanplatd/goravelframework/auth"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/crypt"
 )
 
 func Providers() []foundation.ServiceProvider {
@@ -116,7 +116,7 @@ func (s *ModifyActionsTestSuite) TestActions() {
 			name: "add code to function when function's body is empty",
 			content: `package provider
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 	
 type ServiceProvider struct {
@@ -140,7 +140,7 @@ func (provider *ServiceProvider) Boot(app foundation.Application) {}
 			name: "add code to function",
 			content: `package provider
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 	
 type ServiceProvider struct {
@@ -167,7 +167,7 @@ func (provider *ServiceProvider) Boot(app foundation.Application) {}
 			name: "remove code from function",
 			content: `package provider
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 	
 type ServiceProvider struct {
@@ -300,7 +300,7 @@ func (provider *ServiceProvider) Boot(app foundation.Application) {}
 	t "github.com/goravel/test"
 	"goravel/app/jobs"
 
-	"github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/facades"
 )`)
 			},
 		},
@@ -315,7 +315,7 @@ func (provider *ServiceProvider) Boot(app foundation.Application) {}
 				s.Contains(content, `import (
 	"goravel/app/jobs"
 
-	"github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/facades"
 )`)
 			},
 		},
@@ -385,10 +385,10 @@ func (provider *ServiceProvider) Boot(app foundation.Application) {}
 			content:  s.providers,
 			matchers: match.Imports(),
 			actions: []modify.Action{
-				RemoveImport("github.com/goravel/framework/auth"),
+				RemoveImport("github.com/rusmanplatd/goravelframework/auth"),
 			},
 			assert: func(content string) {
-				s.Contains(content, `"github.com/goravel/framework/auth"`)
+				s.Contains(content, `"github.com/rusmanplatd/goravelframework/auth"`)
 			},
 		},
 		{
@@ -396,10 +396,10 @@ func (provider *ServiceProvider) Boot(app foundation.Application) {}
 			content:  strings.Replace(s.config, "&auth.AuthServiceProvider{},", "", 1),
 			matchers: match.Imports(),
 			actions: []modify.Action{
-				RemoveImport("github.com/goravel/framework/auth"),
+				RemoveImport("github.com/rusmanplatd/goravelframework/auth"),
 			},
 			assert: func(content string) {
-				s.NotContains(content, `"github.com/goravel/framework/auth"`)
+				s.NotContains(content, `"github.com/rusmanplatd/goravelframework/auth"`)
 			},
 		},
 		{

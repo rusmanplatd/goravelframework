@@ -8,14 +8,14 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/mail"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/foundation/json"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/queue"
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/mail"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/queue"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 var testBcc, testCc, testTo, testFromAddress, testFromName string

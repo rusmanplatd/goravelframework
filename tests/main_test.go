@@ -4,12 +4,12 @@ import (
 	"os"
 	"testing"
 
-	"github.com/goravel/framework/foundation/json"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
 	"github.com/goravel/mysql"
 	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
 	"github.com/goravel/sqlserver"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
 )
 
 func TestMain(m *testing.M) {

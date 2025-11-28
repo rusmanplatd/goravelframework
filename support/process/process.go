@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 func Run(command string) (string, error) {

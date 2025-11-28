@@ -5,9 +5,9 @@ import (
 	"fmt"
 
 	"github.com/brianvoe/gofakeit/v7"
-	"github.com/goravel/framework/contracts/database/factory"
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/database/factory"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 	"gorm.io/gorm"
 )
 

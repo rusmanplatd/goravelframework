@@ -4,11 +4,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type PackageMakeCommand struct{}

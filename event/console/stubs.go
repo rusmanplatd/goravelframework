@@ -6,7 +6,7 @@ type Stubs struct {
 func (receiver Stubs) Event() string {
 	return `package DummyPackage
 
-import "github.com/goravel/framework/contracts/event"
+import "github.com/rusmanplatd/goravelframework/contracts/event"
 
 type DummyEvent struct {
 }
@@ -21,7 +21,7 @@ func (receiver Stubs) Listener() string {
 	return `package DummyPackage
 
 import (
-	"github.com/goravel/framework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
 )
 
 type DummyListener struct {

@@ -5,7 +5,7 @@ package db
 import (
 	context "context"
 
-	db "github.com/goravel/framework/contracts/database/db"
+	db "github.com/rusmanplatd/goravelframework/contracts/database/db"
 	mock "github.com/stretchr/testify/mock"
 )
 

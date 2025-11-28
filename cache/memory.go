@@ -8,10 +8,10 @@ import (
 
 	"github.com/spf13/cast"
 
-	contractscache "github.com/goravel/framework/contracts/cache"
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/testing/docker"
-	"github.com/goravel/framework/errors"
+	contractscache "github.com/rusmanplatd/goravelframework/contracts/cache"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/testing/docker"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type Memory struct {

@@ -3,8 +3,8 @@ package seeder
 import (
 	"slices"
 
-	"github.com/goravel/framework/contracts/database/seeder"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 var _ seeder.Facade = (*SeederFacade)(nil)

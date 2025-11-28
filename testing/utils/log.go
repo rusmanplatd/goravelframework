@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 var _ log.Log = &TestLog{}

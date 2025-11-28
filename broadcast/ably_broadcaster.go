@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 )
 
 // AblyBroadcaster provides broadcasting functionality using Ably.

@@ -6,7 +6,7 @@ func (s Stubs) ViewFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/view"
+	"github.com/rusmanplatd/goravelframework/contracts/view"
 )
 
 func View() view.View {

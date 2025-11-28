@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/foundation/json"
-	configmock "github.com/goravel/framework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	configmock "github.com/rusmanplatd/goravelframework/mocks/config"
 )
 
 type GeneralTestSuite struct {

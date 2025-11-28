@@ -3,7 +3,7 @@
 package route
 
 import (
-	route "github.com/goravel/framework/contracts/route"
+	route "github.com/rusmanplatd/goravelframework/contracts/route"
 	mock "github.com/stretchr/testify/mock"
 )
 

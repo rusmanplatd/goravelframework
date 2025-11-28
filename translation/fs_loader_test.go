@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
 )
 
 type FSLoaderTestSuite struct {

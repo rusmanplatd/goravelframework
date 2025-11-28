@@ -1,8 +1,8 @@
 package schema
 
 import (
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 type ColumnDefinition struct {

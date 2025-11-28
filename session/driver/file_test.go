@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type FileTestSuite struct {

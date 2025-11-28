@@ -1,8 +1,8 @@
 package event
 
 import (
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type TestEvent struct{}

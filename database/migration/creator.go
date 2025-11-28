@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type Creator struct {

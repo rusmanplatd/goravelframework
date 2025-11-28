@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/goravel/framework/contracts/testing/docker"
-	"github.com/goravel/framework/support/process"
+	"github.com/rusmanplatd/goravelframework/contracts/testing/docker"
+	"github.com/rusmanplatd/goravelframework/support/process"
 )
 
 func ExposedPort(exposedPorts []string, port string) string {

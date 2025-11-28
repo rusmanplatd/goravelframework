@@ -13,12 +13,12 @@ import (
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/assert"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	logcontracts "github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/foundation/json"
-	configmock "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/file"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/http"
+	logcontracts "github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	configmock "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 var (

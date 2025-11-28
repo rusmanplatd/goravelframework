@@ -10,11 +10,11 @@ import (
 	"github.com/mattn/go-runewidth"
 	"github.com/pterm/pterm"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type Make struct {

@@ -4,11 +4,11 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	contractsdb "github.com/goravel/framework/contracts/database/db"
-	contractsfoundation "github.com/goravel/framework/contracts/foundation"
-	contractslog "github.com/goravel/framework/contracts/log"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/support/carbon"
+	contractsdb "github.com/rusmanplatd/goravelframework/contracts/database/db"
+	contractsfoundation "github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractslog "github.com/rusmanplatd/goravelframework/contracts/log"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type PendingJob struct {

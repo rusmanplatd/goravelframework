@@ -7,7 +7,7 @@ import (
 
 	"github.com/dave/dst"
 
-	"github.com/goravel/framework/contracts/packages/match"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/match"
 )
 
 func Config(key string) []match.GoNode {

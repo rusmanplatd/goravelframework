@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/goravel/framework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
 )
 
 // parseEventAndPayload parses the given event and payload and prepares them for dispatching.

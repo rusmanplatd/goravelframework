@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	ormcontract "github.com/goravel/framework/contracts/database/orm"
-	"github.com/goravel/framework/database/factory"
+	ormcontract "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/database/factory"
 )
 
 type FactoryTestSuite struct {

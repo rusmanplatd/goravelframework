@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/goravel/framework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
 )
 
 const (

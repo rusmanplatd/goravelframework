@@ -9,8 +9,8 @@ import (
 
 	"github.com/gabriel-vasile/mimetype"
 
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 func ClientOriginalExtension(file string) string {
@@ -94,7 +94,7 @@ func GetContent(file string) (string, error) {
 }
 
 func GetFrameworkContent(file string) (string, error) {
-	return GetPackageContent("github.com/goravel/framework", file)
+	return GetPackageContent("github.com/rusmanplatd/goravelframework", file)
 }
 
 func GetPackageContent(pkgName, file string) (string, error) {

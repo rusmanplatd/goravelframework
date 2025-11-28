@@ -6,9 +6,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/goravel/framework/contracts/database/orm"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
-	databaseorm "github.com/goravel/framework/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
+	databaseorm "github.com/rusmanplatd/goravelframework/database/orm"
 )
 
 // DatabaseChannel sends notifications to the database.

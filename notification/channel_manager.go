@@ -3,14 +3,14 @@ package notification
 import (
 	"fmt"
 
-	"github.com/goravel/framework/contracts/config"
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	contractsevent "github.com/goravel/framework/contracts/event"
-	contractslog "github.com/goravel/framework/contracts/log"
-	contractsmail "github.com/goravel/framework/contracts/mail"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/notification/channels"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsevent "github.com/rusmanplatd/goravelframework/contracts/event"
+	contractslog "github.com/rusmanplatd/goravelframework/contracts/log"
+	contractsmail "github.com/rusmanplatd/goravelframework/contracts/mail"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/notification/channels"
 )
 
 // ChannelManager manages notification channels.

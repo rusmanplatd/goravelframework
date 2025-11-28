@@ -9,16 +9,16 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	"github.com/goravel/framework/support/env"
-	"github.com/goravel/framework/support/file"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/support/env"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 var (
 	appServiceProvider = `package providers
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 type AppServiceProvider struct {
@@ -54,8 +54,8 @@ func TestMakeCommand(t *testing.T) {
 		assert.NoError(t, file.PutContent(kernelPath, `package console
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/schedule"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
 )
 
 type Kernel struct {
@@ -123,7 +123,7 @@ func TestMakeCommand_AddCommandToBootstrapSetup(t *testing.T) {
 	bootstrapContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -158,7 +158,7 @@ func Boot() {
 	expectedAppContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -174,8 +174,8 @@ func Boot() {
 	expectedCommandsContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/app/console/commands"
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/app/console/commands"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 )
 
 func Commands() []console.Command {
@@ -212,9 +212,9 @@ func TestMakeCommand_initKernel(t *testing.T) {
 
 				appServiceProvider, err := file.GetContent(appServiceProviderPath)
 				assert.NoError(t, err)
-				assert.True(t, strings.Contains(appServiceProvider, "github.com/goravel/framework/contracts/foundation"))
-				assert.True(t, strings.Contains(appServiceProvider, "github.com/goravel/framework/app/facades"))
-				assert.True(t, strings.Contains(appServiceProvider, "github.com/goravel/framework/app/console"))
+				assert.True(t, strings.Contains(appServiceProvider, "github.com/rusmanplatd/goravelframework/contracts/foundation"))
+				assert.True(t, strings.Contains(appServiceProvider, "github.com/rusmanplatd/goravelframework/app/facades"))
+				assert.True(t, strings.Contains(appServiceProvider, "github.com/rusmanplatd/goravelframework/app/console"))
 				assert.True(t, strings.Contains(appServiceProvider, "facades.Artisan().Register(console.Kernel{}.Commands())"))
 			},
 		},
@@ -232,9 +232,9 @@ func TestMakeCommand_initKernel(t *testing.T) {
 
 				appServiceProvider, err := file.GetContent(appServiceProviderPath)
 				assert.NoError(t, err)
-				assert.True(t, strings.Contains(appServiceProvider, "github.com/goravel/framework/contracts/foundation"))
-				assert.True(t, strings.Contains(appServiceProvider, "github.com/goravel/framework/app/facades"))
-				assert.True(t, strings.Contains(appServiceProvider, "github.com/goravel/framework/app/console"))
+				assert.True(t, strings.Contains(appServiceProvider, "github.com/rusmanplatd/goravelframework/contracts/foundation"))
+				assert.True(t, strings.Contains(appServiceProvider, "github.com/rusmanplatd/goravelframework/app/facades"))
+				assert.True(t, strings.Contains(appServiceProvider, "github.com/rusmanplatd/goravelframework/app/console"))
 				assert.True(t, strings.Contains(appServiceProvider, "facades.Artisan().Register(console.Kernel{}.Commands())"))
 			},
 		},
@@ -245,7 +245,7 @@ func TestMakeCommand_initKernel(t *testing.T) {
 				appServiceProvider := `package providers
 
 import (
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 type AppServiceProvider struct {}

@@ -10,10 +10,10 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	"github.com/goravel/framework/contracts/http"
-	logcontract "github.com/goravel/framework/contracts/log"
-	translationcontract "github.com/goravel/framework/contracts/translation"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	logcontract "github.com/rusmanplatd/goravelframework/contracts/log"
+	translationcontract "github.com/rusmanplatd/goravelframework/contracts/translation"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type Translator struct {

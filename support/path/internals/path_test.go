@@ -3,7 +3,7 @@ package internals
 import (
 	"testing"
 
-	"github.com/goravel/framework/support"
+	"github.com/rusmanplatd/goravelframework/support"
 	"github.com/stretchr/testify/assert"
 )
 

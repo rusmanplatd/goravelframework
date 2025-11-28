@@ -9,9 +9,9 @@ import (
 
 	gormlogger "gorm.io/gorm/logger"
 
-	log "github.com/goravel/framework/contracts/log"
+	log "github.com/rusmanplatd/goravelframework/contracts/log"
 
-	logger "github.com/goravel/framework/contracts/database/logger"
+	logger "github.com/rusmanplatd/goravelframework/contracts/database/logger"
 
 	mock "github.com/stretchr/testify/mock"
 )

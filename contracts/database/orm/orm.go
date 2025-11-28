@@ -4,8 +4,8 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/goravel/framework/contracts/database"
-	"github.com/goravel/framework/contracts/database/db"
+	"github.com/rusmanplatd/goravelframework/contracts/database"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
 )
 
 type Orm interface {

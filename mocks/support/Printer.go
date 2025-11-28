@@ -3,7 +3,7 @@
 package support
 
 import (
-	support "github.com/goravel/framework/contracts/support"
+	support "github.com/rusmanplatd/goravelframework/contracts/support"
 	mock "github.com/stretchr/testify/mock"
 )
 

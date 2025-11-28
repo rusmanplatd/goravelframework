@@ -7,11 +7,11 @@ import (
 
 	"github.com/robfig/cron/v3"
 
-	"github.com/goravel/framework/contracts/cache"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/contracts/schedule"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/cache"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type Application struct {

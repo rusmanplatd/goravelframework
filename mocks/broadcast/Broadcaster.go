@@ -3,7 +3,7 @@
 package broadcast
 
 import (
-	broadcast "github.com/goravel/framework/contracts/broadcast"
+	broadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 	mock "github.com/stretchr/testify/mock"
 )
 

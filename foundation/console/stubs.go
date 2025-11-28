@@ -41,8 +41,8 @@ func (r Stubs) ServiceProvider() string {
 	return `package DummyPackage
 
 import (
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 type DummyServiceProvider struct{}

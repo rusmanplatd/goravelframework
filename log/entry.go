@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/goravel/framework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
 )
 
 type Entry struct {

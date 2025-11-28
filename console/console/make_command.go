@@ -5,17 +5,17 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/packages"
-	"github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/packages/modify"
-	"github.com/goravel/framework/support"
-	supportconsole "github.com/goravel/framework/support/console"
-	"github.com/goravel/framework/support/env"
-	"github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/packages"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	"github.com/rusmanplatd/goravelframework/packages/modify"
+	"github.com/rusmanplatd/goravelframework/support"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
+	"github.com/rusmanplatd/goravelframework/support/env"
+	"github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type MakeCommand struct {

@@ -40,7 +40,7 @@ func (s Stubs) TestCase() string {
 	return `package tests
 
 import (
-	"github.com/goravel/framework/testing"
+	"github.com/rusmanplatd/goravelframework/testing"
 
 	"goravel/bootstrap"
 )
@@ -59,7 +59,7 @@ func (s Stubs) TestingFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/testing"
+	"github.com/rusmanplatd/goravelframework/contracts/testing"
 )
 
 func Testing() testing.Testing {

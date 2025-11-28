@@ -9,8 +9,8 @@ import (
 
 	"golang.org/x/crypto/argon2"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 type Argon2id struct {

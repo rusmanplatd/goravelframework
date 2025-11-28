@@ -1,11 +1,11 @@
 package filesystem
 
 import (
-	"github.com/goravel/framework/contracts/binding"
-	configcontract "github.com/goravel/framework/contracts/config"
-	filesystemcontract "github.com/goravel/framework/contracts/filesystem"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	configcontract "github.com/rusmanplatd/goravelframework/contracts/config"
+	filesystemcontract "github.com/rusmanplatd/goravelframework/contracts/filesystem"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 var (

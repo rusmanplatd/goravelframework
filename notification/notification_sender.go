@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"reflect"
 
-	contractslog "github.com/goravel/framework/contracts/log"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/notification/events"
+	contractslog "github.com/rusmanplatd/goravelframework/contracts/log"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/notification/events"
 )
 
 // NotificationSender handles sending notifications.

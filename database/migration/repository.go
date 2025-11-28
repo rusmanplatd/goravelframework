@@ -1,8 +1,8 @@
 package migration
 
 import (
-	"github.com/goravel/framework/contracts/database/migration"
-	"github.com/goravel/framework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/migration"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
 )
 
 type Repository struct {

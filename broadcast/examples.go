@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 )
 
 // This file contains practical examples of using the enhanced broadcast features.
@@ -222,10 +222,10 @@ func ExamplePatternMatching() {
 func ExamplePresenceChannelMember() {
 	// Create a presence channel member
 	member := NewPresenceChannelMember("user-123", map[string]interface{}{
-		"name": "John Doe",
-		"email": "john@example.com",
+		"name":   "John Doe",
+		"email":  "john@example.com",
 		"avatar": "https://example.com/avatars/john.jpg",
-		"role": "member",
+		"role":   "member",
 	})
 
 	// Convert to JSON for WebSocket transmission

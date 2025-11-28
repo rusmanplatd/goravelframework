@@ -5,7 +5,7 @@ package internals
 import (
 	"path/filepath"
 
-	"github.com/goravel/framework/support"
+	"github.com/rusmanplatd/goravelframework/support"
 )
 
 func Abs(paths ...string) string {

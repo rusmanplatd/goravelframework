@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gorm.io/gorm"
 
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type Body struct {

@@ -3,11 +3,11 @@ package auth
 import (
 	"gorm.io/gorm/clause"
 
-	contractsauth "github.com/goravel/framework/contracts/auth"
-	"github.com/goravel/framework/contracts/database/orm"
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/database"
+	contractsauth "github.com/rusmanplatd/goravelframework/contracts/auth"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/database"
 )
 
 var _ contractsauth.UserProviderFunc = NewOrmUserProvider

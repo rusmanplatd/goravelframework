@@ -1,8 +1,8 @@
 package binding
 
 import (
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/support/collect"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/support/collect"
 )
 
 func Dependencies(bindings ...string) []string {

@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
-	queuemock "github.com/goravel/framework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
+	queuemock "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 func TestDispatch(t *testing.T) {

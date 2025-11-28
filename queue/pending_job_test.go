@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 type PendingJobTestSuite struct {

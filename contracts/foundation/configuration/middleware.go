@@ -1,6 +1,6 @@
 package configuration
 
-import "github.com/goravel/framework/contracts/http"
+import "github.com/rusmanplatd/goravelframework/contracts/http"
 
 type Middleware interface {
 	Append(middleware ...http.Middleware) Middleware

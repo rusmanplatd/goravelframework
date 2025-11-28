@@ -7,12 +7,12 @@ import (
 	"encoding/base64"
 	"io"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 type AES struct {

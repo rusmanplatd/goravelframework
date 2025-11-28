@@ -9,9 +9,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type Application struct {

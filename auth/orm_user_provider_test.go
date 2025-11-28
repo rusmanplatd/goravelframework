@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/errors"
-	mocksorm "github.com/goravel/framework/mocks/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksorm "github.com/rusmanplatd/goravelframework/mocks/database/orm"
 )
 
 type OrmUserProviderTestSuite struct {

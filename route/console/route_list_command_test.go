@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/http"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksroute "github.com/goravel/framework/mocks/route"
-	"github.com/goravel/framework/support/color"
-	supportconsole "github.com/goravel/framework/support/console"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksroute "github.com/rusmanplatd/goravelframework/mocks/route"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
 )
 
 func TestRouteListCommand(t *testing.T) {

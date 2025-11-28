@@ -3,8 +3,8 @@ package queue
 import (
 	"fmt"
 
-	"github.com/goravel/framework/contracts/config"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
 )
 
 type QueueRunner struct {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 func TestHtml_Render(t *testing.T) {

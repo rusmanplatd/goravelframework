@@ -6,7 +6,7 @@ func (s Stubs) EventFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
 )
 
 func Event() event.Instance {

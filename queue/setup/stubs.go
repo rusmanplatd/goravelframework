@@ -54,7 +54,7 @@ func (s Stubs) QueueFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/queue"
 )
 
 func Queue() queue.Queue {

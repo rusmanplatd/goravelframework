@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/goravel/framework/packages"
-	"github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/packages/modify"
-	"github.com/goravel/framework/support/path"
+	"github.com/rusmanplatd/goravelframework/packages"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	"github.com/rusmanplatd/goravelframework/packages/modify"
+	"github.com/rusmanplatd/goravelframework/support/path"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	moduleName := packages.GetModuleNameFromArgs(os.Args)
 	appServiceProviderPath := path.App("providers", "app_service_provider.go")
 	registerSeeders := "facades.Event().Register(map[event.Event][]event.Listener{})"
-	eventImport := "github.com/goravel/framework/contracts/event"
+	eventImport := "github.com/rusmanplatd/goravelframework/contracts/event"
 	facadesImport := fmt.Sprintf("%s/app/facades", moduleName)
 	eventFacadePath := path.Facades("event.go")
 	eventServiceProvider := "&event.ServiceProvider{}"

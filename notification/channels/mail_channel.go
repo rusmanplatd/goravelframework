@@ -3,8 +3,8 @@ package channels
 import (
 	"fmt"
 
-	contractsmail "github.com/goravel/framework/contracts/mail"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
+	contractsmail "github.com/rusmanplatd/goravelframework/contracts/mail"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
 )
 
 // MailChannel sends notifications via email.

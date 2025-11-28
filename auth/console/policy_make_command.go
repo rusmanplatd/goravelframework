@@ -3,11 +3,11 @@ package console
 import (
 	"strings"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/support"
-	supportconsole "github.com/goravel/framework/support/console"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/support"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type PolicyMakeCommand struct {

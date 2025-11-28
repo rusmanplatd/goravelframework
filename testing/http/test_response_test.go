@@ -10,10 +10,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	contractshttp "github.com/goravel/framework/contracts/testing/http"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
-	mockssession "github.com/goravel/framework/mocks/session"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/testing/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	mockssession "github.com/rusmanplatd/goravelframework/mocks/session"
 )
 
 func TestAssertOk(t *testing.T) {

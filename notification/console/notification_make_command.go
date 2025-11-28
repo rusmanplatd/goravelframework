@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
 )
 
 // NotificationMakeCommand creates a new notification class.
@@ -89,9 +89,9 @@ func (c *NotificationMakeCommand) generateNotificationContent(name string) strin
 	return fmt.Sprintf(`package notifications
 
 import (
-	"github.com/goravel/framework/contracts/mail"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
-	"github.com/goravel/framework/notification"
+	"github.com/rusmanplatd/goravelframework/contracts/mail"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
+	"github.com/rusmanplatd/goravelframework/notification"
 )
 
 // %s represents a notification.

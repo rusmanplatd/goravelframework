@@ -3,7 +3,7 @@
 package log
 
 import (
-	log "github.com/goravel/framework/contracts/log"
+	log "github.com/rusmanplatd/goravelframework/contracts/log"
 	mock "github.com/stretchr/testify/mock"
 )
 

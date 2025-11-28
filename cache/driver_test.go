@@ -7,10 +7,10 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/cache"
-	"github.com/goravel/framework/contracts/testing/docker"
-	configmock "github.com/goravel/framework/mocks/config"
-	logmock "github.com/goravel/framework/mocks/log"
+	"github.com/rusmanplatd/goravelframework/contracts/cache"
+	"github.com/rusmanplatd/goravelframework/contracts/testing/docker"
+	configmock "github.com/rusmanplatd/goravelframework/mocks/config"
+	logmock "github.com/rusmanplatd/goravelframework/mocks/log"
 )
 
 type DriverTestSuite struct {

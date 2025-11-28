@@ -3,7 +3,7 @@ package binding
 import (
 	"testing"
 
-	"github.com/goravel/framework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
 	"github.com/stretchr/testify/assert"
 )
 

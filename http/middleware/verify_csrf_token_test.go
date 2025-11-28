@@ -3,9 +3,9 @@ package middleware
 import (
 	"testing"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	mockhttp "github.com/goravel/framework/mocks/http"
-	mocksession "github.com/goravel/framework/mocks/session"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/http"
+	mockhttp "github.com/rusmanplatd/goravelframework/mocks/http"
+	mocksession "github.com/rusmanplatd/goravelframework/mocks/session"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -56,7 +56,7 @@ func (s Stubs) HashFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/hash"
+	"github.com/rusmanplatd/goravelframework/contracts/hash"
 )
 
 func Hash() hash.Hash {

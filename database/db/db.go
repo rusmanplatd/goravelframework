@@ -9,14 +9,14 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/goravel/framework/contracts/config"
-	contractsdb "github.com/goravel/framework/contracts/database/db"
-	contractsdriver "github.com/goravel/framework/contracts/database/driver"
-	contractslogger "github.com/goravel/framework/contracts/database/logger"
-	"github.com/goravel/framework/contracts/log"
-	databasedriver "github.com/goravel/framework/database/driver"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	contractsdb "github.com/rusmanplatd/goravelframework/contracts/database/db"
+	contractsdriver "github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	contractslogger "github.com/rusmanplatd/goravelframework/contracts/database/logger"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	databasedriver "github.com/rusmanplatd/goravelframework/database/driver"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type DB struct {

@@ -1,8 +1,9 @@
 package rules
 
 import (
-	"github.com/goravel/framework/contracts/support/pluralizer"
 	"regexp"
+
+	"github.com/rusmanplatd/goravelframework/contracts/support/pluralizer"
 )
 
 var _ pluralizer.Pattern = (*Pattern)(nil)

@@ -12,8 +12,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	contractsprocess "github.com/goravel/framework/contracts/process"
-	"github.com/goravel/framework/errors"
+	contractsprocess "github.com/rusmanplatd/goravelframework/contracts/process"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 func TestProcess_Run_Windows(t *testing.T) {

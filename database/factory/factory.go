@@ -6,9 +6,9 @@ import (
 
 	"github.com/go-viper/mapstructure/v2"
 
-	"github.com/goravel/framework/contracts/database/factory"
-	ormcontract "github.com/goravel/framework/contracts/database/orm"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/database/factory"
+	ormcontract "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type FactoryImpl struct {

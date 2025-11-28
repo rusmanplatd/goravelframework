@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/console/command"
-	consolemocks "github.com/goravel/framework/mocks/console"
-	schedulemocks "github.com/goravel/framework/mocks/schedule"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	consolemocks "github.com/rusmanplatd/goravelframework/mocks/console"
+	schedulemocks "github.com/rusmanplatd/goravelframework/mocks/schedule"
 )
 
 func TestRunCommand(t *testing.T) {

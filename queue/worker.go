@@ -5,16 +5,16 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/goravel/framework/contracts/database/db"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/queue/models"
-	"github.com/goravel/framework/queue/utils"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/console"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/queue/models"
+	"github.com/rusmanplatd/goravelframework/queue/utils"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/console"
 )
 
 type Worker struct {
@@ -117,7 +117,7 @@ func (r *Worker) call(task queue.Task) error {
 		if jobWithShouldRetry, ok := task.Job.(queue.JobWithShouldRetry); ok {
 			shouldRetry, delay = jobWithShouldRetry.ShouldRetry(err, tries)
 		} else {
-			shouldRetry = tries < r.tries /* || r.tries == 0 */ // Currently, we do not support unlimited retries, see https://github.com/goravel/framework/pull/1123#discussion_r2194272829
+			shouldRetry = tries < r.tries /* || r.tries == 0 */ // Currently, we do not support unlimited retries, see https://github.com/rusmanplatd/goravelframework/pull/1123#discussion_r2194272829
 		}
 
 		if shouldRetry {

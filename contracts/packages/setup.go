@@ -1,7 +1,7 @@
 package packages
 
 import (
-	"github.com/goravel/framework/contracts/packages/modify"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/modify"
 )
 
 type Setup interface {

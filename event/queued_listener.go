@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/queue"
 )
 
 // QueuedListenerJob represents a job that executes a queued listener.

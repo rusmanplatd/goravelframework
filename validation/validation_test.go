@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	httpvalidate "github.com/goravel/framework/contracts/validation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/http"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/http"
+	httpvalidate "github.com/rusmanplatd/goravelframework/contracts/validation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/http"
 )
 
 func TestMake(t *testing.T) {

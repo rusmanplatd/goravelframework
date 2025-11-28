@@ -73,17 +73,17 @@ var (
 	Bindings = map[string]Info{
 		Artisan: {
 			Description: "The CLI tool that comes with Goravel for interacting with the command line.",
-			PkgPath:     "github.com/goravel/framework/console",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/console",
 			IsBase:      true,
 		},
 		Config: {
 			Description: "Gets and sets configuration values.",
-			PkgPath:     "github.com/goravel/framework/config",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/config",
 			IsBase:      true,
 		},
 		Auth: {
 			Description: "Provides support for JWT and Session drivers.",
-			PkgPath:     "github.com/goravel/framework/auth",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/auth",
 			Dependencies: []string{
 				Cache,
 				Config,
@@ -93,7 +93,7 @@ var (
 		},
 		Broadcast: {
 			Description: "Enables real-time event broadcasting to channels using various drivers.",
-			PkgPath:     "github.com/goravel/framework/broadcast",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/broadcast",
 			Dependencies: []string{
 				Config,
 				Log,
@@ -120,7 +120,7 @@ var (
 		},
 		Cache: {
 			Description: "Gets and sets cached items.",
-			PkgPath:     "github.com/goravel/framework/cache",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/cache",
 			Dependencies: []string{
 				Config,
 				Log,
@@ -139,14 +139,14 @@ var (
 		},
 		Crypt: {
 			Description: "Provides encryption and decryption services.",
-			PkgPath:     "github.com/goravel/framework/crypt",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/crypt",
 			Dependencies: []string{
 				Config,
 			},
 		},
 		DB: {
 			Description: "Database management and query builder.",
-			PkgPath:     "github.com/goravel/framework/database",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/database",
 			Dependencies: []string{
 				Config,
 				Log,
@@ -175,14 +175,14 @@ var (
 		},
 		Event: {
 			Description: "Provides a simple observer pattern implementation.",
-			PkgPath:     "github.com/goravel/framework/event",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/event",
 			Dependencies: []string{
 				Queue,
 			},
 		},
 		Gate: {
 			Description: "An easy-to-use authorization feature to manage user actions on resources.",
-			PkgPath:     "github.com/goravel/framework/auth",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/auth",
 			Dependencies: []string{
 				Cache,
 				Orm,
@@ -190,21 +190,21 @@ var (
 		},
 		Grpc: {
 			Description: "Provides gRPC server and client support.",
-			PkgPath:     "github.com/goravel/framework/grpc",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/grpc",
 			Dependencies: []string{
 				Config,
 			},
 		},
 		Hash: {
 			Description: "Provides secure Argon2id and Bcrypt hashing for storing user passwords.",
-			PkgPath:     "github.com/goravel/framework/hash",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/hash",
 			Dependencies: []string{
 				Config,
 			},
 		},
 		Http: {
 			Description: "An easy-to-use, expressive, and minimalist API built on the standard net/http library.",
-			PkgPath:     "github.com/goravel/framework/http",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/http",
 			Dependencies: []string{
 				Cache,
 				Config,
@@ -215,7 +215,7 @@ var (
 		},
 		Lang: {
 			Description: "Provides localization support for multiple languages.",
-			PkgPath:     "github.com/goravel/framework/translation",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/translation",
 			Dependencies: []string{
 				Config,
 				Log,
@@ -223,14 +223,14 @@ var (
 		},
 		Log: {
 			Description: "Provides logging capabilities with support for multiple channels and formats.",
-			PkgPath:     "github.com/goravel/framework/log",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/log",
 			Dependencies: []string{
 				Config,
 			},
 		},
 		Mail: {
 			Description: "A clean, simple API over popular email services.",
-			PkgPath:     "github.com/goravel/framework/mail",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/mail",
 			Dependencies: []string{
 				Config,
 				Queue,
@@ -238,7 +238,7 @@ var (
 		},
 		Notification: {
 			Description: "Send notifications across multiple channels (mail, database, etc.)",
-			PkgPath:     "github.com/goravel/framework/notification",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/notification",
 			Dependencies: []string{
 				Config,
 				Event,
@@ -250,7 +250,7 @@ var (
 		},
 		Orm: {
 			Description: "An elegant ORM for Go, inspired by Eloquent.",
-			PkgPath:     "github.com/goravel/framework/database",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/database",
 			Dependencies: []string{
 				Config,
 				Log,
@@ -279,16 +279,16 @@ var (
 		},
 		Pipeline: {
 			Description: "Provides a pipeline pattern for passing data through a series of processing stages.",
-			PkgPath:     "github.com/goravel/framework/pipeline",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/pipeline",
 			IsBase:      true,
 		},
 		Process: {
 			Description: "Executes and manages external processes with concurrency support.",
-			PkgPath:     "github.com/goravel/framework/process",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/process",
 		},
 		Queue: {
 			Description: "A solution by allowing you to create queued jobs that can run in the background.",
-			PkgPath:     "github.com/goravel/framework/queue",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/queue",
 			Dependencies: []string{
 				Config,
 				DB,
@@ -312,14 +312,14 @@ var (
 		},
 		RateLimiter: {
 			Description: "Provides a simple and efficient way to limit the rate of incoming requests.",
-			PkgPath:     "github.com/goravel/framework/http",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/http",
 			Dependencies: []string{
 				Cache,
 			},
 		},
 		Route: {
 			Description: "Routing system, which supports multiple web frameworks.",
-			PkgPath:     "github.com/goravel/framework/route",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/route",
 			Dependencies: []string{
 				Config,
 				Http,
@@ -340,7 +340,7 @@ var (
 		},
 		Schedule: {
 			Description: "A fresh approach to managing scheduled tasks on your server.",
-			PkgPath:     "github.com/goravel/framework/schedule",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/schedule",
 			Dependencies: []string{
 				Artisan,
 				Cache,
@@ -350,7 +350,7 @@ var (
 		},
 		Schema: {
 			Description: "Database schema builder and migration system.",
-			PkgPath:     "github.com/goravel/framework/database",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/database",
 			Dependencies: []string{
 				Config,
 				Log,
@@ -359,11 +359,11 @@ var (
 		},
 		Seeder: {
 			Description: "Database seeding system to populate your database with test data.",
-			PkgPath:     "github.com/goravel/framework/database",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/database",
 		},
 		Session: {
 			Description: "Enables you to store user information across multiple requests.",
-			PkgPath:     "github.com/goravel/framework/session",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/session",
 			Dependencies: []string{
 				Config,
 			},
@@ -381,7 +381,7 @@ var (
 		},
 		Storage: {
 			Description: "Provides a unified API for interacting with various file storage systems.",
-			PkgPath:     "github.com/goravel/framework/filesystem",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/filesystem",
 			Dependencies: []string{
 				Config,
 			},
@@ -415,7 +415,7 @@ var (
 		},
 		Testing: {
 			Description: "Provides tools for testing your application.",
-			PkgPath:     "github.com/goravel/framework/testing",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/testing",
 			Dependencies: []string{
 				Artisan,
 				Cache,
@@ -427,11 +427,11 @@ var (
 		},
 		Validation: {
 			Description: "Provides validation services for incoming data.",
-			PkgPath:     "github.com/goravel/framework/validation",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/validation",
 		},
 		View: {
 			Description: "Provides a simple yet powerful templating engine.",
-			PkgPath:     "github.com/goravel/framework/view",
+			PkgPath:     "github.com/rusmanplatd/goravelframework/view",
 		},
 	}
 )

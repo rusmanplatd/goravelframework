@@ -6,9 +6,9 @@ import (
 
 	"github.com/gookit/validate"
 
-	"github.com/goravel/framework/contracts/http"
-	validatecontract "github.com/goravel/framework/contracts/validation"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	validatecontract "github.com/rusmanplatd/goravelframework/contracts/validation"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type Validation struct {

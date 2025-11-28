@@ -3,7 +3,7 @@ package auth
 import (
 	"time"
 
-	"github.com/goravel/framework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
 )
 
 type Auth interface {

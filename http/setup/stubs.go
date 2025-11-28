@@ -93,7 +93,7 @@ func (s Stubs) HttpFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/http/client"
+	"github.com/rusmanplatd/goravelframework/contracts/http/client"
 )
 
 func Http() client.Request {
@@ -153,7 +153,7 @@ func (s Stubs) Kernel() string {
 	return `package http
 
 import (
-	"github.com/goravel/framework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
 )
 
 type Kernel struct {
@@ -171,7 +171,7 @@ func (s Stubs) RateLimiterFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
 )
 
 func RateLimiter() http.RateLimiter {
@@ -184,7 +184,7 @@ func (s Stubs) ViewFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
 )
 
 func View() http.View {

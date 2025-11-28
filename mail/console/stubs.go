@@ -7,7 +7,7 @@ func (s Stubs) Mail() string {
 	return `package DummyPackage
 
 import (
-	"github.com/goravel/framework/contracts/mail"
+	"github.com/rusmanplatd/goravelframework/contracts/mail"
 )
 
 type DummyMail struct {

@@ -8,11 +8,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/filesystem"
-	"github.com/goravel/framework/errors"
-	supportfile "github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/filesystem"
+	"github.com/rusmanplatd/goravelframework/errors"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type Local struct {

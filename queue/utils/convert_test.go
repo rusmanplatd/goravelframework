@@ -5,11 +5,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/convert"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 func TestTaskToJson(t *testing.T) {

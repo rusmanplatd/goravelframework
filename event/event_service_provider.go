@@ -1,8 +1,8 @@
 package event
 
 import (
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 // EventServiceProvider is a base service provider for event registration.

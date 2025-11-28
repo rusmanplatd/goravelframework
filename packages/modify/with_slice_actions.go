@@ -9,11 +9,11 @@ import (
 	"github.com/dave/dst"
 	"github.com/dave/dst/dstutil"
 
-	contractsmatch "github.com/goravel/framework/contracts/packages/match"
-	"github.com/goravel/framework/contracts/packages/modify"
-	"github.com/goravel/framework/packages/match"
-	supportfile "github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/path/internals"
+	contractsmatch "github.com/rusmanplatd/goravelframework/contracts/packages/match"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/modify"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/path/internals"
 )
 
 // withSliceConfig holds configuration for adding items to a slice in foundation.Setup() chain.
@@ -28,7 +28,7 @@ type withSliceConfig struct {
 	typePackage string
 	// typeName is the type name for the slice element (e.g., "Command", "Migration")
 	typeName string
-	// typeImportPath is the import path for the type package (e.g., "github.com/goravel/framework/contracts/console")
+	// typeImportPath is the import path for the type package (e.g., "github.com/rusmanplatd/goravelframework/contracts/console")
 	typeImportPath string
 	// fileExistsError is the error to return when the file exists but WithMethod is not registered
 	fileExistsError error
@@ -160,11 +160,11 @@ func (r *withSliceHandler) createFile() error {
 
 // addImports adds the required imports for the item package and type package.
 //
-// Example: For pkg="github.com/user/app/commands" and typeImportPath="github.com/goravel/framework/contracts/console":
+// Example: For pkg="github.com/user/app/commands" and typeImportPath="github.com/rusmanplatd/goravelframework/contracts/console":
 //
 //	import (
 //	    "github.com/user/app/commands"
-//	    "github.com/goravel/framework/contracts/console"
+//	    "github.com/rusmanplatd/goravelframework/contracts/console"
 //	)
 func (r *withSliceHandler) addImports(pkg string) error {
 	importMatchers := match.Imports()
@@ -592,7 +592,7 @@ func addMiddlewareImports(appFilePath, pkg string) error {
 		return err
 	}
 
-	configImportPath := "github.com/goravel/framework/contracts/foundation/configuration"
+	configImportPath := "github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
 	return GoFile(appFilePath).Find(importMatchers).Modify(AddImport(configImportPath)).Apply()
 }
 

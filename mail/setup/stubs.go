@@ -84,7 +84,7 @@ func (s Stubs) MailFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/mail"
+	"github.com/rusmanplatd/goravelframework/contracts/mail"
 )
 
 func Mail() mail.Mail {

@@ -1,14 +1,14 @@
 package queue
 
 import (
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/database/db"
-	"github.com/goravel/framework/contracts/foundation"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/queue/models"
-	"github.com/goravel/framework/queue/utils"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/queue/models"
+	"github.com/rusmanplatd/goravelframework/queue/utils"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 type Failer struct {

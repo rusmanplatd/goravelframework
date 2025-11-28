@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/goravel/framework/contracts/database"
-	"github.com/goravel/framework/contracts/database/driver"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/testing/utils"
 	"github.com/goravel/mysql"
 	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
 	"github.com/goravel/sqlserver"
+	"github.com/rusmanplatd/goravelframework/contracts/database"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/testing/utils"
 )
 
 func mockDatabaseConfig(mockConfig *mocksconfig.Config, config database.Config) {

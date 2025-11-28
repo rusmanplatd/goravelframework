@@ -3,7 +3,7 @@ package inflector
 import (
 	"strings"
 
-	"github.com/goravel/framework/contracts/support/pluralizer"
+	"github.com/rusmanplatd/goravelframework/contracts/support/pluralizer"
 )
 
 type Inflector struct {

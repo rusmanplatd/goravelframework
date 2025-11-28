@@ -6,12 +6,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/contracts/database/schema"
-	mocksdriver "github.com/goravel/framework/mocks/database/driver"
-	mocksorm "github.com/goravel/framework/mocks/database/orm"
-	mocksschema "github.com/goravel/framework/mocks/database/schema"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	mocksdriver "github.com/rusmanplatd/goravelframework/mocks/database/driver"
+	mocksorm "github.com/rusmanplatd/goravelframework/mocks/database/orm"
+	mocksschema "github.com/rusmanplatd/goravelframework/mocks/database/schema"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 type BlueprintTestSuite struct {

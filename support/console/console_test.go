@@ -11,10 +11,10 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/errors"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type MakeTestSuite struct {

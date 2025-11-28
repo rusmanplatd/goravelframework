@@ -1,11 +1,11 @@
 package route
 
 import (
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
-	routeconsole "github.com/goravel/framework/route/console"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	routeconsole "github.com/rusmanplatd/goravelframework/route/console"
 )
 
 type ServiceProvider struct {

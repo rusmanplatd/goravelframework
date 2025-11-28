@@ -6,7 +6,7 @@ func (s Stubs) ProcessFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/process"
+	"github.com/rusmanplatd/goravelframework/contracts/process"
 )
 
 func Process() process.Process {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 )
 
 type SeederTestSuite struct {

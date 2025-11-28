@@ -1,7 +1,7 @@
 package http
 
 import (
-	"github.com/goravel/framework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
 )
 
 type RateLimiter struct {

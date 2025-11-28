@@ -42,7 +42,7 @@ func (s Stubs) GrpcFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/grpc"
+	"github.com/rusmanplatd/goravelframework/contracts/grpc"
 )
 
 func Grpc() grpc.Grpc {

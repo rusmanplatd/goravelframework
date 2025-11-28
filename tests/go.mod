@@ -1,4 +1,4 @@
-module github.com/goravel/framework/tests
+module github.com/rusmanplatd/goravelframework/tests
 
 go 1.24.0
 
@@ -9,7 +9,7 @@ godebug x509negativeserial=1
 require (
 	github.com/brianvoe/gofakeit/v7 v7.9.0
 	github.com/google/uuid v1.6.0
-	github.com/goravel/framework v1.16.5
+	github.com/rusmanplatd/goravelframework v1.16.5
 	github.com/goravel/mysql v1.4.0
 	github.com/goravel/postgres v1.4.1
 	github.com/goravel/sqlite v1.4.0
@@ -77,7 +77,7 @@ require (
 )
 
 replace (
-	github.com/goravel/framework => ../
+	github.com/rusmanplatd/goravelframework => ../
 	github.com/goravel/mysql v0.0.0 => github.com/goravel/mysql v0.0.0
 	github.com/goravel/postgres v0.0.0 => github.com/goravel/postgres v0.0.0
 	github.com/goravel/sqlite v0.0.0 => github.com/goravel/sqlite v0.0.0

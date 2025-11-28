@@ -6,10 +6,10 @@ import (
 
 	"github.com/spf13/cast"
 
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/foundation"
-	contractstranslation "github.com/goravel/framework/contracts/translation"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractstranslation "github.com/rusmanplatd/goravelframework/contracts/translation"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type ServiceProvider struct {

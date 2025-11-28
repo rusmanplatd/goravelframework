@@ -1,11 +1,11 @@
 package queue
 
 import (
-	contractsdb "github.com/goravel/framework/contracts/database/db"
-	contractsfoundation "github.com/goravel/framework/contracts/foundation"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/queue/models"
-	"github.com/goravel/framework/queue/utils"
+	contractsdb "github.com/rusmanplatd/goravelframework/contracts/database/db"
+	contractsfoundation "github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/queue/models"
+	"github.com/rusmanplatd/goravelframework/queue/utils"
 )
 
 type DatabaseReservedJob struct {

@@ -3,8 +3,8 @@ package broadcast
 import (
 	"encoding/json"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
-	contractslog "github.com/goravel/framework/contracts/log"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
+	contractslog "github.com/rusmanplatd/goravelframework/contracts/log"
 )
 
 // Ensure interface implementation

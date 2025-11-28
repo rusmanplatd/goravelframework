@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/contracts/http/client"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/http/client"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 var _ client.Response = (*Response)(nil)

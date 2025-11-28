@@ -6,7 +6,7 @@ import (
 	context "context"
 	io "io"
 
-	http "github.com/goravel/framework/contracts/testing/http"
+	http "github.com/rusmanplatd/goravelframework/contracts/testing/http"
 
 	mock "github.com/stretchr/testify/mock"
 

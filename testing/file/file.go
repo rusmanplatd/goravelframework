@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 func GetLineNum(file string) int {

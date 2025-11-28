@@ -1,11 +1,11 @@
 package console
 
 import (
-	"github.com/goravel/framework/console/console"
-	"github.com/goravel/framework/contracts/binding"
-	consolecontract "github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/console/console"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	consolecontract "github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type ServiceProvider struct {

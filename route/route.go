@@ -1,10 +1,10 @@
 package route
 
 import (
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/route"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/route"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type Driver string

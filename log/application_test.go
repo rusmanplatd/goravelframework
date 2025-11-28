@@ -6,10 +6,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 func TestNewApplication(t *testing.T) {

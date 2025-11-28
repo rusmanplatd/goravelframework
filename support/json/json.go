@@ -1,8 +1,8 @@
 package json
 
 import (
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 // Marshal serializes the given value to a JSON-encoded byte slice.

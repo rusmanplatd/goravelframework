@@ -3,7 +3,7 @@
 package session
 
 import (
-	session "github.com/goravel/framework/contracts/session"
+	session "github.com/rusmanplatd/goravelframework/contracts/session"
 	mock "github.com/stretchr/testify/mock"
 )
 
