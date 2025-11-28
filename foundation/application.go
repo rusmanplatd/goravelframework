@@ -12,7 +12,6 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rusmanplatd/goravelframework/broadcast"
 	"github.com/rusmanplatd/goravelframework/config"
 	frameworkconsole "github.com/rusmanplatd/goravelframework/console"
 	"github.com/rusmanplatd/goravelframework/contracts/binding"
@@ -21,7 +20,6 @@ import (
 	"github.com/rusmanplatd/goravelframework/errors"
 	"github.com/rusmanplatd/goravelframework/foundation/console"
 	"github.com/rusmanplatd/goravelframework/foundation/json"
-	"github.com/rusmanplatd/goravelframework/notification"
 	"github.com/rusmanplatd/goravelframework/support"
 	"github.com/rusmanplatd/goravelframework/support/carbon"
 	"github.com/rusmanplatd/goravelframework/support/color"
@@ -305,8 +303,6 @@ func (r *Application) getBaseServiceProviders() []foundation.ServiceProvider {
 	return []foundation.ServiceProvider{
 		&config.ServiceProvider{},
 		&frameworkconsole.ServiceProvider{},
-		&broadcast.ServiceProvider{},
-		&notification.ServiceProvider{},
 	}
 }
 
