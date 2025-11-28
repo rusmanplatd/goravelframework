@@ -8,15 +8,15 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support"
-	supportconsole "github.com/goravel/framework/support/console"
-	"github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
+	"github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type modelDefinition struct {
@@ -170,7 +170,7 @@ func (r *ModelMakeCommand) generateModelInfo(columns []driver.Column, structName
 	}
 
 	if len(info.Embeds) > 0 {
-		info.Imports["github.com/goravel/framework/database/orm"] = struct{}{}
+		info.Imports["github.com/rusmanplatd/goravelframework/database/orm"] = struct{}{}
 	}
 
 	goTypeMapping := r.schema.GoTypes()

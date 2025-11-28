@@ -1,7 +1,7 @@
 package broadcast
 
 import (
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 )
 
 // Ensure interface implementation

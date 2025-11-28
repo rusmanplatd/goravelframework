@@ -5,8 +5,8 @@ import (
 
 	"gorm.io/gorm/logger"
 
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 // Level log level

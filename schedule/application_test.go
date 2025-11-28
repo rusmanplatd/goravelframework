@@ -9,11 +9,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/schedule"
-	mockscache "github.com/goravel/framework/mocks/cache"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mockslog "github.com/goravel/framework/mocks/log"
-	"github.com/goravel/framework/support/env"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
+	mockscache "github.com/rusmanplatd/goravelframework/mocks/cache"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mockslog "github.com/rusmanplatd/goravelframework/mocks/log"
+	"github.com/rusmanplatd/goravelframework/support/env"
 )
 
 type ApplicationTestSuite struct {

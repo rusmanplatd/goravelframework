@@ -4,7 +4,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 const Associations = clause.Associations

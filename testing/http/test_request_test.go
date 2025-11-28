@@ -10,10 +10,10 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
-	mocksroute "github.com/goravel/framework/mocks/route"
-	mockssession "github.com/goravel/framework/mocks/session"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	mocksroute "github.com/rusmanplatd/goravelframework/mocks/route"
+	mockssession "github.com/rusmanplatd/goravelframework/mocks/session"
 )
 
 type TestRequestSuite struct {

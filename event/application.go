@@ -3,8 +3,8 @@ package event
 import (
 	"slices"
 
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/queue"
 )
 
 type Application struct {

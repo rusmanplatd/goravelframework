@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	mocksqueue "github.com/goravel/framework/mocks/queue"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 // TestQueuedListener tests queued listener functionality

@@ -7,15 +7,15 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	contractsdb "github.com/goravel/framework/contracts/database/db"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
-	mocksdb "github.com/goravel/framework/mocks/database/db"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
-	"github.com/goravel/framework/queue/models"
-	"github.com/goravel/framework/queue/utils"
-	"github.com/goravel/framework/support/carbon"
+	contractsdb "github.com/rusmanplatd/goravelframework/contracts/database/db"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksdb "github.com/rusmanplatd/goravelframework/mocks/database/db"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/queue/models"
+	"github.com/rusmanplatd/goravelframework/queue/utils"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type DatabaseTestSuite struct {

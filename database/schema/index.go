@@ -3,10 +3,10 @@ package schema
 import (
 	"strings"
 
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/support/convert"
-	"github.com/goravel/framework/support/pluralizer"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/support/convert"
+	"github.com/rusmanplatd/goravelframework/support/pluralizer"
 )
 
 type ForeignKeyDefinition struct {

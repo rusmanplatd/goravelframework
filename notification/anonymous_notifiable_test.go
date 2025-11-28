@@ -6,12 +6,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/goravel/framework/contracts/mail"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
-	mocksevent "github.com/goravel/framework/mocks/event"
-	mockslog "github.com/goravel/framework/mocks/log"
-	mocksnotification "github.com/goravel/framework/mocks/notification"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/mail"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
+	mocksevent "github.com/rusmanplatd/goravelframework/mocks/event"
+	mockslog "github.com/rusmanplatd/goravelframework/mocks/log"
+	mocksnotification "github.com/rusmanplatd/goravelframework/mocks/notification"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 // TestAnonymousNotifiable tests the anonymous notifiable functionality

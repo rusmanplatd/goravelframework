@@ -9,7 +9,7 @@ import (
 
 	"golang.org/x/sys/windows"
 
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 // stillActive is a Win32 constant that indicates a process is still running.

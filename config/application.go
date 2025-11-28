@@ -7,11 +7,11 @@ import (
 	"github.com/spf13/cast"
 	"github.com/spf13/viper"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/support"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/convert"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/support"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/convert"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 var _ config.Config = &Application{}

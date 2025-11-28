@@ -6,7 +6,7 @@ import (
 
 	"github.com/urfave/cli/v3"
 
-	"github.com/goravel/framework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
 )
 
 type Command interface {

@@ -3,7 +3,7 @@
 package auth
 
 import (
-	auth "github.com/goravel/framework/contracts/auth"
+	auth "github.com/rusmanplatd/goravelframework/contracts/auth"
 	mock "github.com/stretchr/testify/mock"
 )
 

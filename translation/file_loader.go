@@ -4,10 +4,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/goravel/framework/contracts/foundation"
-	contractstranslation "github.com/goravel/framework/contracts/translation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractstranslation "github.com/rusmanplatd/goravelframework/contracts/translation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type FileLoader struct {

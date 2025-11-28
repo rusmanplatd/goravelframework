@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/event"
-	mocksevent "github.com/goravel/framework/mocks/event"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	mocksevent "github.com/rusmanplatd/goravelframework/mocks/event"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
 )
 
 // TestListen tests the Listen method

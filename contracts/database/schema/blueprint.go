@@ -1,8 +1,8 @@
 package schema
 
 import (
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
 )
 
 type Blueprint interface {

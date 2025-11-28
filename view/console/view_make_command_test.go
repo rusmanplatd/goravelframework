@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/console/command"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 func TestViewMakeCommandSignature(t *testing.T) {

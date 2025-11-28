@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/goravel/framework/contracts/database"
-	"github.com/goravel/framework/contracts/database/driver"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/testing/utils"
 	"github.com/goravel/mysql"
-	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
 	"github.com/goravel/sqlserver"
+	"github.com/rusmanplatd/goravelframework/contracts/database"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/testing/utils"
+	"github.com/rusmanplatd/goravelpostgres"
 )
 
 func mockDatabaseConfig(mockConfig *mocksconfig.Config, config database.Config) {
@@ -43,11 +43,11 @@ func mockDatabaseConfigWithoutWriteAndRead(mockConfig *mocksconfig.Config, confi
 	mockConfig.EXPECT().GetString(fmt.Sprintf("database.connections.%s.schema", connection), "public").Return("public")
 	mockConfig.EXPECT().Get(fmt.Sprintf("database.connections.%s.name_replacer", connection)).Return(nil)
 
-	if config.Driver == postgres.Name {
+	if config.Driver == goravelpostgres.Name {
 		mockConfig.EXPECT().GetString(fmt.Sprintf("database.connections.%s.sslmode", connection)).Return("disable")
 		mockConfig.EXPECT().GetString(fmt.Sprintf("database.connections.%s.timezone", connection)).Return(config.Timezone)
 		mockConfig.EXPECT().Get(fmt.Sprintf("database.connections.%s.via", connection)).Return(func() (driver.Driver, error) {
-			return postgres.NewPostgres(mockConfig, utils.NewTestLog(), connection), nil
+			return goravelpostgres.NewPostgres(mockConfig, utils.NewTestLog(), connection), nil
 		})
 	}
 	if config.Driver == mysql.Name {

@@ -6,7 +6,7 @@ func (s Stubs) ScheduleFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/schedule"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
 )
 
 func Schedule() schedule.Schedule {

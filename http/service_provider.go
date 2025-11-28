@@ -3,18 +3,18 @@ package http
 import (
 	"time"
 
-	contractsbinding "github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/cache"
-	"github.com/goravel/framework/contracts/config"
-	contractsconsole "github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/contracts/http"
-	contractsclient "github.com/goravel/framework/contracts/http/client"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/http/client"
-	"github.com/goravel/framework/http/console"
-	"github.com/goravel/framework/support/binding"
+	contractsbinding "github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/cache"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	contractsconsole "github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	contractsclient "github.com/rusmanplatd/goravelframework/contracts/http/client"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/http/client"
+	"github.com/rusmanplatd/goravelframework/http/console"
+	"github.com/rusmanplatd/goravelframework/support/binding"
 )
 
 type ServiceProvider struct{}

@@ -3,10 +3,10 @@ package tests
 import (
 	"context"
 
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	databaseorm "github.com/goravel/framework/database/orm"
-	"github.com/goravel/framework/database/schema"
-	"github.com/goravel/framework/testing/utils"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	databaseorm "github.com/rusmanplatd/goravelframework/database/orm"
+	"github.com/rusmanplatd/goravelframework/database/schema"
+	"github.com/rusmanplatd/goravelframework/testing/utils"
 )
 
 const (

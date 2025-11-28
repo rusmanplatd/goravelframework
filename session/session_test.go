@@ -7,11 +7,11 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
-	mocksession "github.com/goravel/framework/mocks/session"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	mocksession "github.com/rusmanplatd/goravelframework/mocks/session"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type SessionTestSuite struct {

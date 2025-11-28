@@ -10,13 +10,13 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/database/db"
-	"github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/errors"
-	mocksdb "github.com/goravel/framework/mocks/database/db"
-	mocksdriver "github.com/goravel/framework/mocks/database/driver"
-	mockslogger "github.com/goravel/framework/mocks/database/logger"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksdb "github.com/rusmanplatd/goravelframework/mocks/database/db"
+	mocksdriver "github.com/rusmanplatd/goravelframework/mocks/database/driver"
+	mockslogger "github.com/rusmanplatd/goravelframework/mocks/database/logger"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 // TestUser is a test model

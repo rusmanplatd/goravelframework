@@ -16,10 +16,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 func TestBind_Rule(t *testing.T) {

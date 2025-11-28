@@ -8,8 +8,8 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/log"
-	mockslog "github.com/goravel/framework/mocks/log"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	mockslog "github.com/rusmanplatd/goravelframework/mocks/log"
 )
 
 func TestHook_Fire(t *testing.T) {

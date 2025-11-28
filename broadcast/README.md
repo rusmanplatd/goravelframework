@@ -180,8 +180,8 @@ package events
 
 import (
     "fmt"
-    "github.com/goravel/framework/broadcast"
-    contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
+    "github.com/rusmanplatd/goravelframework/broadcast"
+    contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 )
 
 type OrderShipped struct {
@@ -353,7 +353,7 @@ Register broadcast routes in your application:
 
 ```go
 // In your route registration file
-import "github.com/goravel/framework/broadcast"
+import "github.com/rusmanplatd/goravelframework/broadcast"
 
 // Register broadcast authentication routes
 broadcast.RegisterBroadcastRoutes(router, facades.Broadcast())
@@ -440,7 +440,7 @@ Configure user authentication for broadcasting:
 
 ```go
 import (
-    "github.com/goravel/framework/broadcast"
+    "github.com/rusmanplatd/goravelframework/broadcast"
 )
 
 // Set up user authentication callback
@@ -477,7 +477,7 @@ func extractUserFromRequest(req *http.Request) any {
 #### Creating Presence Channel Members
 
 ```go
-import "github.com/goravel/framework/broadcast"
+import "github.com/rusmanplatd/goravelframework/broadcast"
 
 // Create presence channel member
 member := broadcast.NewPresenceChannelMember("user-123", map[string]interface{}{

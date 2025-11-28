@@ -2,11 +2,11 @@
 
 <img src="https://www.goravel.dev/logo.png?v=1.14.x" width="300" alt="Logo">
 
-[![Doc](https://pkg.go.dev/badge/github.com/goravel/framework)](https://pkg.go.dev/github.com/goravel/framework)
+[![Doc](https://pkg.go.dev/badge/github.com/rusmanplatd/goravelframework)](https://pkg.go.dev/github.com/rusmanplatd/goravelframework)
 [![Go](https://img.shields.io/github/go-mod/go-version/goravel/framework)](https://go.dev/)
-[![Release](https://img.shields.io/github/release/goravel/framework.svg)](https://github.com/goravel/framework/releases)
-[![Test](https://github.com/goravel/framework/actions/workflows/test.yml/badge.svg)](https://github.com/goravel/framework/actions)
-[![Report Card](https://goreportcard.com/badge/github.com/goravel/framework)](https://goreportcard.com/report/github.com/goravel/framework)
+[![Release](https://img.shields.io/github/release/goravel/framework.svg)](https://github.com/rusmanplatd/goravelframework/releases)
+[![Test](https://github.com/rusmanplatd/goravelframework/actions/workflows/test.yml/badge.svg)](https://github.com/rusmanplatd/goravelframework/actions)
+[![Report Card](https://goreportcard.com/badge/github.com/rusmanplatd/goravelframework)](https://goreportcard.com/report/github.com/rusmanplatd/goravelframework)
 [![Codecov](https://codecov.io/gh/goravel/framework/branch/master/graph/badge.svg)](https://codecov.io/gh/goravel/framework)
 ![License](https://img.shields.io/github/license/goravel/framework)
 
@@ -58,13 +58,13 @@ err := facades.Queue().Job(&jobs.Test{}, []queue.Arg{}).Dispatch()
 
 ## 主要功能
 
-|                                                                             |                                                               |                                                                    |                                                                   |                                                                               |
-|-----------------------------------------------------------------------------|---------------------------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| [自定义配置](https://www.goravel.dev/zh_CN/getting-started/configuration.html)      | [HTTP 服务](https://www.goravel.dev/zh_CN/the-basics/routing.html) | [用户认证](https://www.goravel.dev/zh_CN/security/authentication.html)    | [用户授权](https://www.goravel.dev/zh_CN/security/authorization.html)    | [数据库 ORM](https://www.goravel.dev/zh_CN/orm/getting-started.html)                |
-| [数据库迁移](https://www.goravel.dev/zh_CN/database/migrations.html)                     | [日志](https://www.goravel.dev/zh_CN/the-basics/logging.html)      | [缓存](https://www.goravel.dev/zh_CN/digging-deeper/cache.html)         | [Grpc](https://www.goravel.dev/zh_CN/the-basics/grpc.html)           | [Artisan 命令行](https://www.goravel.dev/zh_CN/digging-deeper/artisan-console.html) |
-| [任务调度](https://www.goravel.dev/zh_CN/digging-deeper/task-scheduling.html)      | [队列](https://www.goravel.dev/zh_CN/digging-deeper/queues.html)   | [事件系统](https://www.goravel.dev/zh_CN/digging-deeper/event.html)       | [文件存储](https://www.goravel.dev/zh_CN/digging-deeper/filesystem.html) | [邮件](https://www.goravel.dev/zh_CN/digging-deeper/mail.html)                     |
-| [表单验证](https://www.goravel.dev/zh_CN/the-basics/validation.html)               | [Mock](https://www.goravel.dev/zh_CN/testing/mock.html)   | [Hash](https://www.goravel.dev/zh_CN/security/hashing.html)           | [Crypt](https://www.goravel.dev/zh_CN/security/encryption.html)      | [Carbon](https://www.goravel.dev/zh_CN/digging-deeper/helpers.html)              |
-| [扩展包开发](https://www.goravel.dev/zh_CN/digging-deeper/package-development.html) | [测试](https://www.goravel.dev/zh_CN/testing/getting-started.html) | [本地化](https://www.goravel.dev/zh_CN/digging-deeper/localization.html) | [Session](https://www.goravel.dev/zh_CN/the-basics/session.html)     |                                                                               |
+|                                                                                     |                                                                    |                                                                          |                                                                          |                                                                                     |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| [自定义配置](https://www.goravel.dev/zh_CN/getting-started/configuration.html)      | [HTTP 服务](https://www.goravel.dev/zh_CN/the-basics/routing.html) | [用户认证](https://www.goravel.dev/zh_CN/security/authentication.html)   | [用户授权](https://www.goravel.dev/zh_CN/security/authorization.html)    | [数据库 ORM](https://www.goravel.dev/zh_CN/orm/getting-started.html)                |
+| [数据库迁移](https://www.goravel.dev/zh_CN/database/migrations.html)                | [日志](https://www.goravel.dev/zh_CN/the-basics/logging.html)      | [缓存](https://www.goravel.dev/zh_CN/digging-deeper/cache.html)          | [Grpc](https://www.goravel.dev/zh_CN/the-basics/grpc.html)               | [Artisan 命令行](https://www.goravel.dev/zh_CN/digging-deeper/artisan-console.html) |
+| [任务调度](https://www.goravel.dev/zh_CN/digging-deeper/task-scheduling.html)       | [队列](https://www.goravel.dev/zh_CN/digging-deeper/queues.html)   | [事件系统](https://www.goravel.dev/zh_CN/digging-deeper/event.html)      | [文件存储](https://www.goravel.dev/zh_CN/digging-deeper/filesystem.html) | [邮件](https://www.goravel.dev/zh_CN/digging-deeper/mail.html)                      |
+| [表单验证](https://www.goravel.dev/zh_CN/the-basics/validation.html)                | [Mock](https://www.goravel.dev/zh_CN/testing/mock.html)            | [Hash](https://www.goravel.dev/zh_CN/security/hashing.html)              | [Crypt](https://www.goravel.dev/zh_CN/security/encryption.html)          | [Carbon](https://www.goravel.dev/zh_CN/digging-deeper/helpers.html)                 |
+| [扩展包开发](https://www.goravel.dev/zh_CN/digging-deeper/package-development.html) | [测试](https://www.goravel.dev/zh_CN/testing/getting-started.html) | [本地化](https://www.goravel.dev/zh_CN/digging-deeper/localization.html) | [Session](https://www.goravel.dev/zh_CN/the-basics/session.html)         |                                                                                     |
 
 ## 路线图
 

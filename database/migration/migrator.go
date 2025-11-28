@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/goravel/framework/contracts/console"
-	contractsmigration "github.com/goravel/framework/contracts/database/migration"
-	"github.com/goravel/framework/contracts/database/orm"
-	contractsschema "github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/support/collect"
-	"github.com/goravel/framework/support/color"
-	supportfile "github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	contractsmigration "github.com/rusmanplatd/goravelframework/contracts/database/migration"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsschema "github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/support/collect"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type Migrator struct {

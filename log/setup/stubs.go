@@ -58,7 +58,7 @@ func (s Stubs) LogFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
 )
 
 func Log() log.Log {

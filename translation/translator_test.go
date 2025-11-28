@@ -8,12 +8,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	contractstranslation "github.com/goravel/framework/contracts/translation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/foundation/json"
-	"github.com/goravel/framework/http"
-	mocklog "github.com/goravel/framework/mocks/log"
-	mockloader "github.com/goravel/framework/mocks/translation"
+	contractstranslation "github.com/rusmanplatd/goravelframework/contracts/translation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	"github.com/rusmanplatd/goravelframework/http"
+	mocklog "github.com/rusmanplatd/goravelframework/mocks/log"
+	mockloader "github.com/rusmanplatd/goravelframework/mocks/translation"
 )
 
 type TranslatorTestSuite struct {

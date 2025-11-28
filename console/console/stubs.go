@@ -1,6 +1,6 @@
 package console
 
-import "github.com/goravel/framework/support/stubs"
+import "github.com/rusmanplatd/goravelframework/support/stubs"
 
 type Stubs struct {
 }
@@ -9,8 +9,8 @@ func (r Stubs) Command() string {
 	return `package DummyPackage
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
 )
 
 type DummyCommand struct {

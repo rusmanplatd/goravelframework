@@ -9,17 +9,17 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/goravel/framework/contracts/database/orm"
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	databasedb "github.com/goravel/framework/database/db"
-	"github.com/goravel/framework/database/gorm"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/convert"
 	"github.com/goravel/mysql"
-	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
 	"github.com/goravel/sqlserver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	databasedb "github.com/rusmanplatd/goravelframework/database/db"
+	"github.com/rusmanplatd/goravelframework/database/gorm"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/convert"
+	"github.com/rusmanplatd/goravelpostgres"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 )
@@ -3641,7 +3641,7 @@ func (s *QueryTestSuite) TestToSql() {
 	for driver, query := range s.queries {
 		s.Run(driver, func() {
 			switch driver {
-			case postgres.Name:
+			case goravelpostgres.Name:
 				s.Equal("SELECT * FROM \"users\" WHERE \"id\" = $1 AND \"users\".\"deleted_at\" IS NULL", query.Query().Where("id", 1).ToSql().Find(User{}))
 			case sqlserver.Name:
 				s.Equal("SELECT * FROM \"users\" WHERE \"id\" = @p1 AND \"users\".\"deleted_at\" IS NULL", query.Query().Where("id", 1).ToSql().Find(User{}))
@@ -3656,7 +3656,7 @@ func (s *QueryTestSuite) TestToRawSql() {
 	for driver, query := range s.queries {
 		s.Run(driver, func() {
 			switch driver {
-			case postgres.Name:
+			case goravelpostgres.Name:
 				s.Equal("SELECT * FROM \"users\" WHERE \"id\" = 1 AND \"users\".\"deleted_at\" IS NULL", query.Query().Where("id", 1).ToRawSql().Find(User{}))
 			case sqlserver.Name:
 				s.Equal("SELECT * FROM \"users\" WHERE \"id\" = $1$ AND \"users\".\"deleted_at\" IS NULL", query.Query().Where("id", 1).ToRawSql().Find(User{}))

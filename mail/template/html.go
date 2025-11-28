@@ -6,7 +6,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type Html struct {

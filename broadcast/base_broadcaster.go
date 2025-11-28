@@ -6,7 +6,7 @@ import (
 	"strings"
 	"sync"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 )
 
 // BaseBroadcaster provides common functionality for all broadcasters.

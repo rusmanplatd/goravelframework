@@ -7,8 +7,8 @@ import (
 
 	"github.com/pterm/pterm"
 
-	"github.com/goravel/framework/contracts/support"
-	"github.com/goravel/framework/support/env"
+	"github.com/rusmanplatd/goravelframework/contracts/support"
+	"github.com/rusmanplatd/goravelframework/support/env"
 )
 
 const (

@@ -1,8 +1,8 @@
 package db
 
 import (
-	"github.com/goravel/framework/contracts/database/db"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type ToSql struct {

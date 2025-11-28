@@ -8,7 +8,7 @@ import (
 
 	mock "github.com/stretchr/testify/mock"
 
-	process "github.com/goravel/framework/contracts/process"
+	process "github.com/rusmanplatd/goravelframework/contracts/process"
 
 	time "time"
 )

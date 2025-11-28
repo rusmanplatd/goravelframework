@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"testing"
 
-	contractsseeder "github.com/goravel/framework/contracts/database/seeder"
-	contractshttp "github.com/goravel/framework/contracts/testing/http"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/testing/http"
+	contractsseeder "github.com/rusmanplatd/goravelframework/contracts/database/seeder"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/testing/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/testing/http"
 )
 
 type TestCase struct {

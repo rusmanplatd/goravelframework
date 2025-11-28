@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/goravel/framework/contracts/cache"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/cache"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type Store struct {

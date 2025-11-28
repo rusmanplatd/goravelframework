@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 // TestPipeline_BasicFlow tests basic pipeline execution with a single pipe

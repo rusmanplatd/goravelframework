@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/support/env"
+	"github.com/rusmanplatd/goravelframework/support/env"
 )
 
 func TestRun(t *testing.T) {

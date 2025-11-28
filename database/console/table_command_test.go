@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/database/driver"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksschema "github.com/goravel/framework/mocks/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksschema "github.com/rusmanplatd/goravelframework/mocks/database/schema"
 )
 
 func TestTableCommand(t *testing.T) {

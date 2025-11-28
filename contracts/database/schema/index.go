@@ -1,6 +1,6 @@
 package schema
 
-import "github.com/goravel/framework/contracts/database/driver"
+import "github.com/rusmanplatd/goravelframework/contracts/database/driver"
 
 type ForeignKeyDefinition interface {
 	CascadeOnDelete() ForeignKeyDefinition

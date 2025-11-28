@@ -6,13 +6,14 @@ import (
 	"testing"
 	"time"
 
-	contractsschema "github.com/goravel/framework/contracts/database/schema"
-	databaseschema "github.com/goravel/framework/database/schema"
-	"github.com/goravel/framework/support/carbon"
 	"github.com/goravel/mysql"
 	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
 	"github.com/goravel/sqlserver"
+	contractsschema "github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	databaseschema "github.com/rusmanplatd/goravelframework/database/schema"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelpostgres"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
@@ -261,11 +262,11 @@ func (s *SchemaSuite) TestColumnMethods() {
 }
 
 func (s *SchemaSuite) TestColumnTypes_Postgres() {
-	if s.driverToTestQuery[postgres.Name] == nil {
+	if s.driverToTestQuery[goravelpostgres.Name] == nil {
 		s.T().Skip("Skip test")
 	}
 
-	testQuery := s.driverToTestQuery[postgres.Name]
+	testQuery := s.driverToTestQuery[goravelpostgres.Name]
 	schema := newSchema(testQuery, s.driverToTestQuery)
 	table := "postgres_columns"
 	s.createTableAndAssertColumnsForColumnMethods(schema, table)
@@ -1560,7 +1561,7 @@ func (s *SchemaSuite) TestColumnTypes_Sqlserver() {
 }
 
 func (s *SchemaSuite) TestEnum_Postgres() {
-	if s.driverToTestQuery[postgres.Name] == nil {
+	if s.driverToTestQuery[goravelpostgres.Name] == nil {
 		s.T().Skip("Skip test")
 	}
 
@@ -1800,7 +1801,7 @@ func (s *SchemaSuite) TestFullText() {
 
 			s.Require().Nil(err)
 
-			if driver == mysql.Name || driver == postgres.Name {
+			if driver == mysql.Name || driver == goravelpostgres.Name {
 				s.True(schema.HasIndex(table, "goravel_fulltext_name_fulltext"))
 				s.True(schema.HasIndex(table, "fulltext_avatar_fulltext"))
 			} else {
@@ -1821,11 +1822,11 @@ func (s *SchemaSuite) TestFullText() {
 }
 
 func (s *SchemaSuite) TestGeneratedAs_Postgres() {
-	if s.driverToTestQuery[postgres.Name] == nil {
+	if s.driverToTestQuery[goravelpostgres.Name] == nil {
 		s.T().Skip("Skip test")
 	}
 
-	testQuery := s.driverToTestQuery[postgres.Name]
+	testQuery := s.driverToTestQuery[goravelpostgres.Name]
 	schema := newSchema(testQuery, s.driverToTestQuery)
 	table := "postgres_generated_as"
 
@@ -1870,7 +1871,7 @@ func (s *SchemaSuite) TestPrimary() {
 			}))
 
 			// SQLite does not support set primary index separately
-			if driver == postgres.Name {
+			if driver == goravelpostgres.Name {
 				s.Require().True(schema.HasIndex(table, "goravel_primaries_pkey"))
 			}
 			if driver == mysql.Name {
@@ -1883,7 +1884,7 @@ func (s *SchemaSuite) TestPrimary() {
 			s.NoError(schema.Table(table, func(table contractsschema.Blueprint) {
 				table.DropPrimary("name", "age")
 			}))
-			if driver == postgres.Name {
+			if driver == goravelpostgres.Name {
 				s.Require().False(schema.HasIndex(table, "goravel_primaries_pkey"))
 			}
 			if driver == mysql.Name {
@@ -1944,11 +1945,11 @@ func (s *SchemaSuite) TestTableComment() {
 }
 
 func (s *SchemaSuite) TestID_Postgres() {
-	if s.driverToTestQuery[postgres.Name] == nil {
+	if s.driverToTestQuery[goravelpostgres.Name] == nil {
 		s.T().Skip("Skip test")
 	}
 
-	testQuery := s.driverToTestQuery[postgres.Name]
+	testQuery := s.driverToTestQuery[goravelpostgres.Name]
 	schema := newSchema(testQuery, s.driverToTestQuery)
 
 	tests := []struct {
@@ -2388,7 +2389,7 @@ func (s *SchemaSuite) TestSql() {
 
 func (s *SchemaSuite) TestTypeMethods() {
 	for driver, testQuery := range s.driverToTestQuery {
-		if driver != postgres.Name {
+		if driver != goravelpostgres.Name {
 			continue
 		}
 
@@ -2581,7 +2582,7 @@ func (s *SchemaSuite) TestViewMethods() {
 			s.Equal("goravel_view", views[0].Name)
 			s.NotEmpty(views[0].Definition)
 
-			if driver == postgres.Name || driver == sqlserver.Name {
+			if driver == goravelpostgres.Name || driver == sqlserver.Name {
 				s.NotEmpty(views[0].Schema)
 			} else {
 				s.Empty(views[0].Schema)
@@ -2598,7 +2599,7 @@ func (s *SchemaSuite) createTableAndAssertColumnsForColumnMethods(schema contrac
 		table.BigInteger("big_integer").Comment("This is a big_integer column")
 		table.Boolean("boolean_default").Default(true).Comment("This is a boolean column with default value")
 		table.Char("char").Comment("This is a char column")
-		if strings.Contains(schema.GetConnection(), postgres.Name) {
+		if strings.Contains(schema.GetConnection(), goravelpostgres.Name) {
 			table.Column("custom_type", "macaddr").Comment("This is a custom type column")
 		} else {
 			table.Column("custom_type", "geometry").Comment("This is a custom type column")

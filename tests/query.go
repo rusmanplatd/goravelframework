@@ -5,26 +5,26 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/database"
-	contractsdb "github.com/goravel/framework/contracts/database/db"
-	contractsdriver "github.com/goravel/framework/contracts/database/driver"
-	"github.com/goravel/framework/contracts/database/orm"
-	contractsdocker "github.com/goravel/framework/contracts/testing/docker"
-	databasedb "github.com/goravel/framework/database/db"
-	databasedriver "github.com/goravel/framework/database/driver"
-	databasegorm "github.com/goravel/framework/database/gorm"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/support/str"
-	"github.com/goravel/framework/testing/utils"
 	"github.com/goravel/mysql"
 	mysqlcontracts "github.com/goravel/mysql/contracts"
-	"github.com/goravel/postgres"
-	postgrescontracts "github.com/goravel/postgres/contracts"
 	"github.com/goravel/sqlite"
 	sqlitecontracts "github.com/goravel/sqlite/contracts"
 	"github.com/goravel/sqlserver"
 	sqlservercontracts "github.com/goravel/sqlserver/contracts"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/database"
+	contractsdb "github.com/rusmanplatd/goravelframework/contracts/database/db"
+	contractsdriver "github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsdocker "github.com/rusmanplatd/goravelframework/contracts/testing/docker"
+	databasedb "github.com/rusmanplatd/goravelframework/database/db"
+	databasedriver "github.com/rusmanplatd/goravelframework/database/driver"
+	databasegorm "github.com/rusmanplatd/goravelframework/database/gorm"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/support/str"
+	"github.com/rusmanplatd/goravelframework/testing/utils"
+	"github.com/rusmanplatd/goravelpostgres"
+	postgrescontracts "github.com/rusmanplatd/goravelpostgres/contracts"
 )
 
 type TestQuery struct {
@@ -98,7 +98,7 @@ func (r *TestQuery) Query() orm.Query {
 
 func (r *TestQuery) WithSchema(schema string) {
 	dbConfig := r.driver.Pool().Writers[0]
-	if dbConfig.Driver != postgres.Name && dbConfig.Driver != sqlserver.Name {
+	if dbConfig.Driver != goravelpostgres.Name && dbConfig.Driver != sqlserver.Name {
 		panic(fmt.Sprintf("%s does not support schema", dbConfig.Driver))
 	}
 
@@ -285,9 +285,9 @@ func (r *TestQueryBuilder) single(driver, prefix, timezone string, singular bool
 	)
 
 	switch driver {
-	case postgres.Name:
-		dockerDriver = postgres.NewDocker(postgres.NewConfig(mockConfig, connection), testDatabase, testUsername, testPassword)
-		databaseDriver = postgres.NewPostgres(mockConfig, utils.NewTestLog(), connection)
+	case goravelpostgres.Name:
+		dockerDriver = goravelpostgres.NewDocker(goravelpostgres.NewConfig(mockConfig, connection), testDatabase, testUsername, testPassword)
+		databaseDriver = goravelpostgres.NewPostgres(mockConfig, utils.NewTestLog(), connection)
 	case mysql.Name:
 		dockerDriver = mysql.NewDocker(mysql.NewConfig(mockConfig, connection), testDatabase, testUsername, testPassword)
 		databaseDriver = mysql.NewMysql(mockConfig, utils.NewTestLog(), connection)
@@ -353,8 +353,8 @@ func (r *TestQueryBuilder) mix(driver string, writeDatabaseConfig, readDatabaseC
 	)
 
 	switch driver {
-	case postgres.Name:
-		databaseDriver = postgres.NewPostgres(mockConfig, utils.NewTestLog(), connection)
+	case goravelpostgres.Name:
+		databaseDriver = goravelpostgres.NewPostgres(mockConfig, utils.NewTestLog(), connection)
 		mockConfig.EXPECT().Get(fmt.Sprintf("database.connections.%s.write", connection)).Return([]postgrescontracts.Config{
 			{
 				Host:     writeDatabaseConfig.Host,

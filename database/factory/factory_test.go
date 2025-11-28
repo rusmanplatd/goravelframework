@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	gormio "gorm.io/gorm"
 
-	"github.com/goravel/framework/contracts/database/factory"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/database/factory"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type Model struct {

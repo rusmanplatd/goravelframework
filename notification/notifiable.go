@@ -3,9 +3,9 @@ package notification
 import (
 	"fmt"
 
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
-	databaseorm "github.com/goravel/framework/database/orm"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
+	databaseorm "github.com/rusmanplatd/goravelframework/database/orm"
 )
 
 // Notifiable provides notification functionality to models.

@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/urfave/cli/v3"
 
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 func TestAsk(_ *testing.T) {

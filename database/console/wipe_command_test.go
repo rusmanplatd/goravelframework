@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/errors"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksschema "github.com/goravel/framework/mocks/database/schema"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksschema "github.com/rusmanplatd/goravelframework/mocks/database/schema"
 )
 
 func TestWipeCommand(t *testing.T) {

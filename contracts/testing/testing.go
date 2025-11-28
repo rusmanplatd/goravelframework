@@ -1,7 +1,7 @@
 package testing
 
 import (
-	"github.com/goravel/framework/contracts/testing/docker"
+	"github.com/rusmanplatd/goravelframework/contracts/testing/docker"
 )
 
 type Testing interface {

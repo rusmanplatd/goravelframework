@@ -1,6 +1,6 @@
 package notification
 
-import "github.com/goravel/framework/contracts/mail"
+import "github.com/rusmanplatd/goravelframework/contracts/mail"
 
 // Notification represents a notification that can be sent through various channels.
 type Notification interface {

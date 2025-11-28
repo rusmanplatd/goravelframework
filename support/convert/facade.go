@@ -1,7 +1,7 @@
 package convert
 
 import (
-	"github.com/goravel/framework/contracts/facades"
+	"github.com/rusmanplatd/goravelframework/contracts/facades"
 )
 
 func BindingToFacade(binding string) string {

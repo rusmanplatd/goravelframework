@@ -3,7 +3,7 @@ package orm
 import (
 	"gorm.io/gorm"
 
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 // DatabaseNotification represents a notification stored in the database.

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
 )
 
 // BroadcastEvent wraps an event for queued broadcasting.

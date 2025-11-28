@@ -7,7 +7,7 @@ func (r Stubs) Rule() string {
 	return `package DummyPackage
 
 import (
-	"github.com/goravel/framework/contracts/validation"
+	"github.com/rusmanplatd/goravelframework/contracts/validation"
 )
 
 type DummyRule struct {

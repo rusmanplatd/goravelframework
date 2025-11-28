@@ -12,11 +12,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/foundation"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	"github.com/goravel/framework/support"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	"github.com/rusmanplatd/goravelframework/support"
 )
 
 type ApplicationTestSuite struct {

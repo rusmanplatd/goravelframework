@@ -12,11 +12,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/goravel/framework/contracts/foundation"
-	contractssession "github.com/goravel/framework/contracts/session"
-	contractshttp "github.com/goravel/framework/contracts/testing/http"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractssession "github.com/rusmanplatd/goravelframework/contracts/session"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/testing/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type TestResponseImpl struct {

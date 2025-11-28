@@ -1,10 +1,10 @@
 package migration
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/contracts/database/migration"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/contracts/database/migration"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type MigrateStatusCommand struct {

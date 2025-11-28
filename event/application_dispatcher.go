@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/goravel/framework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
 )
 
 // Listen registers an event listener with the dispatcher.

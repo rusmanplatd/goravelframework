@@ -3,7 +3,7 @@ package notification
 import (
 	"github.com/google/uuid"
 
-	contractsnotification "github.com/goravel/framework/contracts/notification"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
 )
 
 // BaseNotification provides a base implementation for notifications.

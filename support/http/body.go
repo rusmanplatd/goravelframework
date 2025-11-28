@@ -12,10 +12,10 @@ import (
 
 	"github.com/spf13/cast"
 
-	"github.com/goravel/framework/contracts/support/http"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/collect"
-	"github.com/goravel/framework/support/maps"
+	"github.com/rusmanplatd/goravelframework/contracts/support/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/collect"
+	"github.com/rusmanplatd/goravelframework/support/maps"
 )
 
 const (

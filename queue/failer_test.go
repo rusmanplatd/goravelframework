@@ -6,14 +6,14 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/database/db"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	mocksdb "github.com/goravel/framework/mocks/database/db"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
-	"github.com/goravel/framework/queue/models"
-	"github.com/goravel/framework/queue/utils"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	mocksdb "github.com/rusmanplatd/goravelframework/mocks/database/db"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/queue/models"
+	"github.com/rusmanplatd/goravelframework/queue/utils"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type FailerTestSuite struct {

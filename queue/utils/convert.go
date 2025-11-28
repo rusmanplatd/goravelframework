@@ -5,9 +5,9 @@ import (
 
 	"github.com/spf13/cast"
 
-	"github.com/goravel/framework/contracts/foundation"
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/support/convert"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 type Task struct {

@@ -11,16 +11,16 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/database/migration"
-	"github.com/goravel/framework/contracts/database/orm"
-	contractsschema "github.com/goravel/framework/contracts/database/schema"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksmigration "github.com/goravel/framework/mocks/database/migration"
-	mocksorm "github.com/goravel/framework/mocks/database/orm"
-	mocksschema "github.com/goravel/framework/mocks/database/schema"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/color"
-	"github.com/goravel/framework/support/file"
+	"github.com/rusmanplatd/goravelframework/contracts/database/migration"
+	"github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	contractsschema "github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksmigration "github.com/rusmanplatd/goravelframework/mocks/database/migration"
+	mocksorm "github.com/rusmanplatd/goravelframework/mocks/database/orm"
+	mocksschema "github.com/rusmanplatd/goravelframework/mocks/database/schema"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type MigratorSuite struct {

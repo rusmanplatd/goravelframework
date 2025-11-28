@@ -5,8 +5,8 @@ import (
 
 	"github.com/go-viper/mapstructure/v2"
 
-	"github.com/goravel/framework/database/db"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/database/db"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type Row struct {

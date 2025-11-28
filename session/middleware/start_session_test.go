@@ -11,13 +11,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	contractsession "github.com/goravel/framework/contracts/session"
-	"github.com/goravel/framework/foundation/json"
-	configmocks "github.com/goravel/framework/mocks/config"
-	"github.com/goravel/framework/session"
-	"github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/path"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/http"
+	contractsession "github.com/rusmanplatd/goravelframework/contracts/session"
+	"github.com/rusmanplatd/goravelframework/foundation/json"
+	configmocks "github.com/rusmanplatd/goravelframework/mocks/config"
+	"github.com/rusmanplatd/goravelframework/session"
+	"github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/path"
 )
 
 func testHttpSessionMiddleware(next nethttp.Handler, mockConfig *configmocks.Config) nethttp.Handler {

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"io"
 
-	contractsprocess "github.com/goravel/framework/contracts/process"
+	contractsprocess "github.com/rusmanplatd/goravelframework/contracts/process"
 )
 
 type OutputWriterHandler func(typ contractsprocess.OutputType, line []byte, key string)

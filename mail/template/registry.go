@@ -3,9 +3,9 @@ package template
 import (
 	"sync"
 
-	"github.com/goravel/framework/contracts/config"
-	contractsmail "github.com/goravel/framework/contracts/mail"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	contractsmail "github.com/rusmanplatd/goravelframework/contracts/mail"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 const (

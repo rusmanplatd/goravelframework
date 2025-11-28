@@ -1,8 +1,8 @@
 package events
 
 import (
-	contractsevent "github.com/goravel/framework/contracts/event"
-	contractsnotification "github.com/goravel/framework/contracts/notification"
+	contractsevent "github.com/rusmanplatd/goravelframework/contracts/event"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
 )
 
 // NotificationSending is fired before a notification is sent.

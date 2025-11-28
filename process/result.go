@@ -3,7 +3,7 @@ package process
 import (
 	"strings"
 
-	contractsprocess "github.com/goravel/framework/contracts/process"
+	contractsprocess "github.com/rusmanplatd/goravelframework/contracts/process"
 )
 
 var _ contractsprocess.Result = (*Result)(nil)

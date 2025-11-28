@@ -33,7 +33,7 @@
     {
       "groupName": "upgrade DB packages",
       "automerge": true,
-      "matchPackageNames": ["github.com/goravel/mysql", "github.com/goravel/postgres", "github.com/goravel/sqlite", "github.com/goravel/sqlserver"],
+      "matchPackageNames": ["github.com/goravel/mysql", "github.com/rusmanplatd/goravelpostgres", "github.com/goravel/sqlite", "github.com/goravel/sqlserver"],
       "allowedVersions": ">=0.0.0",
       "matchFileNames": ["tests/go.mod"]
     }

@@ -1,15 +1,15 @@
 package foundation
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/contracts/database/seeder"
-	"github.com/goravel/framework/contracts/event"
-	"github.com/goravel/framework/contracts/foundation"
-	contractsconfiguration "github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/contracts/schedule"
-	"github.com/goravel/framework/foundation/configuration"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/event"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractsconfiguration "github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
+	"github.com/rusmanplatd/goravelframework/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/support/color"
 	"google.golang.org/grpc"
 )
 

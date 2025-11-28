@@ -7,7 +7,7 @@ package broadcast
 import (
 	"fmt"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
 	"github.com/pusher/pusher-http-go/v5"
 )
 

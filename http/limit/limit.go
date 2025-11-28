@@ -3,8 +3,8 @@ package limit
 import (
 	"time"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/http"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/http"
 )
 
 func PerMinute(maxAttempts int) contractshttp.Limit {

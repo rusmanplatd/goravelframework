@@ -6,11 +6,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksqueue "github.com/goravel/framework/mocks/queue"
-	"github.com/goravel/framework/support/carbon"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksqueue "github.com/rusmanplatd/goravelframework/mocks/queue"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type QueueFailedCommandTestSuite struct {

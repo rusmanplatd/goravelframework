@@ -5,7 +5,7 @@ package process
 import (
 	context "context"
 
-	process "github.com/goravel/framework/contracts/process"
+	process "github.com/rusmanplatd/goravelframework/contracts/process"
 	mock "github.com/stretchr/testify/mock"
 
 	time "time"

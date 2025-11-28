@@ -3,8 +3,8 @@ package queue
 import (
 	"sync"
 
-	contractsqueue "github.com/goravel/framework/contracts/queue"
-	"github.com/goravel/framework/errors"
+	contractsqueue "github.com/rusmanplatd/goravelframework/contracts/queue"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type JobStorer struct {

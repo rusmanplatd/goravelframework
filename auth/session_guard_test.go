@@ -6,16 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/http"
-	"github.com/goravel/framework/errors"
-	mocksauth "github.com/goravel/framework/mocks/auth"
-	mockscache "github.com/goravel/framework/mocks/cache"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksorm "github.com/goravel/framework/mocks/database/orm"
-	mockshttp "github.com/goravel/framework/mocks/http"
-	mockslog "github.com/goravel/framework/mocks/log"
-	mockssession "github.com/goravel/framework/mocks/session"
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	"github.com/rusmanplatd/goravelframework/errors"
+	mocksauth "github.com/rusmanplatd/goravelframework/mocks/auth"
+	mockscache "github.com/rusmanplatd/goravelframework/mocks/cache"
+	mocksconfig "github.com/rusmanplatd/goravelframework/mocks/config"
+	mocksorm "github.com/rusmanplatd/goravelframework/mocks/database/orm"
+	mockshttp "github.com/rusmanplatd/goravelframework/mocks/http"
+	mockslog "github.com/rusmanplatd/goravelframework/mocks/log"
+	mockssession "github.com/rusmanplatd/goravelframework/mocks/session"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type SessionGuardTestSuite struct {

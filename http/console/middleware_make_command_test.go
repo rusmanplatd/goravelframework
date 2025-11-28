@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	"github.com/goravel/framework/support/file"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 func TestMiddlewareMakeCommand(t *testing.T) {
@@ -55,7 +55,7 @@ func TestMiddlewareMakeCommand_WithBootstrapSetup(t *testing.T) {
 	bootstrapContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -89,9 +89,9 @@ func Boot() {
 	expectedContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/app/http/middleware"
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/app/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {
@@ -122,7 +122,7 @@ func TestMiddlewareMakeCommand_WithBootstrapSetupRegistrationFailed(t *testing.T
 	bootstrapContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {

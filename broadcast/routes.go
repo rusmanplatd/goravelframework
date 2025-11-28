@@ -1,9 +1,9 @@
 package broadcast
 
 import (
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
-	contractshttp "github.com/goravel/framework/contracts/http"
-	contractroute "github.com/goravel/framework/contracts/route"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
+	contractshttp "github.com/rusmanplatd/goravelframework/contracts/http"
+	contractroute "github.com/rusmanplatd/goravelframework/contracts/route"
 )
 
 // RegisterBroadcastRoutes registers the broadcast authentication routes.

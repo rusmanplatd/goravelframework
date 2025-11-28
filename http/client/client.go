@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/goravel/framework/contracts/http/client"
+	"github.com/rusmanplatd/goravelframework/contracts/http/client"
 )
 
 var (

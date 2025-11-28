@@ -4,7 +4,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	"gorm.io/gorm"
 
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 var NameMapper = func(s string) string {

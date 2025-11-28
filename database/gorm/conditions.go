@@ -1,8 +1,8 @@
 package gorm
 
 import (
-	contractsdriver "github.com/goravel/framework/contracts/database/driver"
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
+	contractsdriver "github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
 )
 
 type Conditions struct {

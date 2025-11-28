@@ -11,11 +11,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	contractsmatch "github.com/goravel/framework/contracts/packages/match"
-	"github.com/goravel/framework/contracts/packages/modify"
-	"github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/packages/options"
-	supportfile "github.com/goravel/framework/support/file"
+	contractsmatch "github.com/rusmanplatd/goravelframework/contracts/packages/match"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/modify"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	"github.com/rusmanplatd/goravelframework/packages/options"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
 )
 
 type FileTestSuite struct {

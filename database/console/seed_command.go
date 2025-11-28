@@ -1,11 +1,11 @@
 package console
 
 import (
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	contractsseeder "github.com/goravel/framework/contracts/database/seeder"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	contractsseeder "github.com/rusmanplatd/goravelframework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type SeedCommand struct {

@@ -3,7 +3,7 @@
 package process
 
 import (
-	process "github.com/goravel/framework/contracts/process"
+	process "github.com/rusmanplatd/goravelframework/contracts/process"
 	mock "github.com/stretchr/testify/mock"
 )
 

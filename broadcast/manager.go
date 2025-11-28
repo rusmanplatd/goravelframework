@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"sync"
 
-	contractsbroadcast "github.com/goravel/framework/contracts/broadcast"
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/foundation"
-	contractslog "github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/errors"
+	contractsbroadcast "github.com/rusmanplatd/goravelframework/contracts/broadcast"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	contractslog "github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 // Ensure interface implementation

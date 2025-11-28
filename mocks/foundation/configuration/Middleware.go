@@ -3,8 +3,8 @@
 package configuration
 
 import (
-	configuration "github.com/goravel/framework/contracts/foundation/configuration"
-	http "github.com/goravel/framework/contracts/http"
+	configuration "github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	http "github.com/rusmanplatd/goravelframework/contracts/http"
 
 	mock "github.com/stretchr/testify/mock"
 )

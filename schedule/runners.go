@@ -1,7 +1,7 @@
 package schedule
 
 import (
-	"github.com/goravel/framework/contracts/schedule"
+	"github.com/rusmanplatd/goravelframework/contracts/schedule"
 )
 
 type ScheduleRunner struct {

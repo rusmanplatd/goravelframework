@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	gormio "gorm.io/gorm"
 
-	contractsdriver "github.com/goravel/framework/contracts/database/driver"
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/convert"
+	contractsdriver "github.com/rusmanplatd/goravelframework/contracts/database/driver"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/convert"
 )
 
 func TestAddWhere(t *testing.T) {

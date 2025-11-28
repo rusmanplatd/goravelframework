@@ -7,9 +7,9 @@ import (
 	"github.com/dave/dst"
 	"github.com/dave/dst/decorator"
 
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/support/path/internals"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	"github.com/rusmanplatd/goravelframework/support/path/internals"
 )
 
 // AddCommand adds command to the foundation.Setup() chain in the Boot function.
@@ -41,7 +41,7 @@ import (
 // And creates bootstrap/commands.go:
 //
 //	package bootstrap
-//	import "github.com/goravel/framework/contracts/console"
+//	import "github.com/rusmanplatd/goravelframework/contracts/console"
 //	func Commands() []console.Command {
 //	  return []console.Command{&commands.ExampleCommand{}}
 //	}
@@ -67,7 +67,7 @@ func AddCommand(pkg, command string) error {
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -149,7 +149,7 @@ func AddMiddleware(pkg, middleware string) error {
 // And creates bootstrap/migrations.go:
 //
 //	package bootstrap
-//	import "github.com/goravel/framework/contracts/database/schema"
+//	import "github.com/rusmanplatd/goravelframework/contracts/database/schema"
 //	func Migrations() []schema.Migration {
 //	  return []schema.Migration{&migrations.ExampleMigration{}}
 //	}
@@ -175,7 +175,7 @@ func AddMigration(pkg, migration string) error {
 		helperFuncName:  "Migrations",
 		typePackage:     "schema",
 		typeName:        "Migration",
-		typeImportPath:  "github.com/goravel/framework/contracts/database/schema",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/database/schema",
 		fileExistsError: errors.PackageMigrationsFileExists,
 		stubTemplate:    migrations,
 		matcherFunc:     match.Migrations,
@@ -214,7 +214,7 @@ func AddMigration(pkg, migration string) error {
 // And creates bootstrap/providers.go:
 //
 //	package bootstrap
-//	import "github.com/goravel/framework/contracts/foundation"
+//	import "github.com/rusmanplatd/goravelframework/contracts/foundation"
 //	func Providers() []foundation.ServiceProvider {
 //	  return []foundation.ServiceProvider{&providers.AppServiceProvider{}}
 //	}
@@ -240,7 +240,7 @@ func AddProvider(pkg, provider string) error {
 		helperFuncName:  "Providers",
 		typePackage:     "foundation",
 		typeName:        "ServiceProvider",
-		typeImportPath:  "github.com/goravel/framework/contracts/foundation",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/foundation",
 		fileExistsError: errors.PackageProvidersFileExists,
 		stubTemplate:    providers,
 		matcherFunc:     match.Providers,
@@ -279,7 +279,7 @@ func AddProvider(pkg, provider string) error {
 // And creates bootstrap/seeders.go:
 //
 //	package bootstrap
-//	import "github.com/goravel/framework/contracts/database/seeder"
+//	import "github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 //	func Seeders() []seeder.Seeder {
 //	  return []seeder.Seeder{&seeders.ExampleSeeder{}}
 //	}
@@ -305,7 +305,7 @@ func AddSeeder(pkg, seeder string) error {
 		helperFuncName:  "Seeders",
 		typePackage:     "seeder",
 		typeName:        "Seeder",
-		typeImportPath:  "github.com/goravel/framework/contracts/database/seeder",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/database/seeder",
 		fileExistsError: errors.PackageSeedersFileExists,
 		stubTemplate:    seeders,
 		matcherFunc:     match.Seeders,
@@ -367,7 +367,7 @@ func ExprIndex(x []dst.Expr, y dst.Expr) int {
 //
 // Parameters:
 //   - df: The parsed Go file to inspect
-//   - path: Import path of the package (e.g., "github.com/goravel/framework/contracts/console")
+//   - path: Import path of the package (e.g., "github.com/rusmanplatd/goravelframework/contracts/console")
 //   - name: Optional package name. If not provided, uses the last segment of the path
 //
 // Returns true if the package is used anywhere in the file, false otherwise.
@@ -375,12 +375,12 @@ func ExprIndex(x []dst.Expr, y dst.Expr) int {
 // Example:
 //
 //	file, _ := decorator.Parse(src)
-//	// Check if "console" package from "github.com/goravel/framework/contracts/console" is used
-//	if IsUsingImport(file, "github.com/goravel/framework/contracts/console") {
+//	// Check if "console" package from "github.com/rusmanplatd/goravelframework/contracts/console" is used
+//	if IsUsingImport(file, "github.com/rusmanplatd/goravelframework/contracts/console") {
 //		fmt.Println("console package is being used")
 //	}
 //	// Or specify a custom name
-//	if IsUsingImport(file, "github.com/goravel/framework/contracts/console", "customName") {
+//	if IsUsingImport(file, "github.com/rusmanplatd/goravelframework/contracts/console", "customName") {
 //		fmt.Println("Package with alias 'customName' is being used")
 //	}
 func IsUsingImport(df *dst.File, path string, name ...string) bool {
@@ -553,7 +553,7 @@ func RemoveProvider(pkg, provider string) error {
 		helperFuncName: "Providers",
 		typePackage:    "foundation",
 		typeName:       "ServiceProvider",
-		typeImportPath: "github.com/goravel/framework/contracts/foundation",
+		typeImportPath: "github.com/rusmanplatd/goravelframework/contracts/foundation",
 		matcherFunc:    match.Providers,
 	}
 
@@ -614,7 +614,7 @@ func WrapNewline[T dst.Node](node T) T {
 //
 //	isThirdParty("fmt") // false - standard library
 //	isThirdParty("encoding/json") // false - standard library
-//	isThirdParty("github.com/goravel/framework") // true - third party
+//	isThirdParty("github.com/rusmanplatd/goravelframework") // true - third party
 //	isThirdParty("example.com/package") // true - third party
 func isThirdParty(importPath string) bool {
 	// Third party package import path usually contains "." (".com", ".org", ...)

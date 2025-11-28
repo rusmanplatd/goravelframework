@@ -1,11 +1,11 @@
 package cache
 
 import (
-	"github.com/goravel/framework/cache/console"
-	"github.com/goravel/framework/contracts/binding"
-	contractsconsole "github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
+	"github.com/rusmanplatd/goravelframework/cache/console"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	contractsconsole "github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type ServiceProvider struct {

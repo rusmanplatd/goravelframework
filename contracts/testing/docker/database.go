@@ -1,6 +1,6 @@
 package docker
 
-import "github.com/goravel/framework/contracts/database/seeder"
+import "github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 
 type Database interface {
 	DatabaseDriver

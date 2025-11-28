@@ -10,7 +10,7 @@ import (
 	"github.com/dave/dst/dstutil"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/packages/match"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/match"
 )
 
 type MatchGoNodeTestSuite struct {
@@ -23,9 +23,9 @@ func (s *MatchGoNodeTestSuite) SetupTest() {
 	s.source, err = decorator.Parse(`package config
 
 import (
-	"github.com/goravel/framework/auth"
-	"github.com/goravel/framework/contracts/foundation"
-	facades "github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/auth"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	facades "github.com/rusmanplatd/goravelframework/facades"
 )
 
 func Boot() {}
@@ -167,7 +167,7 @@ func (s *MatchGoNodeTestSuite) TestMatch() {
 		},
 		{
 			name:    "match import spec",
-			matcher: Import("github.com/goravel/framework/facades", "facades"),
+			matcher: Import("github.com/rusmanplatd/goravelframework/facades", "facades"),
 			assert: func(node dst.Node) {
 				s.True(
 					EqualNode(node).MatchNode(
@@ -175,7 +175,7 @@ func (s *MatchGoNodeTestSuite) TestMatch() {
 							Name: &dst.Ident{Name: "facades"},
 							Path: &dst.BasicLit{
 								Kind:  token.STRING,
-								Value: strconv.Quote("github.com/goravel/framework/facades"),
+								Value: strconv.Quote("github.com/rusmanplatd/goravelframework/facades"),
 							},
 						},
 					),
@@ -188,7 +188,7 @@ func (s *MatchGoNodeTestSuite) TestMatch() {
 			assert: func(node dst.Node) {
 				n, ok := node.(*dst.ImportSpec)
 				s.True(ok)
-				s.True(Import("github.com/goravel/framework/auth").MatchNode(n))
+				s.True(Import("github.com/rusmanplatd/goravelframework/auth").MatchNode(n))
 			},
 		},
 		{
@@ -197,7 +197,7 @@ func (s *MatchGoNodeTestSuite) TestMatch() {
 			assert: func(node dst.Node) {
 				n, ok := node.(*dst.ImportSpec)
 				s.True(ok)
-				s.True(Import("github.com/goravel/framework/facades", "facades").MatchNode(n))
+				s.True(Import("github.com/rusmanplatd/goravelframework/facades", "facades").MatchNode(n))
 			},
 		},
 		{

@@ -5,10 +5,10 @@ import (
 
 	"github.com/spf13/cast"
 
-	contractsauth "github.com/goravel/framework/contracts/auth"
-	"github.com/goravel/framework/contracts/http"
-	contractsession "github.com/goravel/framework/contracts/session"
-	"github.com/goravel/framework/errors"
+	contractsauth "github.com/rusmanplatd/goravelframework/contracts/auth"
+	"github.com/rusmanplatd/goravelframework/contracts/http"
+	contractsession "github.com/rusmanplatd/goravelframework/contracts/session"
+	"github.com/rusmanplatd/goravelframework/errors"
 )
 
 type SessionGuard struct {

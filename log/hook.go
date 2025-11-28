@@ -4,7 +4,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cast"
 
-	"github.com/goravel/framework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
 )
 
 type Hook struct {

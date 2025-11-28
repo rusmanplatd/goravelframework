@@ -3,7 +3,7 @@ package notification
 import (
 	"encoding/json"
 
-	contractsnotification "github.com/goravel/framework/contracts/notification"
+	contractsnotification "github.com/rusmanplatd/goravelframework/contracts/notification"
 )
 
 // SendQueuedNotificationJob is a queue job for sending notifications.

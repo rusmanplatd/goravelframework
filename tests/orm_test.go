@@ -8,11 +8,11 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	databasedb "github.com/goravel/framework/database/db"
-	"github.com/goravel/framework/database/orm"
-	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	databasedb "github.com/rusmanplatd/goravelframework/database/db"
+	"github.com/rusmanplatd/goravelframework/database/orm"
+	"github.com/rusmanplatd/goravelpostgres"
 )
 
 type OrmSuite struct {
@@ -30,7 +30,7 @@ func TestOrmSuite(t *testing.T) {
 }
 
 func (s *OrmSuite) SetupSuite() {
-	s.defaultConnection = postgres.Name
+	s.defaultConnection = goravelpostgres.Name
 	s.queries = NewTestQueryBuilder().All("", false)
 }
 

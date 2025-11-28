@@ -8,7 +8,7 @@ func (s Stubs) LangFacade() string {
 import (
 	"context"
 
-	"github.com/goravel/framework/contracts/translation"
+	"github.com/rusmanplatd/goravelframework/contracts/translation"
 )
 
 func Lang(ctx context.Context) translation.Translator {

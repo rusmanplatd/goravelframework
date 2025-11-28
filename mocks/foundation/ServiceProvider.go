@@ -3,7 +3,7 @@
 package foundation
 
 import (
-	foundation "github.com/goravel/framework/contracts/foundation"
+	foundation "github.com/rusmanplatd/goravelframework/contracts/foundation"
 	mock "github.com/stretchr/testify/mock"
 )
 

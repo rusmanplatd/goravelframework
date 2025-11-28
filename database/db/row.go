@@ -8,8 +8,8 @@ import (
 	"github.com/go-viper/mapstructure/v2"
 	"gorm.io/gorm"
 
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type Row struct {

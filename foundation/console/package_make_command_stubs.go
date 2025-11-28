@@ -3,7 +3,7 @@ package console
 import (
 	"strings"
 
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type PackageMakeCommandStubs struct {
@@ -27,8 +27,8 @@ func (r PackageMakeCommandStubs) ServiceProvider() string {
 	content := `package DummyName
 
 import (
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
 )
 
 const Binding = "DummyPackage"
@@ -84,7 +84,7 @@ func (r PackageMakeCommandStubs) Config() string {
 	content := `package config
 
 import (
-	"github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/facades"
 )
 
 func init() {
@@ -141,10 +141,10 @@ func (r PackageMakeCommandStubs) Setup() string {
 import (
 	"os"
 
-	"github.com/goravel/framework/packages"
-	"github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/packages/modify"
-	"github.com/goravel/framework/support/path"
+	"github.com/rusmanplatd/goravelframework/packages"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	"github.com/rusmanplatd/goravelframework/packages/modify"
+	"github.com/rusmanplatd/goravelframework/support/path"
 )
 
 func main() {

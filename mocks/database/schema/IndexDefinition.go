@@ -3,7 +3,7 @@
 package schema
 
 import (
-	schema "github.com/goravel/framework/contracts/database/schema"
+	schema "github.com/rusmanplatd/goravelframework/contracts/database/schema"
 	mock "github.com/stretchr/testify/mock"
 )
 

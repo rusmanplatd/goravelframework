@@ -6,16 +6,16 @@ import (
 	"slices"
 	"strings"
 
-	contractsbinding "github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/packages"
-	"github.com/goravel/framework/support/collect"
-	"github.com/goravel/framework/support/color"
-	supportconsole "github.com/goravel/framework/support/console"
-	"github.com/goravel/framework/support/convert"
-	"github.com/goravel/framework/support/str"
+	contractsbinding "github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/packages"
+	"github.com/rusmanplatd/goravelframework/support/collect"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
+	"github.com/rusmanplatd/goravelframework/support/convert"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 type PackageInstallCommand struct {
@@ -145,7 +145,7 @@ func (r *PackageInstallCommand) selectFacades(ctx console.Context) ([]string, er
 
 func (r *PackageInstallCommand) inputThirdPackage(ctx console.Context) (string, error) {
 	return ctx.Ask("Enter the package", console.AskOption{
-		Description: "E.g.: github.com/goravel/framework or github.com/goravel/framework@master",
+		Description: "E.g.: github.com/rusmanplatd/goravelframework or github.com/rusmanplatd/goravelframework@master",
 	})
 }
 

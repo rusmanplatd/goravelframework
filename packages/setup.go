@@ -6,11 +6,11 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/goravel/framework/contracts/packages"
-	"github.com/goravel/framework/contracts/packages/modify"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/packages/options"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/packages"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/modify"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/packages/options"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type setup struct {
@@ -25,7 +25,7 @@ type setup struct {
 
 var osExit = os.Exit
 
-// GetModulePath returns the module path of package, it may be a sub-package, eg: github.com/goravel/framework/auth.
+// GetModulePath returns the module path of package, it may be a sub-package, eg: github.com/rusmanplatd/goravelframework/auth.
 func GetModulePath() string {
 	if info, ok := debug.ReadBuildInfo(); ok && strings.HasSuffix(info.Path, "setup") {
 		return path.Dir(info.Path)

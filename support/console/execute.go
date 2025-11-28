@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 )
 
 func ExecuteCommand(ctx console.Context, cmd *exec.Cmd, message ...string) error {

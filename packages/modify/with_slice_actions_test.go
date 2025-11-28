@@ -11,11 +11,11 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/packages/match"
-	"github.com/goravel/framework/support"
-	supportfile "github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/path/internals"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/packages/match"
+	"github.com/rusmanplatd/goravelframework/support"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/path/internals"
 )
 
 type WithSliceHandlerTestSuite struct {
@@ -44,7 +44,7 @@ func (s *WithSliceHandlerTestSuite) TestNewWithSliceHandler() {
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -54,7 +54,7 @@ func (s *WithSliceHandlerTestSuite) TestNewWithSliceHandler() {
 		// Create app.go file
 		s.Require().NoError(supportfile.PutContent(s.appFile, `package bootstrap
 
-import "github.com/goravel/framework/foundation"
+import "github.com/rusmanplatd/goravelframework/foundation"
 
 func Boot() {
 	foundation.Setup().Run()
@@ -82,7 +82,7 @@ func Boot() {
 		// Create both app.go and commands.go
 		s.Require().NoError(supportfile.PutContent(s.appFile, `package bootstrap
 
-import "github.com/goravel/framework/foundation"
+import "github.com/rusmanplatd/goravelframework/foundation"
 
 func Boot() {
 	foundation.Setup().Run()
@@ -92,7 +92,7 @@ func Boot() {
 		commandsFile := filepath.Join(s.bootstrapDir, "commands.go")
 		s.Require().NoError(supportfile.PutContent(commandsFile, `package bootstrap
 
-import "github.com/goravel/framework/contracts/console"
+import "github.com/rusmanplatd/goravelframework/contracts/console"
 
 func Commands() []console.Command {
 	return []console.Command{}
@@ -113,7 +113,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_NoWithMethod_NoFile() {
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -122,7 +122,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_NoWithMethod_NoFile() {
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -158,7 +158,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_NoWithMethod_FileExists() {
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -167,7 +167,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_NoWithMethod_FileExists() {
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -181,7 +181,7 @@ func Boot() {
 	commandsFile := filepath.Join(s.bootstrapDir, "commands.go")
 	s.Require().NoError(supportfile.PutContent(commandsFile, `package bootstrap
 
-import "github.com/goravel/framework/contracts/console"
+import "github.com/rusmanplatd/goravelframework/contracts/console"
 
 func Commands() []console.Command {
 	return []console.Command{}
@@ -202,7 +202,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_WithMethodExists_FileExists() {
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -211,7 +211,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_WithMethodExists_FileExists() {
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -226,7 +226,7 @@ func Boot() {
 	s.Require().NoError(supportfile.PutContent(commandsFile, `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -257,7 +257,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_WithMethodExists_NoFile_InlineAr
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -266,8 +266,8 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_WithMethodExists_NoFile_InlineAr
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 	"goravel/config"
 )
@@ -302,7 +302,7 @@ func (s *WithSliceHandlerTestSuite) TestCheckWithMethodExists() {
 	// Test when method exists
 	appContent := `package bootstrap
 
-import "github.com/goravel/framework/foundation"
+import "github.com/rusmanplatd/goravelframework/foundation"
 
 func Boot() {
 	foundation.Setup().WithCommands(Commands()).Run()
@@ -319,7 +319,7 @@ func Boot() {
 	// Test when method doesn't exist
 	appContent = `package bootstrap
 
-import "github.com/goravel/framework/foundation"
+import "github.com/rusmanplatd/goravelframework/foundation"
 
 func Boot() {
 	foundation.Setup().Run()
@@ -358,12 +358,12 @@ func (s *WithSliceHandlerTestSuite) TestCreateFile() {
 func (s *WithSliceHandlerTestSuite) TestAddImports() {
 	config := withSliceConfig{
 		fileName:       "commands.go",
-		typeImportPath: "github.com/goravel/framework/contracts/console",
+		typeImportPath: "github.com/rusmanplatd/goravelframework/contracts/console",
 	}
 
 	appContent := `package bootstrap
 
-import "github.com/goravel/framework/foundation"
+import "github.com/rusmanplatd/goravelframework/foundation"
 
 func Boot() {
 	foundation.Setup().Run()
@@ -379,7 +379,7 @@ func Boot() {
 	content, err := supportfile.GetContent(s.appFile)
 	s.NoError(err)
 	s.Contains(content, `"goravel/app/console/commands"`)
-	s.Contains(content, `"github.com/goravel/framework/contracts/console"`)
+	s.Contains(content, `"github.com/rusmanplatd/goravelframework/contracts/console"`)
 }
 
 func (s *WithSliceHandlerTestSuite) TestAddItemToFile() {
@@ -394,7 +394,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItemToFile() {
 	commandsContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 )
 
 func Commands() []console.Command {
@@ -595,8 +595,8 @@ func (s *WithSliceHandlerTestSuite) TestSetupInline() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 )
 
@@ -625,8 +625,8 @@ func Boot() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 )
 
@@ -658,7 +658,7 @@ func (s *WithSliceHandlerTestSuite) TestSetupWithFunction() {
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -686,7 +686,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_WithMigrations() {
 		helperFuncName:  "Migrations",
 		typePackage:     "schema",
 		typeName:        "Migration",
-		typeImportPath:  "github.com/goravel/framework/contracts/database/schema",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/database/schema",
 		fileExistsError: errors.PackageMigrationsFileExists,
 		stubTemplate:    migrations,
 		matcherFunc:     match.Migrations,
@@ -695,7 +695,7 @@ func (s *WithSliceHandlerTestSuite) TestAddItem_WithMigrations() {
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -731,7 +731,7 @@ func (s *WithSliceHandlerTestSuite) TestRemoveItem() {
 		helperFuncName:  "Commands",
 		typePackage:     "console",
 		typeName:        "Command",
-		typeImportPath:  "github.com/goravel/framework/contracts/console",
+		typeImportPath:  "github.com/rusmanplatd/goravelframework/contracts/console",
 		fileExistsError: errors.PackageCommandsFileExists,
 		stubTemplate:    commands,
 		matcherFunc:     match.Commands,
@@ -745,7 +745,7 @@ func (s *WithSliceHandlerTestSuite) TestRemoveItem() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -770,7 +770,7 @@ func Boot() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -785,7 +785,7 @@ func Boot() {
 		s.Require().NoError(supportfile.PutContent(commandsFile, `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -818,8 +818,8 @@ func Commands() []console.Command {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 	"goravel/config"
 )
@@ -854,7 +854,7 @@ func Boot() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -869,7 +869,7 @@ func Boot() {
 		s.Require().NoError(supportfile.PutContent(commandsFile, `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -900,8 +900,8 @@ func Commands() []console.Command {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 	"goravel/config"
 )
@@ -931,14 +931,14 @@ func Boot() {
 func (s *WithSliceHandlerTestSuite) TestRemoveImports() {
 	config := withSliceConfig{
 		fileName:       "commands.go",
-		typeImportPath: "github.com/goravel/framework/contracts/console",
+		typeImportPath: "github.com/rusmanplatd/goravelframework/contracts/console",
 	}
 
 	appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 	"goravel/app/console/unused"
 	"goravel/config"
@@ -978,7 +978,7 @@ func (s *WithSliceHandlerTestSuite) TestRemoveItemFromFile() {
 	commandsContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
 
 	"goravel/app/console/commands"
 )
@@ -1016,8 +1016,8 @@ func (s *WithSliceHandlerTestSuite) TestRemoveInline() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/app/console/commands"
 )
 
@@ -1049,7 +1049,7 @@ func Boot() {
 		appContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1222,9 +1222,9 @@ func Test_appendToExistingMiddleware(t *testing.T) {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1241,9 +1241,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1306,9 +1306,9 @@ func Test_addMiddlewareAppendCall(t *testing.T) {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1323,9 +1323,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1388,7 +1388,7 @@ func Test_addMiddlewareImports(t *testing.T) {
 			initialContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1396,11 +1396,11 @@ func Boot() {
 	foundation.Setup().WithConfig(config.Boot).Run()
 }
 `,
-			pkg:         "github.com/goravel/framework/http/middleware",
+			pkg:         "github.com/rusmanplatd/goravelframework/http/middleware",
 			expectError: false,
 			expectedImports: []string{
-				"github.com/goravel/framework/http/middleware",
-				"github.com/goravel/framework/contracts/foundation/configuration",
+				"github.com/rusmanplatd/goravelframework/http/middleware",
+				"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration",
 			},
 		},
 		{
@@ -1408,8 +1408,8 @@ func Boot() {
 			initialContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1417,11 +1417,11 @@ func Boot() {
 	foundation.Setup().WithConfig(config.Boot).Run()
 }
 `,
-			pkg:         "github.com/goravel/framework/http/middleware",
+			pkg:         "github.com/rusmanplatd/goravelframework/http/middleware",
 			expectError: false,
 			expectedImports: []string{
-				"github.com/goravel/framework/http/middleware",
-				"github.com/goravel/framework/contracts/foundation/configuration",
+				"github.com/rusmanplatd/goravelframework/http/middleware",
+				"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration",
 			},
 		},
 		{
@@ -1429,8 +1429,8 @@ func Boot() {
 			initialContent: `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -1438,11 +1438,11 @@ func Boot() {
 	foundation.Setup().WithConfig(config.Boot).Run()
 }
 `,
-			pkg:         "github.com/goravel/framework/http/middleware",
+			pkg:         "github.com/rusmanplatd/goravelframework/http/middleware",
 			expectError: false,
 			expectedImports: []string{
-				"github.com/goravel/framework/http/middleware",
-				"github.com/goravel/framework/contracts/foundation/configuration",
+				"github.com/rusmanplatd/goravelframework/http/middleware",
+				"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration",
 			},
 		},
 	}
@@ -1487,7 +1487,7 @@ func Test_createWithMiddleware(t *testing.T) {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1507,7 +1507,7 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1634,7 +1634,7 @@ func Test_findFoundationSetupCallsForMiddleware(t *testing.T) {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1651,9 +1651,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -1674,7 +1674,7 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1755,9 +1755,9 @@ func Test_findMiddlewareAppendCall(t *testing.T) {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1773,9 +1773,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1792,9 +1792,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1809,9 +1809,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 )
 
 func Boot() {
@@ -1871,7 +1871,7 @@ func Test_foundationSetupMiddleware(t *testing.T) {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1883,7 +1883,7 @@ func Boot() {
 			expectedResult: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1902,9 +1902,9 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -1919,9 +1919,9 @@ func Boot() {
 			expectedResult: `package test
 
 import (
-	"github.com/goravel/framework/contracts/foundation/configuration"
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/http/middleware"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation/configuration"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/http/middleware"
 	"goravel/config"
 )
 
@@ -1940,7 +1940,7 @@ func Boot() {
 			initialContent: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 
@@ -1953,7 +1953,7 @@ func Boot() {
 			expectedResult: `package test
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 	"goravel/config"
 )
 

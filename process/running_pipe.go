@@ -9,7 +9,7 @@ import (
 	"os/exec"
 	"time"
 
-	contractsprocess "github.com/goravel/framework/contracts/process"
+	contractsprocess "github.com/rusmanplatd/goravelframework/contracts/process"
 )
 
 type RunningPipe struct {

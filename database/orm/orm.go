@@ -7,13 +7,13 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/goravel/framework/contracts/binding"
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/database"
-	contractsorm "github.com/goravel/framework/contracts/database/orm"
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/database/factory"
-	"github.com/goravel/framework/database/gorm"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/database"
+	contractsorm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/database/factory"
+	"github.com/rusmanplatd/goravelframework/database/gorm"
 )
 
 type Orm struct {

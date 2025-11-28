@@ -5,10 +5,10 @@ import (
 	"os/exec"
 	"runtime"
 
-	"github.com/goravel/framework/contracts/config"
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/console/command"
-	supportconsole "github.com/goravel/framework/support/console"
+	"github.com/rusmanplatd/goravelframework/contracts/config"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console/command"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
 )
 
 type BuildCommand struct {

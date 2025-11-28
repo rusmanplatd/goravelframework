@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	httpvalidate "github.com/goravel/framework/contracts/validation"
+	httpvalidate "github.com/rusmanplatd/goravelframework/contracts/validation"
 )
 
 func TestOne(t *testing.T) {

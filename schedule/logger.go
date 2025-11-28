@@ -1,8 +1,8 @@
 package schedule
 
 import (
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type Logger struct {

@@ -11,9 +11,9 @@ import (
 	"github.com/pterm/pterm"
 	"github.com/urfave/cli/v3"
 
-	"github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/support/color"
-	supportconsole "github.com/goravel/framework/support/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	supportconsole "github.com/rusmanplatd/goravelframework/support/console"
 )
 
 type CliContext struct {

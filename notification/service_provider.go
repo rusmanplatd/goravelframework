@@ -1,11 +1,11 @@
 package notification
 
 import (
-	"github.com/goravel/framework/contracts/binding"
-	contractsconsole "github.com/goravel/framework/contracts/console"
-	"github.com/goravel/framework/contracts/foundation"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/notification/console"
+	"github.com/rusmanplatd/goravelframework/contracts/binding"
+	contractsconsole "github.com/rusmanplatd/goravelframework/contracts/console"
+	"github.com/rusmanplatd/goravelframework/contracts/foundation"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/notification/console"
 )
 
 // ServiceProvider provides notification services.

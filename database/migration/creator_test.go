@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
 )
 
 type DefaultCreatorSuite struct {
@@ -62,8 +62,8 @@ func (r *M202410131203CreateUsersTable) Down() error {
 			expected: `package migrations
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/facades"
 )
 
 type M202410131203CreateUsersTable struct{}
@@ -98,8 +98,8 @@ func (r *M202410131203CreateUsersTable) Down() error {
 			expected: `package migrations
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/facades"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/facades"
 )
 
 type M202410131203CreateUsersTable struct{}

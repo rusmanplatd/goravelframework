@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/goravel/framework/contracts/packages"
-	mockmodify "github.com/goravel/framework/mocks/packages/modify"
-	"github.com/goravel/framework/support/color"
+	"github.com/rusmanplatd/goravelframework/contracts/packages"
+	mockmodify "github.com/rusmanplatd/goravelframework/mocks/packages/modify"
+	"github.com/rusmanplatd/goravelframework/support/color"
 )
 
 type PackagesSetupTestSuite struct {
@@ -181,7 +181,7 @@ func TestSetup(t *testing.T) {
 }
 
 func TestModuleName(t *testing.T) {
-	assert.Equal(t, "github.com/goravel/framework", GetModuleName())
+	assert.Equal(t, "github.com/rusmanplatd/goravelframework", GetModuleName())
 }
 
 func TestModuleNameFromArgs(t *testing.T) {

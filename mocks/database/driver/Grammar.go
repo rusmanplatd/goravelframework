@@ -3,7 +3,7 @@
 package driver
 
 import (
-	driver "github.com/goravel/framework/contracts/database/driver"
+	driver "github.com/rusmanplatd/goravelframework/contracts/database/driver"
 	mock "github.com/stretchr/testify/mock"
 	clause "gorm.io/gorm/clause"
 

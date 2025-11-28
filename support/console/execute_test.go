@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/goravel/framework/contracts/console"
-	mocksconsole "github.com/goravel/framework/mocks/console"
+	"github.com/rusmanplatd/goravelframework/contracts/console"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
 )
 
 func TestExecuteCommand(t *testing.T) {

@@ -6,7 +6,7 @@ func (s Stubs) ValidationFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/validation"
+	"github.com/rusmanplatd/goravelframework/contracts/validation"
 )
 
 func Validation() validation.Validation {

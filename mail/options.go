@@ -1,7 +1,7 @@
 package mail
 
 import (
-	"github.com/goravel/framework/contracts/mail"
+	"github.com/rusmanplatd/goravelframework/contracts/mail"
 )
 
 func Address(address, name string) mail.Address {

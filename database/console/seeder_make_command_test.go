@@ -8,16 +8,16 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	mocksconsole "github.com/goravel/framework/mocks/console"
-	mocksfoundation "github.com/goravel/framework/mocks/foundation"
-	"github.com/goravel/framework/support/file"
+	mocksconsole "github.com/rusmanplatd/goravelframework/mocks/console"
+	mocksfoundation "github.com/rusmanplatd/goravelframework/mocks/foundation"
+	"github.com/rusmanplatd/goravelframework/support/file"
 )
 
 var databaseKernel = `package database
 
 import (
-	"github.com/goravel/framework/contracts/database/schema"
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/contracts/database/schema"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 )
 
 type Kernel struct {
@@ -84,8 +84,8 @@ func TestSeederMakeCommand_BootstrapSetup(t *testing.T) {
 	bootstrapContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
-	"github.com/goravel/framework/contracts/database/seeder"
+	"github.com/rusmanplatd/goravelframework/foundation"
+	"github.com/rusmanplatd/goravelframework/contracts/database/seeder"
 )
 
 func Boot() {
@@ -129,7 +129,7 @@ func Boot() {
 		invalidBootstrapContent := `package bootstrap
 
 import (
-	"github.com/goravel/framework/foundation"
+	"github.com/rusmanplatd/goravelframework/foundation"
 )
 
 func Boot() {

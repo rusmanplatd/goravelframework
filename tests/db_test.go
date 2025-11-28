@@ -9,14 +9,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/goravel/framework/contracts/database/db"
-	databasedb "github.com/goravel/framework/database/db"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/carbon"
-	"github.com/goravel/framework/support/convert"
 	"github.com/goravel/postgres"
 	"github.com/goravel/sqlite"
 	"github.com/goravel/sqlserver"
+	"github.com/rusmanplatd/goravelframework/contracts/database/db"
+	databasedb "github.com/rusmanplatd/goravelframework/database/db"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/carbon"
+	"github.com/rusmanplatd/goravelframework/support/convert"
+	"github.com/rusmanplatd/goravelpostgres"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
@@ -232,7 +233,7 @@ func (s *DBTestSuite) Test_DB_Select_Insert_Update_Delete_Statement() {
 				updateSql = "UPDATE products SET name = @p1 WHERE id = @p2"
 				deleteSql = "DELETE FROM products WHERE id = @p1"
 			}
-			if driver == postgres.Name {
+			if driver == goravelpostgres.Name {
 				insertSql = "INSERT INTO products (name) VALUES ($1)"
 				updateSql = "UPDATE products SET name = $1 WHERE id = $2"
 				deleteSql = "DELETE FROM products WHERE id = $1"
@@ -580,7 +581,7 @@ func (s *DBTestSuite) TestInsertGetID() {
 				Name: "insert get id",
 			})
 
-			if driver == sqlserver.Name || driver == postgres.Name {
+			if driver == sqlserver.Name || driver == goravelpostgres.Name {
 				s.Error(err)
 				s.Equal(int64(0), id)
 			} else {

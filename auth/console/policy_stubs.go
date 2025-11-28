@@ -9,7 +9,7 @@ func (receiver PolicyStubs) Policy() string {
 import (
 	"context"
 	
-	"github.com/goravel/framework/contracts/auth/access"
+	"github.com/rusmanplatd/goravelframework/contracts/auth/access"
 )
 
 type DummyPolicy struct {

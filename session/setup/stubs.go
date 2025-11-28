@@ -10,8 +10,8 @@ func (s Stubs) Config(module string) string {
 	content := `package config
 
 import (
-	"github.com/goravel/framework/support/path"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/support/path"
+	"github.com/rusmanplatd/goravelframework/support/str"
 
 	"DummyModule/app/facades"
 )
@@ -109,7 +109,7 @@ func (s Stubs) SessionFacade() string {
 	return `package facades
 
 import (
-	"github.com/goravel/framework/contracts/session"
+	"github.com/rusmanplatd/goravelframework/contracts/session"
 )
 
 func Session() session.Manager {

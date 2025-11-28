@@ -9,13 +9,13 @@ import (
 	"github.com/dave/dst/dstutil"
 	"github.com/spf13/cast"
 
-	"github.com/goravel/framework/contracts/packages/match"
-	"github.com/goravel/framework/contracts/packages/modify"
-	"github.com/goravel/framework/errors"
-	"github.com/goravel/framework/support/color"
-	supportfile "github.com/goravel/framework/support/file"
-	"github.com/goravel/framework/support/path/internals"
-	"github.com/goravel/framework/support/str"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/match"
+	"github.com/rusmanplatd/goravelframework/contracts/packages/modify"
+	"github.com/rusmanplatd/goravelframework/errors"
+	"github.com/rusmanplatd/goravelframework/support/color"
+	supportfile "github.com/rusmanplatd/goravelframework/support/file"
+	"github.com/rusmanplatd/goravelframework/support/path/internals"
+	"github.com/rusmanplatd/goravelframework/support/str"
 )
 
 func AddProviderApply(pkg, provider string) modify.Apply {

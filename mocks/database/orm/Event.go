@@ -5,7 +5,7 @@ package orm
 import (
 	context "context"
 
-	orm "github.com/goravel/framework/contracts/database/orm"
+	orm "github.com/rusmanplatd/goravelframework/contracts/database/orm"
 	mock "github.com/stretchr/testify/mock"
 )
 

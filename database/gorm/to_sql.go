@@ -3,8 +3,8 @@ package gorm
 import (
 	"gorm.io/gorm"
 
-	"github.com/goravel/framework/contracts/log"
-	"github.com/goravel/framework/support/database"
+	"github.com/rusmanplatd/goravelframework/contracts/log"
+	"github.com/rusmanplatd/goravelframework/support/database"
 )
 
 type ToSql struct {
