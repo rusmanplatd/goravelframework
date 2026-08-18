@@ -7,16 +7,19 @@ import (
 
 	"github.com/goravel/framework/errors"
 	mocksconsole "github.com/goravel/framework/mocks/console"
+	mocksconfig "github.com/goravel/framework/mocks/config"
 	mocksmigration "github.com/goravel/framework/mocks/database/migration"
 )
 
 func TestMigrateRollbackCommand(t *testing.T) {
 	var (
+		mockConfig   *mocksconfig.Config
 		mockContext  *mocksconsole.Context
 		mockMigrator *mocksmigration.Migrator
 	)
 
 	beforeEach := func() {
+		mockConfig = mocksconfig.NewConfig(t)
 		mockContext = mocksconsole.NewContext(t)
 		mockMigrator = mocksmigration.NewMigrator(t)
 	}
@@ -28,6 +31,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "Default value",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(0).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(0).Once()
 				mockMigrator.EXPECT().Rollback(0, 0).Return(nil).Once()
@@ -37,6 +41,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "step < 0",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(-1).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(0).Once()
 				mockContext.EXPECT().Error("The step option should be a positive integer").Once()
@@ -45,6 +50,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "batch < 0",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(0).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(-1).Once()
 				mockContext.EXPECT().Error("The batch option should be a positive integer").Once()
@@ -53,6 +59,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "step > 0 && batch > 0",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(1).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(1).Once()
 				mockContext.EXPECT().Error("The step and batch options cannot be used together").Once()
@@ -61,6 +68,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "With step",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(2).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(0).Once()
 				mockMigrator.EXPECT().Rollback(2, 0).Return(nil).Once()
@@ -70,6 +78,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "With batch",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(0).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(2).Once()
 				mockMigrator.EXPECT().Rollback(0, 2).Return(nil).Once()
@@ -79,10 +88,25 @@ func TestMigrateRollbackCommand(t *testing.T) {
 		{
 			name: "Rollback failed",
 			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("").Once()
 				mockContext.EXPECT().OptionInt("step").Return(0).Once()
 				mockContext.EXPECT().OptionInt("batch").Return(0).Once()
 				mockMigrator.EXPECT().Rollback(0, 0).Return(assert.AnError).Once()
 				mockContext.EXPECT().Error(errors.MigrationMigrateFailed.Args(assert.AnError).Error()).Once()
+			},
+		},
+		{
+			name: "With schema override",
+			setup: func() {
+				mockContext.EXPECT().Option("schema").Return("myschema").Once()
+				mockConfig.EXPECT().GetString("database.default").Return("postgres").Once()
+				mockConfig.EXPECT().GetString("database.connections.postgres.schema").Return("public").Once()
+				mockConfig.EXPECT().Add("database.connections.postgres.schema", "myschema").Once()
+				mockContext.EXPECT().OptionInt("step").Return(0).Once()
+				mockContext.EXPECT().OptionInt("batch").Return(0).Once()
+				mockMigrator.EXPECT().Rollback(0, 0).Return(nil).Once()
+				mockConfig.EXPECT().Add("database.connections.postgres.schema", "public").Once()
+				mockContext.EXPECT().Success("Migration rollback success").Once()
 			},
 		},
 	}
@@ -92,7 +116,7 @@ func TestMigrateRollbackCommand(t *testing.T) {
 			beforeEach()
 			test.setup()
 
-			command := NewMigrateRollbackCommand(mockMigrator)
+			command := NewMigrateRollbackCommand(mockMigrator, mockConfig)
 			err := command.Handle(mockContext)
 
 			assert.NoError(t, err)

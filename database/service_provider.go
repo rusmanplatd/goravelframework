@@ -150,12 +150,12 @@ func (r *ServiceProvider) registerCommands(app foundation.Application) {
 		migrator := migration.NewMigrator(artisan, schema, config.GetString("database.migrations.table"))
 		artisan.Register([]contractsconsole.Command{
 			consolemigration.NewMigrateMakeCommand(app, migrator),
-			consolemigration.NewMigrateCommand(migrator),
-			consolemigration.NewMigrateRollbackCommand(migrator),
-			consolemigration.NewMigrateResetCommand(migrator),
-			consolemigration.NewMigrateRefreshCommand(artisan),
-			consolemigration.NewMigrateFreshCommand(artisan, migrator),
-			consolemigration.NewMigrateStatusCommand(migrator),
+			consolemigration.NewMigrateCommand(migrator, config),
+			consolemigration.NewMigrateRollbackCommand(migrator, config),
+			consolemigration.NewMigrateResetCommand(migrator, config),
+			consolemigration.NewMigrateRefreshCommand(artisan, config),
+			consolemigration.NewMigrateFreshCommand(artisan, migrator, config),
+			consolemigration.NewMigrateStatusCommand(migrator, config),
 			console.NewModelMakeCommand(artisan, schema),
 			console.NewObserverMakeCommand(),
 			console.NewSeedCommand(config, seeder),

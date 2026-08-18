@@ -1,6 +1,7 @@
 package migration
 
 import (
+	"github.com/goravel/framework/contracts/config"
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
 	"github.com/goravel/framework/contracts/database/migration"
@@ -8,11 +9,13 @@ import (
 )
 
 type MigrateRollbackCommand struct {
+	config   config.Config
 	migrator migration.Migrator
 }
 
-func NewMigrateRollbackCommand(migrator migration.Migrator) *MigrateRollbackCommand {
+func NewMigrateRollbackCommand(migrator migration.Migrator, config config.Config) *MigrateRollbackCommand {
 	return &MigrateRollbackCommand{
+		config:   config,
 		migrator: migrator,
 	}
 }
@@ -42,12 +45,26 @@ func (r *MigrateRollbackCommand) Extend() command.Extend {
 				Value: 0,
 				Usage: "rollback batch number (only can be used in default driver)",
 			},
+			&command.StringFlag{
+				Name:  "path",
+				Usage: "the path to the migrations folder (overrides config default)",
+			},
+			&command.StringFlag{
+				Name:  "schema",
+				Usage: "the database schema to use (overrides config default)",
+			},
 		},
 	}
 }
 
 // Handle Execute the console command.
 func (r *MigrateRollbackCommand) Handle(ctx console.Context) error {
+	schema := ctx.Option("schema")
+	if schema != "" {
+		restore := overrideSchema(r.config, schema)
+		defer restore()
+	}
+
 	step := ctx.OptionInt("step")
 	batch := ctx.OptionInt("batch")
 

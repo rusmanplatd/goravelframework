@@ -3,20 +3,24 @@ package migration
 import (
 	"strings"
 
+	"github.com/goravel/framework/contracts/config"
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
 	"github.com/goravel/framework/contracts/database/migration"
 	"github.com/goravel/framework/errors"
+	"github.com/goravel/framework/support/color"
 )
 
 type MigrateFreshCommand struct {
 	artisan  console.Artisan
+	config   config.Config
 	migrator migration.Migrator
 }
 
-func NewMigrateFreshCommand(artisan console.Artisan, migrator migration.Migrator) *MigrateFreshCommand {
+func NewMigrateFreshCommand(artisan console.Artisan, migrator migration.Migrator, config config.Config) *MigrateFreshCommand {
 	return &MigrateFreshCommand{
 		artisan:  artisan,
+		config:   config,
 		migrator: migrator,
 	}
 }
@@ -44,12 +48,33 @@ func (r *MigrateFreshCommand) Extend() command.Extend {
 				Name:  "seeder",
 				Usage: "specify the seeder(s) to use for seeding the database",
 			},
+			&command.StringFlag{
+				Name:  "path",
+				Usage: "the path to the migrations folder (overrides config default)",
+			},
+			&command.StringFlag{
+				Name:  "schema",
+				Usage: "the database schema to use (overrides config default)",
+			},
 		},
 	}
 }
 
 // Handle Execute the console command.
 func (r *MigrateFreshCommand) Handle(ctx console.Context) error {
+	path := ctx.Option("path")
+	schema := ctx.Option("schema")
+
+	// Override schema in config so it propagates to the "migrate" sub-call inside Fresh().
+	if schema != "" {
+		restore := overrideSchema(r.config, schema)
+		defer restore()
+	}
+
+	if path != "" {
+		color.Infoln("Using migration path:", path)
+	}
+
 	if err := r.migrator.Fresh(); err != nil {
 		ctx.Error(errors.MigrationFreshFailed.Args(err).Error())
 		return nil

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/goravel/framework/contracts/config"
 	"github.com/goravel/framework/contracts/console"
 	"github.com/goravel/framework/contracts/console/command"
 	"github.com/goravel/framework/errors"
@@ -11,11 +12,13 @@ import (
 
 type MigrateRefreshCommand struct {
 	artisan console.Artisan
+	config  config.Config
 }
 
-func NewMigrateRefreshCommand(artisan console.Artisan) *MigrateRefreshCommand {
+func NewMigrateRefreshCommand(artisan console.Artisan, config config.Config) *MigrateRefreshCommand {
 	return &MigrateRefreshCommand{
 		artisan: artisan,
+		config:  config,
 	}
 }
 
@@ -47,25 +50,49 @@ func (r *MigrateRefreshCommand) Extend() command.Extend {
 				Name:  "seeder",
 				Usage: "specify the seeder(s) to use for seeding the database",
 			},
+			&command.StringFlag{
+				Name:  "path",
+				Usage: "the path to the migrations folder (overrides config default)",
+			},
+			&command.StringFlag{
+				Name:  "schema",
+				Usage: "the database schema to use (overrides config default)",
+			},
 		},
 	}
 }
 
 // Handle Execute the console command.
 func (r *MigrateRefreshCommand) Handle(ctx console.Context) error {
+	schema := ctx.Option("schema")
+	path := ctx.Option("path")
+
+	// Override schema in config; since all sub-commands run in-process they will
+	// inherit the patched config automatically.
+	if schema != "" {
+		restore := overrideSchema(r.config, schema)
+		defer restore()
+	}
+
+	// Build extra flags to propagate --path to sub-commands (schema propagates via config).
+	pathFlag := ""
+	if path != "" {
+		pathFlag = " --path " + path
+	}
+
 	if step := ctx.OptionInt("step"); step == 0 {
-		if err := r.artisan.Call("migrate:reset"); err != nil {
+		if err := r.artisan.Call("migrate:reset" + pathFlag); err != nil {
 			ctx.Error(errors.MigrationRefreshFailed.Args(err).Error())
 			return nil
 		}
 	} else {
-		if err := r.artisan.Call(fmt.Sprintf("migrate:rollback --step %d", step)); err != nil {
+		if err := r.artisan.Call(fmt.Sprintf("migrate:rollback --step %d", step) + pathFlag); err != nil {
 			ctx.Error(errors.MigrationRefreshFailed.Args(err).Error())
 			return nil
 		}
 	}
 
-	if err := r.artisan.Call("migrate"); err != nil {
+	if err := r.artisan.Call("migrate" + pathFlag); err != nil {
 		ctx.Error(errors.MigrationRefreshFailed.Args(err).Error())
 		return nil
 	}
